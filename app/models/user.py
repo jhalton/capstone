@@ -4,8 +4,8 @@ from flask_login import UserMixin
 from enum import Enum
 
 class ACCOUNT_TYPE(Enum):
-    consumer = "Consumer",
-    admin = "Admin"
+    CONSUMER = "CONSUMER",
+    ADMIN = "ADMIN"
 
 
 
@@ -24,7 +24,7 @@ class User(db.Model, UserMixin):
     city = db.Column(db.String)
     state = db.Column(db.String)
     hashed_password = db.Column(db.String(255), nullable=False)
-    account_type = db.Column('account_type', db.Enum(ACCOUNT_TYPE), nullable=False)
+    account_type = db.Column('account_type', db.Enum('CONSUMER', "ADMIN"), nullable=False)
     membership = db.Column(db.Boolean)
 
     @property

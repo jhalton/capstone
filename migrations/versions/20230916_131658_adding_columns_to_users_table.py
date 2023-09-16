@@ -31,7 +31,7 @@ def upgrade():
         batch_op.add_column(sa.Column('street_address', sa.String(), nullable=True))
         batch_op.add_column(sa.Column('city', sa.String(), nullable=True))
         batch_op.add_column(sa.Column('state', sa.String(), nullable=True))
-        batch_op.add_column(sa.Column('account_type', sa.Enum('ACCOUNT_TYPE'), nullable=False))
+        batch_op.add_column(sa.Column('account_type', sa.Enum("CONSUMER", "ADMIN"), nullable=False))
         batch_op.add_column(sa.Column('membership', sa.Boolean(), nullable=True))
         batch_op.create_unique_constraint("unique_phone_number", ['phone'])
         batch_op.drop_column('username')
