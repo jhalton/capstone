@@ -20,6 +20,7 @@ class Book(db.Model):
     publisher = db.Column(db.String)
     publication_date = db.Column(db.String)
     on_hand = db.Column(db.Integer)
+    description = db.Column(db.String)
 
 
     def to_dict(self):
@@ -36,7 +37,8 @@ class Book(db.Model):
             'backImage': self.back_image,
             'publisher': self.publisher,
             'publicationDate': self.publication_date,
-            'onHand': self.on_hand
+            'onHand': self.on_hand,
+            'description': self.description
         }
 
 
