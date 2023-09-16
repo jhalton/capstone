@@ -1,11 +1,9 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from enum import Enum
 
-class ACCOUNT_TYPE(Enum):
-    CONSUMER = "CONSUMER",
-    ADMIN = "ADMIN"
+
+
 
 
 
@@ -24,7 +22,7 @@ class User(db.Model, UserMixin):
     city = db.Column(db.String)
     state = db.Column(db.String)
     hashed_password = db.Column(db.String(255), nullable=False)
-    account_type = db.Column('account_type', db.Enum('CONSUMER', "ADMIN"), nullable=False)
+    account_type = db.Column(db.String, nullable=False)
     membership = db.Column(db.Boolean)
 
     @property
