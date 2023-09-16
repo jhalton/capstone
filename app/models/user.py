@@ -24,7 +24,7 @@ class User(db.Model, UserMixin):
     city = db.Column(db.String)
     state = db.Column(db.String)
     hashed_password = db.Column(db.String(255), nullable=False)
-    account_type = db.Column(db.Enum(AccountType), nullable=False)
+    account_type = db.Column('account_type', db.Enum('Consumer', 'Admin', name="account_enum"), nullable=False)
     membership = db.Column(db.Boolean)
 
     @property
