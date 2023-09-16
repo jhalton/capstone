@@ -91,7 +91,7 @@ def seed_books():
         publisher="Barnes and Noble",
         publication_date="2015-03-27",
         on_hand=10,
-        description="It was only ever meant to be a game played by six best friends in their first year at Oxford University; a game of consequences, silly forfeits, and childish dares. But then the game changed: The stakes grew higher and the dares more personal and more humiliating, finally evolving into a vicious struggle with unpredictable and tragic results. Now, fourteen years later, the remaining players must meet again for the final round. Who knows better than your best friends what would break you? A gripping psychological thriller partly inspired by the author's own time at Oxford University, Black Chalk is perfect for fans of the high tension and expert pacing of The Secret History and The Bellwether Revivals. Christopher J. Yates' background in puzzle writing and setting can clearly be seen in the plotting of this clever, tricky book that will keep you guessing to the very end."
+        description="Horror hides behind an attractive face in The Picture of Dorian Gray, Oscar Wilde's tale of a notorious Victorian libertine and his life of evil excesses. Though Dorian's hedonistic indulgences leave no blemish on his ageless features, the painted portrait imbued with his soul proves a living catalogue of corruption, revealing in its every new line and lesion the manifold sins he has committed. Desperate to hide the physical evidence of his unregenerate spirit, Dorian will stop at nothing—not even murder—to keep his picture's existence a secret."
     )
     the_metamorphosis = Book(
         title="The Metamorphosis", 
