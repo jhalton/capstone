@@ -8,7 +8,7 @@ class Collection(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
-    book_id = db.Column(db.String, db.ForeignKey(add_prefix_for_prod('books.id')), nullable=False)
+    book_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('books.id')), nullable=False)
 
 
     def to_dict(self):
