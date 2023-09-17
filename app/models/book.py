@@ -1,5 +1,5 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
-
+from .book_collections import book_collections
 
 class Book(db.Model):
     __tablename__ = 'books'
@@ -22,6 +22,8 @@ class Book(db.Model):
     on_hand = db.Column(db.Integer)
     description = db.Column(db.String)
 
+
+    collections = db.relationship('Collection', secondary=book_collections, back_populates='books')
 
     def to_dict(self):
         return {

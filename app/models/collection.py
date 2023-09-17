@@ -1,4 +1,5 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
+from .book_collections import book_collections
 
 class Collection(db.Model):
     __tablename__ = 'collections'
@@ -8,12 +9,13 @@ class Collection(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
-    book_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('books.id')), nullable=False)
+    description = db.Column(db.String)
 
+    books = db.relationship('Book', secondary=book_collections, back_populates='collections')
 
     def to_dict(self):
         return {
             'id': self.id, 
             'name': self.name,
-            'bookId': self.book_id
+            'description': self.description
         }

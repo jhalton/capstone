@@ -12,6 +12,8 @@ def all_books():
     books = Book.query.all()
     return {'books': [book.to_dict() for book in books]}
 
+
+
 @book_routes.route('/<int:id>')
 def book_detail(id):
     """

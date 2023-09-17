@@ -24,3 +24,7 @@ class Review(db.Model):
             'spoiler': self.spoiler,
             'penName': self.pen_name
         }
+    
+    
+    
+        
