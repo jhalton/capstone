@@ -49,3 +49,10 @@ class User(db.Model, UserMixin):
             'accountType': self.account_type,
             'membership': self.membership
         }
+    
+    def to_dict_review(self):
+        return {
+            "id": self.id,
+            "firstName": self.first_name,
+            "lastName": self.last_name,
+        }

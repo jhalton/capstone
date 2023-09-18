@@ -4,7 +4,8 @@ from app.models import Review
 
 review_routes = Blueprint('reviews', __name__)
 
-@review_routes.route('/')
+
+@review_routes.route('/<int:id>')
 def review_by_id(id):
     """
     Query for review by id

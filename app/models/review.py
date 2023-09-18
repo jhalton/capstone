@@ -25,6 +25,11 @@ class Review(db.Model):
             'penName': self.pen_name
         }
     
+    def to_dict_book_reviews(self):
+        review = self.to_dict()
+        review["Book"] = self.book.to_dict_review()
+        return review
+    
     
     
         
