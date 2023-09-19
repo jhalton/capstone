@@ -83,7 +83,9 @@ def edit_collection(id):
 @login_required
 @admin_required
 def delete_collection(id):
-    
+    """
+    Deletes a collection
+    """
     collection = Collection.query.get(int(id))
     if not collection:
         return {'errors': "Collection couldn't be found"}, 404
