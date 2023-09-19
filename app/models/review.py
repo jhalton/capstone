@@ -14,11 +14,15 @@ class Review(db.Model):
     spoiler = db.Column(db.Boolean, nullable=False)
     pen_name = db.Column(db.String)
 
+    book = db.relationship(
+        'Book', back_populates='reviews')
+
 
     def to_dict(self):
         return {
             'id': self.id,
             'rating': self.rating,
+            'review': self.review,
             'userId': self.user_id,
             'bookId': self.book_id,
             'spoiler': self.spoiler,

@@ -24,6 +24,8 @@ def book_detail(id):
         return book.to_dict_by_id()
     else:
         return {'message': "Book couldn't be found"}, 404
+    
+    
 
 
 #---------------------------Reviews---------------------------
@@ -32,7 +34,7 @@ def get_book_reviews(id):
     """
     Query for a book's reviews by book id
     """
-    book = Book.query.get(int)
+    book = Book.query.get(int(id))
     if not book:
         return {'errors': "Book couldn't be found"}, 404
-    return {"Reviews": [review.to_dict_book_reviews()] for review in book.reviews}
+    return {"Reviews": [review.to_dict_book_reviews() for review in book.reviews]}

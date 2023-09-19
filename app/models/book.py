@@ -24,6 +24,8 @@ class Book(db.Model):
 
 
     collections = db.relationship('Collection', secondary=book_collections, back_populates='books')
+    reviews = db.relationship(
+        'Review', back_populates='book', cascade="all, delete-orphan")
 
     def to_dict(self):
         return {
@@ -47,7 +49,7 @@ class Book(db.Model):
     def to_dict_by_id(self):
         book = self.to_dict()
         if self.reviews:
-            avg_rating = round(sum(review.rating for review in self.reviews) / len(self.review), 1)
+            avg_rating = round(sum(review.rating for review in self.reviews) / len(self.reviews), 1)
             book["avgRating"] = avg_rating
         else:
             book['avgRating'] = None
