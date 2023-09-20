@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from flask_login import login_required
 from .decorators import admin_required
-from app.models import Collection, db
+from app.models import Collection, book_collections, db
 from app.forms import CreateCollectionForm
 from .auth_routes import validation_errors_to_error_messages
 
@@ -23,11 +23,16 @@ def get_collection(id):
     """
     Query for a collection by id
     """
-    collection = Collection.query.get(int(id))
-    if collection:
-        return collection.to_dict()
-    else: 
-        {'message': "Collection couldn't be found"}, 404
+    try:
+        collection = Collection.query.get(int(id))
+        if not collection: 
+            {'message': "Collection couldn't be found"}, 404
+
+        books = [book.to_dict() for book in collection.books]
+        return books
+    except:
+        return ["An error has occurred."]
+    
 
 
 

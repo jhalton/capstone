@@ -6,9 +6,14 @@ def seed_collections():
         name='Horror',
         description='If you like to be disturbed, frightened, or scared, then surely there will be something in this collection for you.'
     )
+    featured = Collection(
+        name='Featured',
+        description='Our current staff picks featured to inspire your next adventure!'
+    )
 
 
     db.session.add(horror)
+    db.session.add(featured)
     db.session.commit()
 
 # Uses a raw SQL query to TRUNCATE or DELETE the users table. SQLAlchemy doesn't
