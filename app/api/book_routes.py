@@ -98,7 +98,7 @@ def edit_book(id):
 
 
 
-@book_routes.route('/delete')
+@book_routes.route('/<int:id>/delete')
 @login_required
 @admin_required
 def delete_book(id):
