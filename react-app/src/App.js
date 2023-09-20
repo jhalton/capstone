@@ -7,6 +7,9 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import CollectionDetail from "./components/CollectionDetail";
+import BrowseCollections from "./components/BrowseCollections";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import AdminPortal from "./components/AdminPortal";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +35,12 @@ function App() {
           <Route path="/collections/:collectionId">
             <CollectionDetail />
           </Route>
+          <Route exact path="/collections">
+            <BrowseCollections />
+          </Route>
+          <ProtectedRoute>
+            <AdminPortal />
+          </ProtectedRoute>
         </Switch>
       )}
     </>
