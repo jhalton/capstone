@@ -53,6 +53,7 @@ export const getAllCollections = () => async (dispatch) => {
     dispatch(getCollections());
     return data;
   } else if (response.status < 500) {
+    const data = (await response).json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -67,6 +68,7 @@ export const getCollectionById = (collectionId) => async (dispatch) => {
     dispatch(getOneCollection(data));
     return data;
   } else if (response.status < 500) {
+    const data = (await response).json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -84,6 +86,7 @@ export const createCollection = (collection) => async (dispatch) => {
     dispatch(addCollection(data));
     return data;
   } else if (response.status < 500) {
+    const data = (await response).json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -101,6 +104,7 @@ export const editCollection =
       dispatch(addCollection(data));
       return data;
     } else if (response.status < 500) {
+      const data = (await response).json();
       return data.errors;
     } else {
       return ["Oops! An error occurred. Please try again."];
@@ -116,6 +120,7 @@ export const deleteCollection = (collectionId) => async (dispatch) => {
     dispatch(removeCollection(data));
     return data;
   } else if (response.status < 500) {
+    const data = (await response).json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -123,9 +128,9 @@ export const deleteCollection = (collectionId) => async (dispatch) => {
 };
 
 //--------------------------State Selectors--------------------------------
-const allCollections = (state) =>
+export const allCollections = (state) =>
   Object.values(state.collections.allCollections);
-const currentCollection = (state) => state.collections.currentCollection;
+export const currentCollection = (state) => state.collections.currentCollection;
 //------------------------------Reducers------------------------------------
 
 const initialState = {

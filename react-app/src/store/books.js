@@ -53,6 +53,7 @@ export const getAllBooks = () => async (dispatch) => {
     dispatch(getBooks());
     return data;
   } else if (response.status < 500) {
+    const data = (await response).json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -67,6 +68,7 @@ export const getBookById = (bookId) => async (dispatch) => {
     dispatch(getOneBook(data));
     return data;
   } else if (response.status < 500) {
+    const data = (await response).json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -84,6 +86,7 @@ export const createBook = (book) => async (dispatch) => {
     dispatch(addBook(data));
     return data;
   } else if (response.status < 500) {
+    const data = (await response).json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -101,6 +104,7 @@ export const editBook = (bookId, book) => async (dispatch) => {
     dispatch(addBook(data));
     return data;
   } else if (response.status < 500) {
+    const data = (await response).json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -116,6 +120,7 @@ export const deleteBook = (bookId) => async (dispatch) => {
     dispatch(removeBook(data));
     return data;
   } else if (response.status < 500) {
+    const data = (await response).json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
