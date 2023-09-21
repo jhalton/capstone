@@ -9,3 +9,8 @@
 .main-navigation--container {
   border-bottom: 1px solid rgb(150, 150, 150);
 }
+
+.main-nav--admin-link:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

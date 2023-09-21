@@ -4,12 +4,14 @@ import AdminPortalSidebar from "../AdminPortalSidebar";
 import LoadingSpinner from "../LoadingSpinner";
 import { useDispatch, useSelector } from "react-redux";
 import { allCollections, getAllCollections } from "../../store/collections";
+import { useHistory } from "react-router-dom";
 import CreateBook from "../CreateBook";
 import CreateCollection from "../CreateCollection";
 
 const AdminPortal = () => {
   const dispatch = useDispatch();
   const collections = useSelector(allCollections);
+  const history = useHistory();
   const [createCollection, setCreateCollection] = useState(false);
   const [createBook, setCreateBook] = useState(false);
 
@@ -55,26 +57,33 @@ const AdminPortal = () => {
         setCreateCollection={setCreateCollection}
         setCreateBook={setCreateBook}
       />
-
-      <ul>
-        {collections?.map((collection) => (
-          <li key={collection.id}>
-            <h3>{collection.name}</h3>
-            <div className="admin-portal-main--collection-tile">
-              {collection.Books
-                ? collection.Books?.map((book) => (
-                    <div
-                      key={book?.id}
-                      className="admin-portal-main--collection-tile-book"
-                    >
-                      <img src={book?.frontImage} alt={book?.title} />
-                    </div>
-                  ))
-                : "This collection doesn't have any books yet"}
-            </div>
-          </li>
-        ))}
-      </ul>
+      <div className="admin-portal-main--collections">
+        <ul className="admin-portal-main--collections-ul">
+          {collections?.map((collection) => (
+            <li
+              key={collection.id}
+              className="admin-portal-main--collections-li"
+            >
+              <h3>{collection.name}</h3>
+              <div
+                className="admin-portal-main--collection-tile"
+                onClick={() => history.push(`/collections/${collection.id}`)}
+              >
+                {collection.Books
+                  ? collection.Books?.slice(0, 4).map((book) => (
+                      <div
+                        key={book?.id}
+                        className="admin-portal-main--collection-tile-book"
+                      >
+                        <img src={book?.frontImage} alt={book?.title} />
+                      </div>
+                    ))
+                  : "This collection doesn't have any books yet"}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

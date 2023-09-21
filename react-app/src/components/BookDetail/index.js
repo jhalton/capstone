@@ -11,8 +11,6 @@ const BookDetail = () => {
   const { bookId } = useParams();
   const rating = book.avgRating;
 
-  console.log(book.avgRating);
-
   useEffect(() => {
     dispatch(getBookById(bookId));
 

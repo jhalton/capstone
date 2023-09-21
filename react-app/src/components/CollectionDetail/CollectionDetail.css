@@ -1,0 +1,33 @@
+.collection-detail--ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.collection-detail--li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  width: auto;
+  margin: 10px;
+}
+
+.collection-detail--li:hover {
+  cursor: pointer;
+}
+
+.collection-detail--li img {
+  max-height: 400px;
+}
+
+.collection-detail--stars {
+  display: flex;
+}
+
+.collection-detail--rating-filled {
+  color: #000000;
+}
+
+.collection-detail--rating-empty {
+  color: #b4b3b3;
+}

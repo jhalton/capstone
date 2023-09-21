@@ -28,6 +28,7 @@ def all_collections():
 
     return {'Collections': collections_w_books}
 
+
 @collection_routes.route('/<int:id>')
 def get_collection(id):
     """
@@ -37,7 +38,7 @@ def get_collection(id):
     collection = Collection.query.get(int(id))
     if not collection: 
         {'message': "Collection couldn't be found"}, 404
-    return {"Books": [book.to_dict() for book in collection.books]}
+    return {"Books": [book.to_dict_by_id() for book in collection.books]}
     
     
 

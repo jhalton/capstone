@@ -35,7 +35,7 @@ const removeCollection = (collection) => {
   };
 };
 
-export const clearOneCollection = () => {
+export const clearCurrentCollection = () => {
   return {
     type: CLEAR_ONE_COLLECTION,
   };

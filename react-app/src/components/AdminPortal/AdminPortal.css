@@ -1,0 +1,29 @@
+.admin-portal-main--collections-ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.admin-portal-main--collections-li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  max-width: 400px;
+}
+
+.admin-portal-main--collection-tile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  max-width: 300px;
+  margin: 25px;
+  padding: 10px;
+}
+
+.admin-portal-main--collection-tile:hover {
+  cursor: pointer;
+}
+
+.admin-portal-main--collection-tile-book img {
+  width: 100%;
+}
