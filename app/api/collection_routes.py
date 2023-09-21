@@ -23,15 +23,12 @@ def get_collection(id):
     """
     Query for a collection by id
     """
-    try:
-        collection = Collection.query.get(int(id))
-        if not collection: 
-            {'message': "Collection couldn't be found"}, 404
-
-        books = [book.to_dict() for book in collection.books]
-        return books
-    except:
-        return ["An error has occurred."]
+    
+    collection = Collection.query.get(int(id))
+    if not collection: 
+        {'message': "Collection couldn't be found"}, 404
+    return {"Books": [book.to_dict() for book in collection.books]}
+    
     
 
 

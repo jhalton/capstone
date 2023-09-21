@@ -1,15 +1,14 @@
 import "./FeaturedBooks.css";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getAllCollections, getCollectionById } from "../../store/collections";
+import { currentCollection, getCollectionById } from "../../store/collections";
 
 const FeaturedBooks = () => {
   const dispatch = useDispatch();
-  const featuredBooks = useSelector(
-    (state) => state.collection.currentCollection
-  );
-  console.log(featuredBooks);
+  const featured = useSelector(currentCollection);
+  const featuredBooks = featured.Books;
 
+  //Gets the Featured Books, which are collectionId 2.
   useEffect(() => {
     dispatch(getCollectionById(2));
   }, [dispatch]);
@@ -20,11 +19,13 @@ const FeaturedBooks = () => {
 
   return (
     <div className="featured-books--container">
-      <h1>Featured Books Component</h1>
+      <h3>Featured</h3>
       <div>
         <ul>
-          {featuredBooks.map((book) => (
-            <li key={book.id}>{book.title}</li>
+          {featuredBooks?.map((book) => (
+            <li key={book.id}>
+              <img src={book.frontImage} alt={book.title} />
+            </li>
           ))}
         </ul>
       </div>

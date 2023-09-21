@@ -1,0 +1,1 @@
+import "./BookDetail.css";
