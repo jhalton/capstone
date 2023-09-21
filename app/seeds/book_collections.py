@@ -6,9 +6,9 @@ def seed_book_collections():
     co2_bo2 = book_collections.insert().values(collection_id=2, book_id=3)
     co2_bo3 = book_collections.insert().values(collection_id=2, book_id=6)
 
-    db.session.add(co2_bo1)
-    db.session.add(co2_bo2)
-    db.session.add(co2_bo3)
+    db.session.execute(co2_bo1)
+    db.session.execute(co2_bo2)
+    db.session.execute(co2_bo3)
     db.session.commit()
 
 

@@ -7,15 +7,17 @@ const CLEAR_ONE_COLLECTION = "collections/CLEAR_ONE_COLLECTION";
 const CLEAR_ALL_COLLECTIONS = "collections/CLEAR_ALL_COLLECTIONS";
 
 //-----------------------------Action Creators--------------------------------
-const getCollections = () => {
+const getCollections = (collection) => {
   return {
     type: GET_COLLECTIONS,
+    payload: collection,
   };
 };
 
-const getOneCollection = () => {
+const getOneCollection = (collection) => {
   return {
     type: GET_ONE_COLLECTION,
+    payload: collection,
   };
 };
 
@@ -26,9 +28,10 @@ const addCollection = (collection) => {
   };
 };
 
-const removeCollection = () => {
+const removeCollection = (collection) => {
   return {
     type: REMOVE_COLLECTION,
+    payload: collection,
   };
 };
 
@@ -50,7 +53,7 @@ export const getAllCollections = () => async (dispatch) => {
 
   if (response.ok) {
     const data = await response.json();
-    dispatch(getCollections());
+    dispatch(getCollections(data));
     return data;
   } else if (response.status < 500) {
     const data = (await response).json();
@@ -129,8 +132,8 @@ export const deleteCollection = (collectionId) => async (dispatch) => {
 
 //--------------------------State Selectors--------------------------------
 export const allCollections = (state) =>
-  Object.values(state.collections.allCollections);
-export const currentCollection = (state) => state.collections.currentCollection;
+  Object.values(state.collection.allCollections);
+export const currentCollection = (state) => state.collection.currentCollection;
 //------------------------------Reducers------------------------------------
 
 const initialState = {
