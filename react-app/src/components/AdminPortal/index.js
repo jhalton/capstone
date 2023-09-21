@@ -1,13 +1,17 @@
 import "./AdminPortal.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AdminPortalSidebar from "../AdminPortalSidebar";
 import LoadingSpinner from "../LoadingSpinner";
 import { useDispatch, useSelector } from "react-redux";
 import { allCollections, getAllCollections } from "../../store/collections";
+import CreateBook from "../CreateBook";
+import CreateCollection from "../CreateCollection";
 
 const AdminPortal = () => {
   const dispatch = useDispatch();
   const collections = useSelector(allCollections);
+  const [createCollection, setCreateCollection] = useState(true);
+  const [createBook, setCreateBook] = useState(false);
   console.log("ADMIN PORTAL", collections);
 
   useEffect(() => {
@@ -17,10 +21,41 @@ const AdminPortal = () => {
   if (!collections) {
     return <LoadingSpinner />;
   }
+
+  if (createCollection) {
+    return (
+      <div>
+        <AdminPortalSidebar
+          collections={collections}
+          setCreateCollection={setCreateCollection}
+          setCreateBook={setCreateBook}
+        />
+        <CreateCollection />
+      </div>
+    );
+  }
+
+  if (createBook) {
+    return (
+      <div>
+        <AdminPortalSidebar
+          collections={collections}
+          setCreateCollection={setCreateCollection}
+          setCreateBook={setCreateBook}
+        />
+        <CreateBook />
+      </div>
+    );
+  }
+
   return (
     <div className="admin-portal-main--container">
       <h1>Welcome to your Admin Portal</h1>
-      <AdminPortalSidebar collections={collections} />
+      <AdminPortalSidebar
+        collections={collections}
+        setCreateCollection={setCreateCollection}
+        setCreateBook={setCreateBook}
+      />
 
       <ul>
         {collections?.map((collection) => (

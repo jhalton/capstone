@@ -1,13 +1,28 @@
 import "./AdminPortalSidebar.css";
 import React from "react";
 
-const AdminPortalSidebar = ({ collections }) => {
+const AdminPortalSidebar = ({ setCreateCollection, setCreateBook }) => {
+  const handleCollectionClick = () => {
+    setCreateCollection(true);
+    setCreateBook(false);
+  };
+
+  const handleBookClick = () => {
+    setCreateBook(true);
+    setCreateCollection(false);
+  };
+
+  const handleViewsClick = () => {
+    setCreateBook(false);
+    setCreateCollection(false);
+  };
+
   return (
     <div className="admin-portal-sidebar--container">
       <h3>Admin Sidebar component</h3>
-      <span>View Collections</span>
-      <span>Create New Collection</span>
-      <span>Create New Book</span>
+      <span onClick={handleViewsClick}>View Collections</span>
+      <span onClick={handleCollectionClick}>Create New Collection</span>
+      <span onClick={handleBookClick}>Create New Book</span>
     </div>
   );
 };
