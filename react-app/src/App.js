@@ -10,6 +10,7 @@ import CollectionDetail from "./components/CollectionDetail";
 import BrowseCollections from "./components/BrowseCollections";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import AdminPortal from "./components/AdminPortal";
+import BookDetail from "./components/BookDetail";
 
 function App() {
   const dispatch = useDispatch();
@@ -41,6 +42,9 @@ function App() {
           <ProtectedRoute>
             <AdminPortal />
           </ProtectedRoute>
+          <Route path="/books/:bookId">
+            <BookDetail />
+          </Route>
         </Switch>
       )}
     </>

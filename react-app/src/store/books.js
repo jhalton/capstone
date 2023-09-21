@@ -7,15 +7,17 @@ const CLEAR_ONE_BOOK = "books/CLEAR_ONE_BOOK";
 const CLEAR_ALL_BOOKS = "books/CLEAR_ALL_BOOKS";
 
 //---------------------------Action Creators------------------------
-const getBooks = () => {
+const getBooks = (book) => {
   return {
     type: GET_BOOKS,
+    payload: book,
   };
 };
 
-const getOneBook = () => {
+const getOneBook = (book) => {
   return {
     type: GET_ONE_BOOK,
+    payload: book,
   };
 };
 
@@ -26,9 +28,10 @@ const addBook = (book) => {
   };
 };
 
-const removeBook = () => {
+const removeBook = (book) => {
   return {
     type: REMOVE_BOOK,
+    payload: book,
   };
 };
 
