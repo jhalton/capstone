@@ -35,7 +35,7 @@ const removeBook = (book) => {
   };
 };
 
-export const clearOneBook = () => {
+export const clearCurrentBook = () => {
   return {
     type: CLEAR_ONE_BOOK,
   };
@@ -67,11 +67,11 @@ export const getBookById = (bookId) => async (dispatch) => {
   const response = await fetch(`/api/books/${bookId}`);
 
   if (response.ok) {
-    const data = (await response).json();
+    const data = await response.json();
     dispatch(getOneBook(data));
     return data;
   } else if (response.status < 500) {
-    const data = (await response).json();
+    const data = await response.json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -132,7 +132,7 @@ export const deleteBook = (bookId) => async (dispatch) => {
 
 //------------------------State Selectors------------------------------
 export const allBooks = (state) => Object.values(state.books.allBooks);
-export const currentBook = (state) => state.books.currentBook;
+export const currentBook = (state) => state.book.currentBook;
 //-------------------------------Reducers--------------------------------
 
 const initialState = {

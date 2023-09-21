@@ -13,3 +13,7 @@
 .featured-books--container img {
   max-height: 400px;
 }
+
+.featured-books--container li:hover {
+  cursor: pointer;
+}

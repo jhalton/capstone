@@ -39,7 +39,7 @@ function App() {
           <Route exact path="/collections">
             <BrowseCollections />
           </Route>
-          <ProtectedRoute>
+          <ProtectedRoute path="/admin-portal">
             <AdminPortal />
           </ProtectedRoute>
           <Route path="/books/:bookId">
