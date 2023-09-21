@@ -1,0 +1,9 @@
+.admin-portal-sidebar--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-portal-sidebar--container span:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

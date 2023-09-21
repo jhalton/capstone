@@ -5,10 +5,21 @@ def seed_book_collections():
     co2_bo1 = book_collections.insert().values(collection_id=2, book_id=1)
     co2_bo2 = book_collections.insert().values(collection_id=2, book_id=3)
     co2_bo3 = book_collections.insert().values(collection_id=2, book_id=6)
+    co1_bo1 = book_collections.insert().values(collection_id=1, book_id=1)
+    co1_bo2 = book_collections.insert().values(collection_id=1, book_id=2)
+    co1_bo3 = book_collections.insert().values(collection_id=1, book_id=3)
+    co1_bo4 = book_collections.insert().values(collection_id=1, book_id=4)
+    co1_bo5 = book_collections.insert().values(collection_id=1, book_id=6)
+    
 
     db.session.execute(co2_bo1)
     db.session.execute(co2_bo2)
     db.session.execute(co2_bo3)
+    db.session.execute(co1_bo1)
+    db.session.execute(co1_bo2)
+    db.session.execute(co1_bo3)
+    db.session.execute(co1_bo4)
+    db.session.execute(co1_bo5)
     db.session.commit()
 
 

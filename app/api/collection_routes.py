@@ -14,9 +14,19 @@ def all_collections():
     """
 
     collections = Collection.query.all()
-    return {'Collections': [collection.to_dict() for collection in collections]}
+    
+    collections_w_books = []
+    for collection in collections:
+        collection_w_books = collection.to_dict()
 
+        if collection.books:
+            collection_w_books['Books'] = [book.to_dict() for book in collection.books]
+        else:
+            collection_w_books["Books"] = []
 
+        collections_w_books.append(collection_w_books)
+
+    return {'Collections': collections_w_books}
 
 @collection_routes.route('/<int:id>')
 def get_collection(id):
