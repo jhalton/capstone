@@ -11,11 +11,11 @@ def validation_errors_to_error_messages(validation_errors):
     """
     Simple function that turns the WTForms validation errors into a simple list
     """
-    errorMessages = []
+    errorMessages = {}
     for field in validation_errors:
         for error in validation_errors[field]:
-            errorMessages.append(f'{field} : {error}')
-    return errorMessages
+            errorMessages[field] = error
+    return {"errors": errorMessages}
 
 
 @auth_routes.route('/')
@@ -25,7 +25,7 @@ def authenticate():
     """
     if current_user.is_authenticated:
         return current_user.to_dict()
-    return {'errors': ['Unauthorized']}
+    return {'errors':{'unauthorized': 'Unauthorized'}}
 
 
 @auth_routes.route('/login', methods=['POST'])

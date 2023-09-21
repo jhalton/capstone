@@ -10,9 +10,8 @@ import CreateCollection from "../CreateCollection";
 const AdminPortal = () => {
   const dispatch = useDispatch();
   const collections = useSelector(allCollections);
-  const [createCollection, setCreateCollection] = useState(true);
+  const [createCollection, setCreateCollection] = useState(false);
   const [createBook, setCreateBook] = useState(false);
-  console.log("ADMIN PORTAL", collections);
 
   useEffect(() => {
     dispatch(getAllCollections());

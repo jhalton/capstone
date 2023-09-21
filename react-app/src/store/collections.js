@@ -81,7 +81,10 @@ export const getCollectionById = (collectionId) => async (dispatch) => {
 export const createCollection = (collection) => async (dispatch) => {
   const response = await fetch(`/api/collections/new`, {
     method: "POST",
-    body: collection,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(collection),
   });
 
   if (response.ok) {
@@ -89,7 +92,7 @@ export const createCollection = (collection) => async (dispatch) => {
     dispatch(addCollection(data));
     return data;
   } else if (response.status < 500) {
-    const data = (await response).json();
+    const data = await response.json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -100,7 +103,8 @@ export const editCollection =
   (collectionId, collection) => async (dispatch) => {
     const response = await fetch(`/api/collections/${collectionId}/edit`, {
       method: "PUT",
-      body: collection,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(collection),
     });
     if (response.ok) {
       const data = await response.json();

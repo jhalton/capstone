@@ -81,7 +81,8 @@ export const getBookById = (bookId) => async (dispatch) => {
 export const createBook = (book) => async (dispatch) => {
   const response = await fetch("/api/books/new", {
     method: "POST",
-    body: book,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(book),
   });
 
   if (response.ok) {
@@ -89,7 +90,7 @@ export const createBook = (book) => async (dispatch) => {
     dispatch(addBook(data));
     return data;
   } else if (response.status < 500) {
-    const data = (await response).json();
+    const data = await response.json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -99,7 +100,8 @@ export const createBook = (book) => async (dispatch) => {
 export const editBook = (bookId, book) => async (dispatch) => {
   const response = await fetch(`/api/books/${bookId}/edit`, {
     method: "PUT",
-    body: book,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(book),
   });
 
   if (response.ok) {
@@ -107,7 +109,7 @@ export const editBook = (bookId, book) => async (dispatch) => {
     dispatch(addBook(data));
     return data;
   } else if (response.status < 500) {
-    const data = (await response).json();
+    const data = await response.json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -155,7 +157,6 @@ const booksReducer = (state = initialState, action) => {
       return {
         ...newState,
         allBooks: {
-          ...newState.allBooks,
           [action.payload.id]: action.payload,
         },
       };
