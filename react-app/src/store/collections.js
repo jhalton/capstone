@@ -196,6 +196,10 @@ const collectionsReducer = (state = initialState, action) => {
       return { ...newState, allCollections: {} };
     case CLEAR_ONE_COLLECTION:
       return { ...newState, currentCollection: {} };
+    case ADD_BOOKS_TO_COLLECTION:
+      const updatedCollection = { ...newState.currentCollection };
+      updatedCollection[action.payload.id] = action.payload;
+      return { ...newState, currentCollection: updatedCollection };
     default:
       return state;
   }

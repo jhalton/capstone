@@ -35,6 +35,7 @@ const CollectionDetail = () => {
         <OpenModalButton
           modalComponent={AddBookToCollectionModal}
           buttonText={"Add books"}
+          // collectionId={collectionId}
         />
       ) : null}
       <div className="collection-detail--tile">
