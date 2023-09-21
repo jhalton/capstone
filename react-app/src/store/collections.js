@@ -5,6 +5,7 @@ const ADD_COLLECTION = "collections/ADD_COLLECTION";
 const REMOVE_COLLECTION = "collections/REMOVE_COLLECTION";
 const CLEAR_ONE_COLLECTION = "collections/CLEAR_ONE_COLLECTION";
 const CLEAR_ALL_COLLECTIONS = "collections/CLEAR_ALL_COLLECTIONS";
+const ADD_BOOKS_TO_COLLECTION = "collections/ADD_BOOKS_TO_COLLECTION";
 
 //-----------------------------Action Creators--------------------------------
 const getCollections = (collection) => {
@@ -44,6 +45,13 @@ export const clearCurrentCollection = () => {
 export const clearAllCollections = () => {
   return {
     type: CLEAR_ALL_COLLECTIONS,
+  };
+};
+
+const addToCollection = (book) => {
+  return {
+    type: ADD_BOOKS_TO_COLLECTION,
+    payload: book,
   };
 };
 
@@ -128,6 +136,24 @@ export const deleteCollection = (collectionId) => async (dispatch) => {
     return data;
   } else if (response.status < 500) {
     const data = (await response).json();
+    return data.errors;
+  } else {
+    return ["Oops! An error occurred. Please try again."];
+  }
+};
+
+export const addBookToCollection = (collectionId, book) => async (dispatch) => {
+  const response = await fetch(`/api/collections/${collectionId}/add_books`, {
+    method: "PUT",
+    body: book,
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(addToCollection(data));
+    return data;
+  } else if (response.status < 500) {
+    const data = await response.json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];

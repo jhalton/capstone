@@ -91,6 +91,24 @@ def edit_collection(id):
         return collection.to_dict()
     return validation_errors_to_error_messages(form.errors), 400
 
+@collection_routes.route('/<int:id>/add_books', methods=["PUT"])
+@login_required
+@admin_required
+def add_books_to_collection(id):
+    """
+    Adds books to a collection
+    """
+    data = request.get_json()
+    book_ids = data.get('book_ids', [])
+
+    for book_id in book_ids:
+        book_collection = book_collections.insert().values(collection_id=id, book_id=book_id)
+        db.session.execute(book_collection)
+
+    db.session.commit()
+
+    return {'message': "Books successfully added to the collection"}
+
 
 @collection_routes.route('/<int:id>/delete', methods=["DELETE"])
 @login_required
