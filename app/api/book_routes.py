@@ -13,7 +13,7 @@ def all_books():
     Query for all books and returns them in a list of book dictionaries
     """
     books = Book.query.all()
-    return {'books': [book.to_dict() for book in books]}
+    return {'Books': [book.to_dict() for book in books]}
 
 
 

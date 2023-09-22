@@ -1,0 +1,15 @@
+.add-book-to-collection--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.add-book-to-collection--li {
+  list-style-type: none;
+}
+
+.add-book-to-collection--li:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

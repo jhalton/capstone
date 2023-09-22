@@ -145,7 +145,8 @@ export const deleteCollection = (collectionId) => async (dispatch) => {
 export const addBookToCollection = (collectionId, book) => async (dispatch) => {
   const response = await fetch(`/api/collections/${collectionId}/add_books`, {
     method: "PUT",
-    body: book,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ book_ids: [book.id] }),
   });
 
   if (response.ok) {

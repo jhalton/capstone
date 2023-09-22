@@ -52,11 +52,11 @@ export const getAllBooks = () => async (dispatch) => {
   const response = await fetch("/api/books");
 
   if (response.ok) {
-    const data = (await response).json();
-    dispatch(getBooks());
+    const data = await response.json();
+    dispatch(getBooks(data));
     return data;
   } else if (response.status < 500) {
-    const data = (await response).json();
+    const data = await response.json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];
@@ -133,7 +133,7 @@ export const deleteBook = (bookId) => async (dispatch) => {
 };
 
 //------------------------State Selectors------------------------------
-export const allBooks = (state) => Object.values(state.books.allBooks);
+export const allBooks = (state) => Object.values(state.book.allBooks);
 export const currentBook = (state) => state.book.currentBook;
 //-------------------------------Reducers--------------------------------
 

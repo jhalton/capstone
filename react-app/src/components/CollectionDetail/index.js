@@ -10,21 +10,24 @@ import { useDispatch, useSelector } from "react-redux";
 import LoadingSpinner from "../LoadingSpinner";
 import OpenModalButton from "../OpenModalButton";
 import AddBookToCollectionModal from "../AddBookToCollectionModal";
+import { getAllBooks } from "../../store/books";
 
 const CollectionDetail = () => {
   const dispatch = useDispatch();
   const { collectionId } = useParams();
   const collection = useSelector(currentCollection).Books;
+  const books = useSelector((state) => state.book.allBooks);
   const user = useSelector((state) => state.session.user);
   const history = useHistory();
 
   useEffect(() => {
     dispatch(getCollectionById(collectionId));
+    dispatch(getAllBooks());
 
-    return () => dispatch(clearCurrentCollection());
+    // return () => dispatch(clearCurrentCollection());
   }, [dispatch, collectionId]);
 
-  if (!collection) {
+  if (!collection || !books) {
     return <LoadingSpinner />;
   }
 
@@ -33,9 +36,13 @@ const CollectionDetail = () => {
       <h1>Collection Detail Component</h1>
       {user.accountType === "Admin" ? (
         <OpenModalButton
-          modalComponent={AddBookToCollectionModal}
+          modalComponent={
+            <AddBookToCollectionModal
+              collectionId={collectionId}
+              books={books}
+            />
+          }
           buttonText={"Add books"}
-          // collectionId={collectionId}
         />
       ) : null}
       <div className="collection-detail--tile">
