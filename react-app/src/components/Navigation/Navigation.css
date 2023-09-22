@@ -11,6 +11,11 @@
   text-decoration: none;
 }
 
+.main-navigation--loaded-div {
+  display: flex;
+  justify-content: baseline;
+}
+
 .main-navigation--container a,
 a:visited {
   text-decoration: none;

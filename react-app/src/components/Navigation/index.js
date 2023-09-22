@@ -24,7 +24,7 @@ function Navigation({ isLoaded }) {
           </NavLink>
         </li>
         {isLoaded && (
-          <div>
+          <div className="main-navigation--loaded-div">
             <li>
               <NavSearchBar />
             </li>

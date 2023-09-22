@@ -4,8 +4,7 @@
   max-height: 200px;
   overflow-y: auto;
   z-index: 1;
-  position: relative;
-  top: 100%;
+  position: absolute;
   left: 0;
   right: 0;
   padding: 3px;
