@@ -18,10 +18,13 @@ const CollectionDetail = () => {
   const dispatch = useDispatch();
   const { collectionId } = useParams();
   const collection = useSelector(currentCollection).Books;
+  const collectionInfo = useSelector(currentCollection).Collection;
   const books = useSelector((state) => state.book.allBooks);
   const user = useSelector((state) => state.session.user);
   const history = useHistory();
   const { closeModal } = useModal();
+
+  console.log(collectionInfo);
 
   useEffect(() => {
     dispatch(getCollectionById(collectionId));
@@ -36,7 +39,8 @@ const CollectionDetail = () => {
 
   return (
     <div className="collection-detail--container">
-      <h1>Collection Detail Component</h1>
+      <h1>{collectionInfo.name}</h1>
+      <p>{collectionInfo.description}</p>
       {user.accountType === "Admin" ? (
         <OpenModalButton
           modalComponent={
@@ -59,7 +63,12 @@ const CollectionDetail = () => {
               />
               {user.accountType === "Admin" ? (
                 <OpenModalButton
-                  modalComponent={<DeleteBookFromCollectionModal book={book} />}
+                  modalComponent={
+                    <DeleteBookFromCollectionModal
+                      book={book}
+                      collectionId={collectionId}
+                    />
+                  }
                   buttonText={"Remove"}
                 />
               ) : null}

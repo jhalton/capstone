@@ -78,11 +78,12 @@ export const getBookById = (bookId) => async (dispatch) => {
   }
 };
 
+//Create new book
 export const createBook = (book) => async (dispatch) => {
   const response = await fetch("/api/books/new", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(book),
+    // headers: { "Content-Type": "multipart/form-data" },
+    body: book,
   });
 
   if (response.ok) {
@@ -91,7 +92,7 @@ export const createBook = (book) => async (dispatch) => {
     return data;
   } else if (response.status < 500) {
     const data = await response.json();
-    return data.errors;
+    return data;
   } else {
     return ["Oops! An error occurred. Please try again."];
   }

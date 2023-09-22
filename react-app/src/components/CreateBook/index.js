@@ -3,54 +3,50 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createBook } from "../../store/books";
 import { genreOptions, formatOptions } from "../../Resources/selectOptions";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const CreateBook = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [title, setTitle] = useState("");
-  const [authorFirstName, setAuthorFirstName] = useState("");
-  const [authorLastName, setAuthorLastName] = useState("");
+  const [author_first_name, setAuthorFirstName] = useState("");
+  const [author_last_name, setAuthorLastName] = useState("");
   const [genre, setGenre] = useState("");
   const [format, setFormat] = useState("");
   const [isbn, setIsbn] = useState("");
   const [price, setPrice] = useState("");
-  const [frontImage, setFrontImage] = useState("");
-  const [backImage, setBackImage] = useState("");
+  const [front_image, setFrontImage] = useState("");
+  const [back_image, setBackImage] = useState("");
   const [publisher, setPublisher] = useState("");
-  const [publicationDate, setPublicationDate] = useState("");
-  const [onHand, setOnHand] = useState(0);
+  const [publication_date, setPublicationDate] = useState("");
+  const [on_hand, setOnHand] = useState(0);
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState({});
-
-  console.log("CREATE BOOK AUTHORFIRSTNAME", authorFirstName);
-  console.log("CREATE BOOK AUTHORLASTNAME", authorLastName);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const book = {
-      title,
-      authorFirstName,
-      authorLastName,
-      genre,
-      format,
-      isbn,
-      price,
-      frontImage,
-      backImage,
-      publisher,
-      publicationDate,
-      onHand,
-      description,
-    };
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("author_first_name", author_first_name);
+    formData.append("author_last_name", author_last_name);
+    formData.append("genre", genre);
+    formData.append("format", format);
+    formData.append("isbn", isbn);
+    formData.append("price", price);
+    formData.append("front_image", front_image);
+    formData.append("back_image", back_image);
+    formData.append("publisher", publisher);
+    formData.append("publication_date", publication_date);
+    formData.append("on_hand", on_hand);
+    formData.append("description", description);
 
-    console.log("CREATE BOOK DATA", book);
-
-    const data = await dispatch(createBook(book));
+    const data = await dispatch(createBook(formData));
     if (data?.errors) {
       setErrors(data?.errors);
     } else {
-      return "Yippee! You created a new book!";
+      history.push(`/books/${data.id}`);
     }
   };
 
@@ -70,18 +66,18 @@ const CreateBook = () => {
           id="authorFirstName"
           type="text"
           placeholder="Author's first name"
-          value={authorFirstName}
+          value={author_first_name}
           onChange={(e) => setAuthorFirstName(e.target.value)}
         />
-        {errors.authorFirstName && <p>errors.authorFirstName</p>}
+        {errors.author_first_name && <p>errors.author_first_name</p>}
         <input
           id="authorLastName"
           type="text"
           placeholder="Author's last name"
-          value={authorLastName}
+          value={author_last_name}
           onChange={(e) => setAuthorLastName(e.target.value)}
         />
-        {errors.authorLastName && <p>errors.authorLastName</p>}
+        {errors.author_last_name && <p>errors.author_last_name</p>}
         <select id="genre" onChange={(e) => setGenre(e.target.value)}>
           <option value="">Genre</option>
           {genreOptions.map((genre) => (
@@ -120,18 +116,18 @@ const CreateBook = () => {
           id="frontImage"
           type="text"
           placeholder="Front cover image"
-          value={frontImage}
+          value={front_image}
           onChange={(e) => setFrontImage(e.target.value)}
         />
-        {errors.frontImage && <p>errors.frontImage</p>}
+        {errors.front_image && <p>errors.front_image</p>}
         <input
           id="backImage"
           type="text"
           placeholder="Back cover image (optional)"
-          value={backImage}
+          value={back_image}
           onChange={(e) => setBackImage(e.target.value)}
         />
-        {errors.backImage && <p>errors.backImage</p>}
+        {errors.back_image && <p>errors.back_image</p>}
         <input
           id="publisher"
           type="text"
@@ -144,17 +140,18 @@ const CreateBook = () => {
           id="publicationDate"
           type="text"
           placeholder="Publication date YYYY/MM/DD"
-          value={publicationDate}
+          value={publication_date}
           onChange={(e) => setPublicationDate(e.target.value)}
         />
-        {errors.publicationDate && <p>errors.publicationDate</p>}
+        {errors.publication_date && <p>errors.publication_date</p>}
         <input
           id="onHand"
           type="number"
           placeholder="On hand"
-          value={onHand}
+          value={on_hand}
           onChange={(e) => setOnHand(e.target.value)}
         />
+        {errors.on_hand && <p>errors.on_hand</p>}
         <textarea
           id="description"
           placeholder="Description"

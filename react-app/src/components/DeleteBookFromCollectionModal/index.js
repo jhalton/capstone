@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { deleteBookFromCollection } from "../../store/collections";
 
-const DeleteBookFromCollectionModal = ({ book }) => {
+const DeleteBookFromCollectionModal = ({ book, collectionId }) => {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
   console.log("DELETE MODAL", book);
@@ -12,7 +12,7 @@ const DeleteBookFromCollectionModal = ({ book }) => {
   const handleRemove = (e) => {
     e.preventDefault();
 
-    dispatch(deleteBookFromCollection(book.id));
+    dispatch(deleteBookFromCollection(collectionId, book.id));
     closeModal();
   };
 

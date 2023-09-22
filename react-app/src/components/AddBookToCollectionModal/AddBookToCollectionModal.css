@@ -13,3 +13,8 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+.add-book-to-collection--li::selection {
+  cursor: pointer;
+  font-weight: bold;
+}

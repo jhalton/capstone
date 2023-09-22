@@ -37,8 +37,8 @@ def get_collection(id):
     
     collection = Collection.query.get(int(id))
     if not collection: 
-        {'message': "Collection couldn't be found"}, 404
-    return {"Books": [book.to_dict_by_id() for book in collection.books]}
+        return {'message': "Collection couldn't be found"}, 404
+    return {"Collection": collection.to_dict(), "Books": [book.to_dict_by_id() for book in collection.books]}
     
     
 
