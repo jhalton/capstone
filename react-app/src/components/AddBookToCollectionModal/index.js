@@ -36,7 +36,7 @@ const AddBookToCollectionModal = ({ collectionId, books }) => {
     e.preventDefault();
 
     dispatch(addBookToCollection(collectionId, book));
-    dispatch(getCollectionById(collectionId));
+
     closeModal();
   };
 

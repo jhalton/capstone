@@ -11,6 +11,7 @@ import LoadingSpinner from "../LoadingSpinner";
 import OpenModalButton from "../OpenModalButton";
 import AddBookToCollectionModal from "../AddBookToCollectionModal";
 import { getAllBooks } from "../../store/books";
+import { useModal } from "../../context/Modal";
 
 const CollectionDetail = () => {
   const dispatch = useDispatch();
@@ -19,13 +20,14 @@ const CollectionDetail = () => {
   const books = useSelector((state) => state.book.allBooks);
   const user = useSelector((state) => state.session.user);
   const history = useHistory();
+  const { closeModal } = useModal();
 
   useEffect(() => {
     dispatch(getCollectionById(collectionId));
     dispatch(getAllBooks());
 
     // return () => dispatch(clearCurrentCollection());
-  }, [dispatch, collectionId]);
+  }, [dispatch, collectionId, closeModal]);
 
   if (!collection || !books) {
     return <LoadingSpinner />;
