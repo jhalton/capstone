@@ -9,9 +9,10 @@
   left: 0;
   right: 0;
   padding: 3px;
+  width: 400px;
 }
 
-.nav-search-bar-dropdown--container li:hover {
+.nav-search-bar-dropdown--container link:hover {
   font-weight: bold;
   cursor: pointer;
 }

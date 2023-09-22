@@ -16,16 +16,22 @@ const NavSearchBar = () => {
         (book) =>
           book.title.toLowerCase().includes(search.toLowerCase()) ||
           book.authorFirstName.toLowerCase().includes(search.toLowerCase()) ||
-          book.authorLastName.toLowerCase().includes(search.toLowerCase()) ||
-          book.genre.toLowerCase().includes(search.toLowerCase())
+          book.authorLastName.toLowerCase().includes(search.toLowerCase())
       );
       setPopulate(res);
     } else {
       setPopulate([]);
     }
   }, [search, books]);
+
+  const closeSearch = () => {
+    setSearch("");
+  };
+
   return (
     <div>
+      {" "}
+      {/*onClick={() => setActiveSearch(true)} */}
       <i
         className="fa-solid fa-magnifying-glass"
         style={{ color: "#000000" }}
@@ -33,7 +39,7 @@ const NavSearchBar = () => {
       <input
         id="nav-search-bar"
         type="text"
-        placeholder="Search for book, author, or genre..."
+        placeholder="Search for book or author..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
@@ -41,7 +47,9 @@ const NavSearchBar = () => {
         <NavSearchBarDropdown
           className="nav-search-bar-dropdown"
           populate={populate}
+          search={search}
           setSearch={setSearch}
+          closeSearch={closeSearch}
         />
       ) : null}
     </div>
