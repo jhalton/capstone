@@ -20,10 +20,6 @@
   max-height: 400px;
 }
 
-.collection-detail--x {
-  z-index: 3;
-}
-
 .collection-detail--x:hover {
   font-weight: bold;
 }

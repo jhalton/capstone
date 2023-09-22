@@ -11,11 +11,6 @@
   text-decoration: none;
 }
 
-/* .main-navigation--container ul {
-  display: flex;
-  flex-direction: row;
-} */
-
 .main-navigation--container a,
 a:visited {
   text-decoration: none;

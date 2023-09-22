@@ -1,0 +1,12 @@
+.nav-search-bar {
+  width: 500px;
+}
+
+.nav-search-bar-dropdown {
+  position: relative;
+  /* background-color: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto; */
+  z-index: 1;
+}

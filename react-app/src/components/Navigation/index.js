@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
 import LogoComponent from "../Logo";
+import NavSearchBar from "../NavSearchBar";
+import { getAllBooks } from "../../store/books";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllBooks());
+  }, [dispatch]);
 
   return (
     <div className="main-navigation--container">
@@ -17,9 +24,14 @@ function Navigation({ isLoaded }) {
           </NavLink>
         </li>
         {isLoaded && (
-          <li>
-            <ProfileButton user={sessionUser} />
-          </li>
+          <div>
+            <li>
+              <NavSearchBar />
+            </li>
+            <li>
+              <ProfileButton user={sessionUser} />
+            </li>
+          </div>
         )}
       </ul>
     </div>
