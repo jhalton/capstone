@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
+import LogoComponent from "../Logo";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -12,7 +13,7 @@ function Navigation({ isLoaded }) {
       <ul>
         <li>
           <NavLink exact to="/">
-            Home
+            <LogoComponent />
           </NavLink>
         </li>
         {isLoaded && (

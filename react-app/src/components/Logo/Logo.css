@@ -1,0 +1,10 @@
+.logo--container h2 {
+  font-family: "Cormorant Garamond", serif;
+  color: #5c809e;
+  background-image: url("../../Resources/crow-logo.jpg");
+  width: 200px;
+  padding: 5px;
+  background-position: bottom 50% right 62%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
