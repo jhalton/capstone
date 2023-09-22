@@ -6,6 +6,7 @@ const REMOVE_COLLECTION = "collections/REMOVE_COLLECTION";
 const CLEAR_ONE_COLLECTION = "collections/CLEAR_ONE_COLLECTION";
 const CLEAR_ALL_COLLECTIONS = "collections/CLEAR_ALL_COLLECTIONS";
 const ADD_BOOKS_TO_COLLECTION = "collections/ADD_BOOKS_TO_COLLECTION";
+const REMOVE_BOOKS_FROM_COLLECTION = "collections/REMOVE_BOOKS_FROM_COLLECTION";
 
 //-----------------------------Action Creators--------------------------------
 const getCollections = (collection) => {
@@ -51,6 +52,13 @@ export const clearAllCollections = () => {
 const addToCollection = (book) => {
   return {
     type: ADD_BOOKS_TO_COLLECTION,
+    payload: book,
+  };
+};
+
+const removeFromCollection = (book) => {
+  return {
+    type: REMOVE_BOOKS_FROM_COLLECTION,
     payload: book,
   };
 };
@@ -161,6 +169,27 @@ export const addBookToCollection = (collectionId, book) => async (dispatch) => {
   }
 };
 
+export const deleteBookFromCollection =
+  (collectionId, bookId) => async (dispatch) => {
+    const response = await fetch(
+      `/api/collections/${collectionId}/books/${bookId}/delete`,
+      {
+        method: "DELETE",
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      dispatch(removeFromCollection(data));
+      return data;
+    } else if (response.status < 500) {
+      const data = await response.json();
+      return data.errors;
+    } else {
+      return ["Oops! An error occurred. Please try again."];
+    }
+  };
+
 //--------------------------State Selectors--------------------------------
 export const allCollections = (state) =>
   Object.values(state.collection.allCollections);
@@ -201,6 +230,9 @@ const collectionsReducer = (state = initialState, action) => {
       const updatedCollection = { ...newState.currentCollection };
       updatedCollection[action.payload.id] = action.payload;
       return { ...newState, currentCollection: updatedCollection };
+    case REMOVE_BOOKS_FROM_COLLECTION:
+      delete newState.currentCollection[action.payload.id];
+      return newState;
     default:
       return state;
   }

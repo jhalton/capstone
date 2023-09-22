@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from flask_login import login_required
 from .decorators import admin_required
-from app.models import Collection, book_collections, db
+from app.models import Collection, book_collections, db, Book
 from app.forms import CreateCollectionForm
 from .auth_routes import validation_errors_to_error_messages
 
@@ -108,6 +108,31 @@ def add_books_to_collection(id):
     db.session.commit()
 
     return {'message': "Books successfully added to the collection"}
+
+
+
+@collection_routes.route('/<int:id>/books/<int:bookId>/delete', methods=["DELETE"])
+@login_required
+@admin_required
+def delete_books_from_collection(id, bookId):
+    """
+    Deletes books from a collection
+    """
+    collection = Collection.query.get(int(id))
+    book = Book.query.get(int(bookId))
+
+    if not collection or not book:
+        return {'message': 'Collection or book not found'}, 404
+    
+    if book in collection.books:
+        collection.books.remove(book)
+        db.session.commit()
+        return {'message': 'Book was successfully removed from the collection'}
+    else:
+        return {'message': "Book is not in this collection"}, 400
+
+    pass
+
 
 
 @collection_routes.route('/<int:id>/delete', methods=["DELETE"])

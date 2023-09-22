@@ -1,10 +1,7 @@
 import "./AddBookToCollectionModal.css";
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {
-  addBookToCollection,
-  getCollectionById,
-} from "../../store/collections";
+import { addBookToCollection } from "../../store/collections";
 import { useModal } from "../../context/Modal";
 
 const AddBookToCollectionModal = ({ collectionId, books }) => {
@@ -13,9 +10,6 @@ const AddBookToCollectionModal = ({ collectionId, books }) => {
   const [book, setBook] = useState("");
   const [populate, setPopulate] = useState([]);
   const { closeModal } = useModal();
-  console.log("ADD TO COLLECTION BOOK", book);
-  console.log("ADD TO COLLECTION SEARCH", search);
-  console.log("ADD TO COLLECTION POPULATE", populate);
 
   useEffect(() => {
     if (search) {
