@@ -12,6 +12,7 @@ import OpenModalButton from "../OpenModalButton";
 import AddBookToCollectionModal from "../AddBookToCollectionModal";
 import { getAllBooks } from "../../store/books";
 import { useModal } from "../../context/Modal";
+import DeleteBookFromCollectionModal from "../DeleteBookFromCollectionModal";
 
 const CollectionDetail = () => {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const CollectionDetail = () => {
     dispatch(getCollectionById(collectionId));
     dispatch(getAllBooks());
 
-    // return () => dispatch(clearCurrentCollection());
+    return () => dispatch(clearCurrentCollection());
   }, [dispatch, collectionId, closeModal]);
 
   if (!collection || !books) {
@@ -50,12 +51,18 @@ const CollectionDetail = () => {
       <div className="collection-detail--tile">
         <ul className="collection-detail--ul">
           {collection.map((book) => (
-            <li
-              key={book.id}
-              onClick={() => history.push(`/books/${book.id}`)}
-              className="collection-detail--li"
-            >
-              <img src={book.frontImage} alt={book.title} />
+            <li key={book.id} className="collection-detail--li">
+              <img
+                src={book.frontImage}
+                alt={book.title}
+                onClick={() => history.push(`/books/${book.id}`)}
+              />
+              {user.accountType === "Admin" ? (
+                <OpenModalButton
+                  modalComponent={<DeleteBookFromCollectionModal book={book} />}
+                  buttonText={"Remove"}
+                />
+              ) : null}
               <span>{book.title}</span>
               <span>
                 by {book.authorFirstName} {book.authorLastName}
