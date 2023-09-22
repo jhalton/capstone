@@ -34,6 +34,7 @@ function ProfileButton({ user }) {
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout());
+    history.push("/");
   };
 
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
@@ -50,7 +51,7 @@ function ProfileButton({ user }) {
             <li>{user.username}</li>
             <li>{user.email}</li>
             <li className="main-nav--admin-link">
-              {user.accountType === "Admin" ? (
+              {user?.accountType === "Admin" ? (
                 <p onClick={() => history.push("/admin-portal")}>
                   Admin Portal
                 </p>

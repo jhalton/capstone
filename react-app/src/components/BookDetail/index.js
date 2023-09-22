@@ -31,7 +31,7 @@ const BookDetail = () => {
     <div className="book-detail--container">
       <div className="book-detail--title">
         <h1>{book.title}</h1>
-        {user.accountType === "Admin" ? (
+        {user?.accountType === "Admin" ? (
           <div>
             <OpenModalButton
               modalComponent={<EditBookModal book={book} />}
