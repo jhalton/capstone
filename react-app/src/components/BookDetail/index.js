@@ -4,18 +4,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { currentBook, getBookById, clearCurrentBook } from "../../store/books";
 import { useParams } from "react-router-dom";
 import LoadingSpinner from "../LoadingSpinner";
+import OpenModalButton from "../OpenModalButton";
+import EditBookModal from "../EditBookModal";
+import DeleteBookModal from "../DeleteBookModal";
+import { useModal } from "../../context/Modal";
 
 const BookDetail = () => {
   const dispatch = useDispatch();
   const book = useSelector(currentBook);
   const { bookId } = useParams();
   const rating = book.avgRating;
+  const user = useSelector((state) => state.session.user);
+  const { closeModal } = useModal();
 
   useEffect(() => {
     dispatch(getBookById(bookId));
 
     return () => dispatch(clearCurrentBook());
-  }, [dispatch, bookId]);
+  }, [dispatch, bookId, closeModal]);
 
   if (!book) {
     return <LoadingSpinner />;
@@ -23,7 +29,31 @@ const BookDetail = () => {
 
   return (
     <div className="book-detail--container">
-      <h1 className="book-detail--title">{book.title}</h1>
+      <div className="book-detail--title">
+        <h1>{book.title}</h1>
+        {user.accountType === "Admin" ? (
+          <div>
+            <OpenModalButton
+              modalComponent={<EditBookModal book={book} />}
+              buttonText={
+                <i
+                  className="fa-regular fa-pen-to-square"
+                  style={{ color: "#000000" }}
+                ></i>
+              }
+            />
+            <OpenModalButton
+              modalComponent={<DeleteBookModal bookId={bookId} />}
+              buttonText={
+                <i
+                  className="fa-regular fa-trash-can"
+                  style={{ color: "#000000" }}
+                ></i>
+              }
+            />
+          </div>
+        ) : null}
+      </div>
       <img
         className="book-detail--img"
         src={book.frontImage}

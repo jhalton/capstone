@@ -62,7 +62,7 @@ def create_book():
         return book.to_dict(), 201
     return validation_errors_to_error_messages(form.errors), 400
 
-@book_routes.route('/edit', methods=["PUT"])
+@book_routes.route('/<int:id>/edit', methods=["PUT"])
 @login_required
 @admin_required
 def edit_book(id):

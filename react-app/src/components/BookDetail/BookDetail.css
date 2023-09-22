@@ -24,6 +24,7 @@
 
 .book-detail--title {
   grid-area: title;
+  display: flex;
 }
 
 .book-detail--img {
