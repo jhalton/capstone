@@ -13,6 +13,7 @@ import AddBookToCollectionModal from "../AddBookToCollectionModal";
 import { getAllBooks } from "../../store/books";
 import { useModal } from "../../context/Modal";
 import DeleteBookFromCollectionModal from "../DeleteBookFromCollectionModal";
+import DeleteCollectionModal from "../DeleteCollectionModal";
 
 const CollectionDetail = () => {
   const dispatch = useDispatch();
@@ -42,15 +43,23 @@ const CollectionDetail = () => {
       <h1>{collectionInfo.name}</h1>
       <p>{collectionInfo.description}</p>
       {user.accountType === "Admin" ? (
-        <OpenModalButton
-          modalComponent={
-            <AddBookToCollectionModal
-              collectionId={collectionId}
-              books={books}
-            />
-          }
-          buttonText={"Add books"}
-        />
+        <div>
+          <OpenModalButton
+            modalComponent={
+              <AddBookToCollectionModal
+                collectionId={collectionId}
+                books={books}
+              />
+            }
+            buttonText={"Add books"}
+          />
+          <OpenModalButton
+            modalComponent={
+              <DeleteCollectionModal collectionId={collectionId} />
+            }
+            buttonText={"Delete collection"}
+          />
+        </div>
       ) : null}
       <div className="collection-detail--tile">
         <ul className="collection-detail--ul">
