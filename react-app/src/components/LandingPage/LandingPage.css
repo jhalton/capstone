@@ -1,0 +1,10 @@
+.landing-featured-carousel--container,
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.landing-featured--img {
+  max-width: 325px;
+  height: auto;
+}
