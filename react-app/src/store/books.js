@@ -84,10 +84,9 @@ export const getBookById = (bookId) => async (dispatch) => {
 export const createBook = (book) => async (dispatch) => {
   const response = await fetch("/api/books/new", {
     method: "POST",
-    headers: { "Content-Type": "multipart/form-data" },
+
     body: book,
   });
-  console.log("CREATE BOOK THUNK", book);
 
   if (response.ok) {
     const data = await response.json();

@@ -27,26 +27,26 @@ const CreateBook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("author_first_name", author_first_name);
-    formData.append("author_last_name", author_last_name);
-    formData.append("genre", genre);
-    formData.append("format", format);
-    formData.append("isbn", isbn);
-    formData.append("price", price);
-    formData.append("front_image", front_image);
-    formData.append("back_image", back_image);
-    formData.append("publisher", publisher);
-    formData.append("publication_date", publication_date);
-    formData.append("on_hand", on_hand);
-    formData.append("description", description);
+    const book = {
+      title,
+      author_first_name,
+      author_last_name,
+      genre,
+      format,
+      isbn,
+      price,
+      front_image,
+      back_image,
+      publisher,
+      publication_date,
+      on_hand,
+      description,
+    };
 
-    const data = await dispatch(createBook(formData));
+    const data = await dispatch(createBook(book));
     if (data?.errors) {
       setErrors(data?.errors);
     } else {
-      console.log(formData);
       history.push(`/books/${data.id}`);
     }
   };
@@ -54,7 +54,7 @@ const CreateBook = () => {
   return (
     <div className="create-book--container">
       <h1>Create Book Component</h1>
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
+      <form onSubmit={handleSubmit}>
         <input
           id="title"
           type="text"
