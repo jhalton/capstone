@@ -7,8 +7,8 @@ def seed_books():
         title="The Haunting of Hill House", 
         author_first_name="Shirley",
         author_last_name="Jackson", 
-        genre="horror",
-        format="paperback",
+        genre="Horror",
+        format="Paperback",
         isbn="9780143039983",
         price=14.99,
         front_image="https://m.media-amazon.com/images/I/51PT+eAwsVL._SY445_SX342_.jpg",
@@ -22,8 +22,8 @@ def seed_books():
         title="Frankenstein", 
         author_first_name="Mary",
         author_last_name="Shelley", 
-        genre="horror",
-        format="paperback",
+        genre="Horror",
+        format="Paperback",
         isbn="9781435159624",
         price=15.00,
         front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781435159624_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
@@ -37,8 +37,8 @@ def seed_books():
         title="Something Wicked This Way Comes", 
         author_first_name="Ray",
         author_last_name="Bradbury", 
-        genre="horror",
-        format="paperback",
+        genre="Horror",
+        format="Paperback",
         isbn="9781501167713",
         price=17.99,
         front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781501167713_p0_v6_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
@@ -52,8 +52,8 @@ def seed_books():
         title="Slade House", 
         author_first_name="David",
         author_last_name="Mitchell", 
-        genre="horror",
-        format="paperback",
+        genre="Horror",
+        format="Paperback",
         isbn="9780812988079",
         price=17.00,
         front_image="https://m.media-amazon.com/images/I/61XFC6g4ruL._SY445_SX342_.jpg",
@@ -67,8 +67,8 @@ def seed_books():
         title="Black Chalk", 
         author_first_name="Christopher",
         author_last_name="Yates", 
-        genre="thriller",
-        format="paperback",
+        genre="Thriller",
+        format="Paperback",
         isbn="9781250075550",
         price=18.00,
         front_image="https://m.media-amazon.com/images/I/91dfjOR2zVL._SL1500_.jpg",
@@ -82,8 +82,8 @@ def seed_books():
         title="The Picture of Dorian Gray", 
         author_first_name="Oscar",
         author_last_name="Wilde", 
-        genre="horror",
-        format="paperback",
+        genre="Horror",
+        format="Paperback",
         isbn="9781435159587",
         price=15.00,
         front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781435159587_p0_v4_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
@@ -97,8 +97,8 @@ def seed_books():
         title="The Metamorphosis", 
         author_first_name="Franz",
         author_last_name="Kafka", 
-        genre="fiction",
-        format="paperback",
+        genre="Fiction",
+        format="Paperback",
         isbn="9781557427663",
         price=5.99,
         front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781557427663_p0_v2_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
@@ -113,7 +113,7 @@ def seed_books():
         author_first_name="Truman",
         author_last_name="Capote", 
         genre="true crime",
-        format="paperback",
+        format="Paperback",
         isbn="9780679745587",
         price=18.00,
         front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780679745587_p0_v3_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
@@ -128,7 +128,7 @@ def seed_books():
         author_first_name="Mona",
         author_last_name="Awad", 
         genre="fiction",
-        format="paperback",
+        format="Paperback",
         isbn="9780525559757",
         price=18.00,
         front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780525559757_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
@@ -143,7 +143,7 @@ def seed_books():
         author_first_name="Aldous",
         author_last_name="Huxley", 
         genre="fiction",
-        format="paperback",
+        format="Paperback",
         isbn="9780060850524",
         price=16.99,
         front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780060850524_p0_v4_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
@@ -152,6 +152,81 @@ def seed_books():
         publication_date="2006-10-17",
         on_hand=10,
         description="Aldous Huxley's profoundly important classic of world literature, Brave New World is a searching vision of an unequal, technologically-advanced future where humans are genetically bred, socially indoctrinated, and pharmaceutically anesthetized to passively uphold an authoritarian ruling order—all at the cost of our freedom, full humanity, and perhaps also our souls. “A genius [who] who spent his life decrying the onward march of the Machine” (The New Yorker), Huxley was a man of incomparable talents: equally an artist, a spiritual seeker, and one of history's keenest observers of human nature and civilization. Brave New World, his masterpiece, has enthralled and terrified millions of readers, and retains its urgent relevance to this day as both a warning to be heeded as we head into tomorrow and as a thought-provoking, satisfying work of literature. Written in the shadow of the rise of fascism during the 1930s, Brave New World likewise speaks to a 21st-century world dominated by mass-entertainment, technology, medicine and pharmaceuticals, the arts of persuasion, and the hidden influence of elites."
+    )
+    wired_that_way = Book(
+        title="Wired That Way", 
+        author_first_name="Maria",
+        author_last_name="Littauer", 
+        genre="Self-Help",
+        format="Paperback",
+        isbn="9780800725372",
+        price=16.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780800725372_p0_v6_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Baker Publishing Group",
+        publication_date="2006-05-08",
+        on_hand=10,
+        description="Do you want to better understand yourself, maximize your strengths, and improve your relationships? Understanding how we are wired can enrich our lives and our relationships, helping to overcome differences that can seem irreconcilable. Instead of terminating jobs, friendships, or marriage on grounds of incompatibility, it is possible to turn these relationships from dying to growing. For more than 25 years, Marita Littauer, with her mother, Florence Littauer, has helped thousands of men and women with their personal and professional relationships. In Wired That Way, Marita brings together in one book a comprehensive overview of the personality types that speaks to anyone who wants to understand and to be understood."
+    )
+    start_with_why = Book(
+        title="Start With Why", 
+        author_first_name="Simon",
+        author_last_name="Sinek", 
+        genre="Self-Help",
+        format="Paperback",
+        isbn="9781591846444",
+        price=13.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781591846444_p0_v3_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Penguin Publishing Group",
+        publication_date="2011-27-27",
+        on_hand=15,
+        description="Discover the book that is captivating millions on TikTok and that served as the basis for one of the most popular TED Talks of all time—with more than 56 million views and counting. Over a decade ago, Simon Sinek started a movement that inspired millions to demand purpose at work, to ask what was the WHY of their organization. Since then, millions have been touched by the power of his ideas, and these ideas remain as relevant and timely as ever. START WITH WHY asks (and answers) the questions: why are some people and organizations more innovative, more influential, and more profitable than others? Why do some command greater loyalty from customers and employees alike? Even among the successful, why are so few able to repeat their success over and over? People like Martin Luther King Jr., Steve Jobs, and the Wright Brothers had little in common, but they all started with WHY. They realized that people won't truly buy into a product, service, movement, or idea until they understand the WHY behind it. START WITH WHY shows that the leaders who have had the greatest influence in the world all think, act and communicate the same way—and it's the opposite of what everyone else does. Sinek calls this powerful idea The Golden Circle, and it provides a framework upon which organizations can be built, movements can be led, and people can be inspired. And it all starts with WHY."
+    )
+    tiny_habits = Book(
+        title="Tiny Habits: The Small Changes That Change Everything", 
+        author_first_name="BJ",
+        author_last_name="Fogg", 
+        genre="Self-Help",
+        format="Paperback",
+        isbn="9780358362777",
+        price=14.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780358362777_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B300x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="HarperCollins Publishers",
+        publication_date="2021-01-19",
+        on_hand=10,
+        description="BJ FOGG is here to change your life—and revolutionize how we think about human behavior. Based on twenty years of research and Fogg’s experience coaching more than 40,000 people, Tiny Habits cracks the code of habit formation. With breakthrough discoveries in every chapter, you'll learn the simplest proven ways to transform your life. Fogg shows you how to feel good about your successes instead of bad about your failures. This proven, step-by-step guide will help you design habits and make them stick through positive emotion and celebrating small successes. Whether you want to lose weight, de-stress, sleep better, or be more productive each day, Tiny Habits makes it easy to achieve—by starting small."
+    )
+    atomic_habits = Book(
+        title="Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones", 
+        author_first_name="James",
+        author_last_name="Clear", 
+        genre="Self-Help",
+        format="Hardcover",
+        isbn="9780735211292",
+        price=24.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780735211292_p0_v20_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Penguin Publishing Group",
+        publication_date="2018-10-16",
+        on_hand=20,
+        description="No matter your goals, Atomic Habits offers a proven framework for improving—every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results. If you're having trouble changing your habits, the problem isn't you. The problem is your system. Bad habits repeat themselves again and again not because you don't want to change, but because you have the wrong system for change. You do not rise to the level of your goals. You fall to the level of your systems. Here, you'll get a proven system that can take you to new heights. Clear is known for his ability to distill complex topics into simple behaviors that can be easily applied to daily life and work. Here, he draws on the most proven ideas from biology, psychology, and neuroscience to create an easy-to-understand guide for making good habits inevitable and bad habits impossible. Along the way, readers will be inspired and entertained with true stories from Olympic gold medalists, award-winning artists, business leaders, life-saving physicians, and star comedians who have used the science of small habits to master their craft and vault to the top of their field. Learn how to: make time for new habits (even when life gets crazy); overcome a lack of motivation and willpower; design your environment to make success easier; get back on track when you fall off course; ...and much more. Atomic Habits will reshape the way you think about progress and success, and give you the tools and strategies you need to transform your habits—whether you are a team looking to win a championship, an organization hoping to redefine an industry, or simply an individual who wishes to quit smoking, lose weight, reduce stress, or achieve any other goal."
+    )
+    the_four_agreements = Book(
+        title="The Four Agreements: A Practical Guide to Personal Freedom", 
+        author_first_name="don Miguel",
+        author_last_name="Ruiz", 
+        genre="Self-Help",
+        format="Paperback",
+        isbn="9781878424310",
+        price=12.95,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781878424310_p0_v7_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Amber-Allen Publishing",
+        publication_date="1997-11-07",
+        on_hand=20,
+        description="In The Four Agreements, bestselling author don Miguel Ruiz reveals the source of self-limiting beliefs that rob us of joy and create needless suffering. Based on ancient Toltec wisdom, The Four Agreements offer a powerful code of conduct that can rapidly transform our lives to a new experience of freedom, true happiness, and love."
     )
 
 
@@ -168,6 +243,11 @@ def seed_books():
     db.session.add(in_cold_blood) #8
     db.session.add(bunny) #9
     db.session.add(brave_new_world) #10
+    db.session.add(wired_that_way) #11
+    db.session.add(start_with_why) #12
+    db.session.add(tiny_habits) #13
+    db.session.add(atomic_habits) #14
+    db.session.add(the_four_agreements) #15
     db.session.commit()
 
 
