@@ -19,7 +19,7 @@ const AdminPortalSidebar = ({ setCreateCollection, setCreateBook }) => {
 
   return (
     <div className="admin-portal-sidebar--container">
-      <h3>Admin Sidebar component</h3>
+      <h3>Admin Portal</h3>
       <span onClick={handleViewsClick}>View Collections</span>
       <span onClick={handleCollectionClick}>Create New Collection</span>
       <span onClick={handleBookClick}>Create New Book</span>

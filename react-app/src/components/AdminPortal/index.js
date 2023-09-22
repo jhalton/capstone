@@ -25,7 +25,7 @@ const AdminPortal = () => {
 
   if (createCollection) {
     return (
-      <div>
+      <div className="admin-portal-main--container">
         <AdminPortalSidebar
           collections={collections}
           setCreateCollection={setCreateCollection}
@@ -38,7 +38,7 @@ const AdminPortal = () => {
 
   if (createBook) {
     return (
-      <div>
+      <div className="admin-portal-main--container">
         <AdminPortalSidebar
           collections={collections}
           setCreateCollection={setCreateCollection}
@@ -51,13 +51,13 @@ const AdminPortal = () => {
 
   return (
     <div className="admin-portal-main--container">
-      <h1>Welcome to your Admin Portal</h1>
       <AdminPortalSidebar
         collections={collections}
         setCreateCollection={setCreateCollection}
         setCreateBook={setCreateBook}
       />
       <div className="admin-portal-main--collections">
+        <h1>View Collections</h1>
         <ul className="admin-portal-main--collections-ul">
           {collections?.map((collection) => (
             <li
@@ -69,16 +69,20 @@ const AdminPortal = () => {
                 className="admin-portal-main--collection-tile"
                 onClick={() => history.push(`/collections/${collection.id}`)}
               >
-                {collection.Books
-                  ? collection.Books?.slice(0, 4).map((book) => (
-                      <div
-                        key={book?.id}
-                        className="admin-portal-main--collection-tile-book"
-                      >
-                        <img src={book?.frontImage} alt={book?.title} />
-                      </div>
-                    ))
-                  : "This collection doesn't have any books yet"}
+                {collection.Books.length ? (
+                  collection.Books?.slice(0, 4).map((book) => (
+                    <div
+                      key={book?.id}
+                      className="admin-portal-main--collection-tile-book"
+                    >
+                      <img src={book?.frontImage} alt={book?.title} />
+                    </div>
+                  ))
+                ) : (
+                  <div className="admin-portal-main--collection-tile-empty">
+                    <p>This collection doesn't have any books</p>
+                  </div>
+                )}
               </div>
             </li>
           ))}

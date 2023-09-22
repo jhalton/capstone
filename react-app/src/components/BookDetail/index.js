@@ -37,7 +37,7 @@ const BookDetail = () => {
               modalComponent={<EditBookModal book={book} />}
               buttonText={
                 <i
-                  className="fa-regular fa-pen-to-square"
+                  className="fa-regular fa-pen-to-square admin-button"
                   style={{ color: "#000000" }}
                 ></i>
               }
@@ -46,10 +46,11 @@ const BookDetail = () => {
               modalComponent={<DeleteBookModal bookId={bookId} />}
               buttonText={
                 <i
-                  className="fa-regular fa-trash-can"
+                  className="fa-regular fa-trash-can admin-button"
                   style={{ color: "#000000" }}
                 ></i>
               }
+              className="admin-button"
             />
           </div>
         ) : null}

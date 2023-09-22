@@ -1,3 +1,7 @@
+.admin-portal-main--container {
+  display: flex;
+}
+
 .admin-portal-main--collections-ul {
   display: flex;
   flex-wrap: wrap;
@@ -26,4 +30,18 @@
 
 .admin-portal-main--collection-tile-book img {
   width: 100%;
+}
+
+.admin-portal-main--collection-tile-empty {
+  width: 300px;
+  height: 471px;
+  background-color: #4e7591;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-portal-main--collection-tile-empty p {
+  padding: 10px;
+  color: white;
 }

@@ -32,7 +32,7 @@ const CollectionDetail = () => {
     dispatch(getCollectionById(collectionId));
     dispatch(getAllBooks());
 
-    return () => dispatch(clearCurrentCollection());
+    // return () => dispatch(clearCurrentCollection());
   }, [dispatch, collectionId, closeModal]);
 
   if (!collection || !books) {
@@ -90,7 +90,12 @@ const CollectionDetail = () => {
                       collectionId={collectionId}
                     />
                   }
-                  buttonText={"Remove"}
+                  buttonText={
+                    <i
+                      className="fa-regular fa-trash-can"
+                      style={{ color: "#000000" }}
+                    ></i>
+                  }
                 />
               ) : null}
               <span>{book.title}</span>

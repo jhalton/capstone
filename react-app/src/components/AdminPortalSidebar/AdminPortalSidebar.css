@@ -1,6 +1,13 @@
 .admin-portal-sidebar--container {
   display: flex;
   flex-direction: column;
+  background-color: #676767;
+  max-width: 250px;
+  min-width: 200px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  height: 100vh;
 }
 
 .admin-portal-sidebar--container span:hover {

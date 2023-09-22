@@ -16,3 +16,8 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.nav-search-bar-dropdown--container link:visited {
+  text-decoration: none;
+  color: #000000;
+}
