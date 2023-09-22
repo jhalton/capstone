@@ -23,6 +23,7 @@ export const genreOptions = [
   "Fantasy",
   "Fantasy/Sci-Fi",
   "Fairy Tale",
+  "Fiction",
   "Finance",
   "Graphic Novel",
   "Historical",

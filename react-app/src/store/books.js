@@ -48,6 +48,7 @@ export const clearAllBooks = () => {
 };
 
 //------------------------Thunk Action Creators------------------------------
+//Get all books
 export const getAllBooks = () => async (dispatch) => {
   const response = await fetch("/api/books");
 
@@ -63,6 +64,7 @@ export const getAllBooks = () => async (dispatch) => {
   }
 };
 
+//Get book by id
 export const getBookById = (bookId) => async (dispatch) => {
   const response = await fetch(`/api/books/${bookId}`);
 
@@ -82,9 +84,10 @@ export const getBookById = (bookId) => async (dispatch) => {
 export const createBook = (book) => async (dispatch) => {
   const response = await fetch("/api/books/new", {
     method: "POST",
-    // headers: { "Content-Type": "multipart/form-data" },
+    headers: { "Content-Type": "multipart/form-data" },
     body: book,
   });
+  console.log("CREATE BOOK THUNK", book);
 
   if (response.ok) {
     const data = await response.json();
@@ -98,6 +101,7 @@ export const createBook = (book) => async (dispatch) => {
   }
 };
 
+//Edit an existing book by id
 export const editBook = (bookId, book) => async (dispatch) => {
   const response = await fetch(`/api/books/${bookId}/edit`, {
     method: "PUT",
@@ -117,6 +121,7 @@ export const editBook = (bookId, book) => async (dispatch) => {
   }
 };
 
+//Delete a book
 export const deleteBook = (bookId) => async (dispatch) => {
   const response = await fetch(`/api/books/${bookId}/delete`, {
     method: "DELETE",

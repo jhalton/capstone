@@ -1,0 +1,12 @@
+.create-book--container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-book--container input,
+select,
+textarea,
+button {
+  margin: 5px;
+}
