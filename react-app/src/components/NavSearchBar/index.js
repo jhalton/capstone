@@ -6,7 +6,6 @@ import NavSearchBarDropdown from "../NavSearchBarDropdown";
 
 const NavSearchBar = () => {
   const [search, setSearch] = useState("");
-  const [book, setBook] = useState("");
   const [populate, setPopulate] = useState([]);
   const books = useSelector(allBooks);
 

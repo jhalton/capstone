@@ -1,10 +1,6 @@
 import "./CollectionDetail.css";
 import React, { useEffect } from "react";
-import {
-  currentCollection,
-  getCollectionById,
-  clearCurrentCollection,
-} from "../../store/collections";
+import { currentCollection, getCollectionById } from "../../store/collections";
 import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingSpinner from "../LoadingSpinner";
@@ -31,8 +27,6 @@ const CollectionDetail = () => {
   useEffect(() => {
     dispatch(getCollectionById(collectionId));
     dispatch(getAllBooks());
-
-    // return () => dispatch(clearCurrentCollection());
   }, [dispatch, collectionId, closeModal]);
 
   if (!collection || !books) {

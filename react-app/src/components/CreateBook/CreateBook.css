@@ -13,7 +13,11 @@
 
 .create-book--container input,
 select,
-textarea,
-button {
+textarea {
+  width: 500px;
+  background-color: #e1e5eb;
+  border-radius: 15px;
+  border: none;
+  min-height: 30px;
   margin: 5px;
 }

@@ -7,6 +7,8 @@
 .carousel-inner {
   white-space: nowrap;
   transition: transform 0.3s;
+  height: 600px;
+  width: 600px;
 }
 
 .carousel--indicators {
@@ -29,8 +31,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 600px;
-  width: 600px;
-  background-color: #344e41;
+  height: 550px;
+  width: 550px;
+  /* background-color: #344e41; */
   color: #fff;
 }

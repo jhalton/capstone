@@ -1,5 +1,5 @@
-.landing-featured-carousel--container,
-h2 {
+.landing-featured-carousel--heading,
+.landing-featured-carousel-item--component {
   display: flex;
   justify-content: center;
 }
@@ -7,4 +7,7 @@ h2 {
 .landing-featured--img {
   max-width: 325px;
   height: auto;
+}
+.landing-featured--img:hover {
+  cursor: pointer;
 }

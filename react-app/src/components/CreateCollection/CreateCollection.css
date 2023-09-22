@@ -1,0 +1,21 @@
+.create-collection--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-collection--container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-collection--container > form > input,
+textarea {
+  width: 500px;
+  background-color: #e1e5eb;
+  border-radius: 15px;
+  border: none;
+  min-height: 30px;
+  margin: 5px;
+}

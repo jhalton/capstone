@@ -53,7 +53,7 @@ const CreateBook = () => {
 
   return (
     <div className="create-book--container">
-      <h1>Create Book Component</h1>
+      <h1>Create New Book</h1>
       <form onSubmit={handleSubmit}>
         <input
           id="title"

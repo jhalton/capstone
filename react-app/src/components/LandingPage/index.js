@@ -28,10 +28,13 @@ const LandingPage = () => {
   return (
     <div>
       <div className="landing-featured-carousel--container">
-        <h2>Featured</h2>
-        <Carousel>
+        <h2 className="landing-featured-carousel--heading">Featured</h2>
+        <Carousel className="landing-featured-carousel--component">
           {featuredBooks?.map((book, index) => (
-            <CarouselItem key={index}>
+            <CarouselItem
+              key={index}
+              className="landing-featured-carousel-item--component"
+            >
               <div>
                 <img
                   src={book.frontImage}

@@ -29,7 +29,7 @@ const CreateCollection = () => {
 
   return (
     <div className="create-collection--container">
-      <h1>Create Collection Component</h1>
+      <h1>Create New Collection</h1>
       <form onSubmit={handleSubmit}>
         <input
           id="name"
