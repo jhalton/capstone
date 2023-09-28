@@ -228,7 +228,82 @@ def seed_books():
         on_hand=20,
         description="In The Four Agreements, bestselling author don Miguel Ruiz reveals the source of self-limiting beliefs that rob us of joy and create needless suffering. Based on ancient Toltec wisdom, The Four Agreements offer a powerful code of conduct that can rapidly transform our lives to a new experience of freedom, true happiness, and love."
     )
-
+    on_earth_were_briefly_gorgeous = Book(
+        title="On Earth We're Briefly Gorgeous", 
+        author_first_name="Ocean",
+        author_last_name="Vuong", 
+        genre="Fiction",
+        format="Paperback",
+        isbn="9780525562047",
+        price=18.00,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780525562047_p0_v2_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Penguin Publishing Group",
+        publication_date="2021-01-2021",
+        on_hand=10,
+        description="On Earth We're Briefly Gorgeous is a letter from a son to a mother who cannot read. Written when the speaker, Little Dog, is in his late twenties, the letter unearths a family’s history that began before he was born — a history whose epicenter is rooted in Vietnam — and serves as a doorway into parts of his life his mother has never known, all of it leading to an unforgettable revelation. At once a witness to the fraught yet undeniable love between a single mother and her son, it is also a brutally honest exploration of race, class, and masculinity. Asking questions central to our American moment, immersed as we are in addiction, violence, and trauma, but undergirded by compassion and tenderness, On Earth We’re Briefly Gorgeous is as much about the power of telling one’s own story as it is about the obliterating silence of not being heard. With stunning urgency and grace, Ocean Vuong writes of people caught between disparate worlds, and asks how we heal and rescue one another without forsaking who we are. The question of how to survive, and how to make of it a kind of joy, powers the most important debut novel of many years."
+    )
+    the_buddha_in_the_attic = Book(
+        title="The Buddha in the Attic", 
+        author_first_name="Julie",
+        author_last_name="Otsuka", 
+        genre="Fiction",
+        format="Paperback",
+        isbn="9780307744425",
+        price=16.00,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780307744425_p0_v5_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Knopf Doubleday Publishing Group",
+        publication_date="2012-03-20",
+        on_hand=10,
+        description="In eight unforgettable sections, The Buddha in the Attic traces the extraordinary lives of these women, from their arduous journeys by boat, to their arrival in San Francisco and their tremulous first nights as new wives; from their experiences raising children who would later reject their culture and language, to the deracinating arrival of war. Julie Otsuka has written a spellbinding novel about identity and loyalty, and what it means to be an American in uncertain times."
+    )
+    fight_club = Book(
+        title="Fight Club: A Novel", 
+        author_first_name="Chuck",
+        author_last_name="Palahniuk", 
+        genre="Fiction",
+        format="Paperback",
+        isbn="9780393355949",
+        price=15.95,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780393355949_p0_v7_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Norton, W. W. & Company, Inc.",
+        publication_date="2018-05-01",
+        on_hand=10,
+        description="We understand that the first rule of Fight Club is to not talk about Fight Club, but it’s too good not to talk about. If ever there was a book that defined Chuck Palahniuk in all of his unhinged brilliance, this is it. A gritty, grimy, oft-disturbing story that still manages to effectively explore mental health and masculinity. The first rule about fight club is you don't talk about fight club. Chuck Palahniuk showed himself to be his generation's most visionary satirist in this, his first book. Fight Club's estranged narrator leaves his lackluster job when he comes under the thrall of Tyler Durden, an enigmatic young man who holds secret after-hours boxing matches in the basements of bars. There, two men fight 'as long as they have to.' This is a gloriously original work that exposes the darkness at the core of our modern world."
+    )
+    the_burning_girls = Book(
+        title="The Burning Girls", 
+        author_first_name="C.J.",
+        author_last_name="Tudor", 
+        genre="Horror",
+        format="Paperback",
+        isbn="9781984825049",
+        price=18.00,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781984825049_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Random House Publishing Group",
+        publication_date="2022-01-04",
+        on_hand=15,
+        description="A dark history lingers in Chapel Croft. Five hundred years ago, local Protestant martyrs were betrayed—then burned. Thirty years ago, two teenage girls disappeared without a trace. And a few weeks ago, the vicar of the local parish hanged himself in the nave of the church. Reverend Jack Brooks, a single parent with a fourteen-year-old daughter and a heavy conscience, arrives in the village hoping for a fresh start. Instead, Jack finds a town rife with conspiracies and secrets, and is greeted with a strange welcome package: an exorcism kit and a note that warns, “But there is nothing covered up that will not be revealed and hidden that will not be known.” The more Jack and daughter, Flo, explore the town and get to know its strange denizens, the deeper they are drawn into the age-old rifts, mysteries, and suspicions. And when Flo begins to see specters of girls ablaze, it becomes apparent there are ghosts here that refuse to be laid to rest. Uncovering the truth can be deadly in a village with a bloody past, where everyone has something to hide and no one trusts an outsider."
+    )
+    house_of_leaves = Book(
+        title="House of Leaves: The Remastered Full-Color Edition", 
+        author_first_name="Mark Z.",
+        author_last_name="Danielewski", 
+        genre="Horror",
+        format="Paperback",
+        isbn="9780375703768",
+        price=29.00,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780375703768_p0_v7_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Knopf Doubleday Publishing Group",
+        publication_date="2000-03-07",
+        on_hand=13,
+        description="Years ago, when House of Leaves was first being passed around, it was nothing more than a badly bundled heap of paper, parts of which would occasionally surface on the Internet. No one could have anticipated the small but devoted following this terrifying story would soon command. Starting with an odd assortment of marginalized youth—musicians, tattoo artists, programmers, strippers, environmentalists, and adrenaline junkies—the book eventually made its way into the hands of older generations, who not only found themselves in those strangely arranged pages but also discovered a way back into the lives of their estranged children. Now made available in book form, complete with the original colored words, vertical footnotes, and second and third appendices, the story remains unchanged. Similarly, the cultural fascination with House of Leaves remains as fervent and as imaginative as ever. The novel has gone on to inspire doctorate-level courses and masters theses, cultural phenomena like the online urban legend of “the backrooms,” and incredible works of art in entirely unrealted mediums from music to video games. Neither Pulitzer Prize-winning photojournalist Will Navidson nor his companion Karen Green was prepared to face the consequences of the impossibility of their new home, until the day their two little children wandered off and their voices eerily began to return another story—of creature darkness, of an ever-growing abyss behind a closet door, and of that unholy growl which soon enough would tear through their walls and consume all their dreams."
+    )
+    
 
     
 
@@ -248,6 +323,11 @@ def seed_books():
     db.session.add(tiny_habits) #13
     db.session.add(atomic_habits) #14
     db.session.add(the_four_agreements) #15
+    db.session.add(on_earth_were_briefly_gorgeous) #16
+    db.session.add(the_buddha_in_the_attic) #17
+    db.session.add(fight_club) #18
+    db.session.add(the_burning_girls) #19
+    db.session.add(house_of_leaves) #20
     db.session.commit()
 
 

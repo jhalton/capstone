@@ -22,8 +22,6 @@ const CollectionDetail = () => {
   const history = useHistory();
   const { closeModal } = useModal();
 
-  console.log(collectionInfo);
-
   useEffect(() => {
     dispatch(getCollectionById(collectionId));
     dispatch(getAllBooks());
