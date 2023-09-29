@@ -4,7 +4,7 @@
 
 .browse-collections--ul {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .browse-collections--li {
@@ -20,14 +20,19 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   max-width: 300px;
-  margin: 25px;
+  margin: 20px;
   padding: 10px;
+  background-color: #344e41;
 }
 
 .browse-collections--tile:hover {
   cursor: pointer;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
 }
 
 .browse-collections--tile-book img {
   width: 100%;
+}
+.browse-collections--tile-book {
+  padding: 5px;
 }

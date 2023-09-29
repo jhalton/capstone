@@ -15,7 +15,7 @@ const LandingPage = () => {
   const books = useSelector(allBooks);
   const collections = useSelector(allCollections);
   const featuredBooks = collections.filter(
-    (collection) => collection.id === 2
+    (collection) => collection.id === 1
   )[0]?.Books;
 
   useEffect(() => {

@@ -453,6 +453,66 @@ def seed_books():
         on_hand=10,
         description="The hero-narrator of The Catcher in the Rye is an ancient child of sixteen, a native New Yorker named Holden Caufield. Through circumstances that tend to preclude adult, secondhand description, he leaves his prep school in Pennsylvania and goes underground in New York City for three days."
     )
+    the_ex_hex= Book(
+        title="The Ex Hex: A Novel", 
+        author_first_name="Erin",
+        author_last_name="Sterling", 
+        genre="Romance",
+        format="Paperback",
+        isbn="9780063027473",
+        price=16.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780063027473_p0_v8_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="HarperCollins Publishers",
+        publication_date="2021-09-28",
+        on_hand=10,
+        description="Nine years ago, Vivienne Jones nursed her broken heart like any young witch would: vodka, weepy music, bubble baths…and a curse on the horrible boyfriend. Sure, Vivi knows she shouldn’t use her magic this way, but with only an “orchard hayride” scented candle on hand, she isn't worried it will cause him anything more than a bad hair day or two. That is until Rhys Penhallow, descendent of the town's ancestors, breaker of hearts, and annoyingly just as gorgeous as he always was, returns to Graves Glen, Georgia. What should be a quick trip to recharge the town's ley lines and make an appearance at the annual fall festival turns disastrously wrong. With one calamity after another striking Rhys, Vivi realizes her silly little Ex Hex may not have been so harmless after all. Suddenly, Graves Glen is under attack from murderous wind-up toys, a pissed off ghost, and a talking cat with some interesting things to say. Vivi and Rhys have to ignore their off the charts chemistry to work together to save the town and find a way to break the break-up curse before it's too late."
+    )
+    hollywood_wives= Book(
+        title="Hollywood Wives", 
+        author_first_name="Jackie",
+        author_last_name="Collins", 
+        genre="Romance",
+        format="Paperback",
+        isbn="9781668015384",
+        price=19.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781668015384_p0_v5_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B300x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Gallery Books",
+        publication_date="2023-07-11",
+        on_hand=10,
+        description="They're a privileged breed—glamorous, glossy, and demanding. When life is this fast, there are no guarantees. Status is everything, and you're only ever as popular as your husband's latest box-office hit. Elaine Conti: Bronx girl turned Hollywood hostess, determined to relaunch her husband's fading acting career back into orbit. Angel Hudson: Married to a hot young actor and an innocent beauty prey to Hollywood's most unscrupulous men. Montana Grey: Gorgeous renegade, ambitiously driven to succeed in the male-dominated world on the other side of the camera. Hollywood Wives is a scorching blockbuster that exposes the glittering microcosm that is Beverly Hills before racing to a gripping and unexpected climax. Captivating, fun, and deliciously sexy, this classic is its own version of Hollywood magic."
+    )
+    valley_of_the_dolls= Book(
+        title="Valley of the Dolls", 
+        author_first_name="Jacqueline",
+        author_last_name="Susann", 
+        genre="Romance",
+        format="Paperback",
+        isbn="9780802125347",
+        price=18.00,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780802125347_p0_v4_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Grove/Atlantic, Inc.",
+        publication_date="2016-07-14",
+        on_hand=10,
+        description="At a time when women were destined to become housewives, Jacqueline Susann let us dream. Anne, Neely, and Jennifer become best friends as struggling young women in New York City trying to make their mark. Eventually, they climb their way to the top of the entertainment industry only to find that there’s no place left to go but down, into the Valley of the Dolls."
+    )
+    anna_karenina= Book(
+        title="Anna Karenina", 
+        author_first_name="Leo",
+        author_last_name="Tolstoy", 
+        genre="Romance",
+        format="Paperback",
+        isbn="9781562170332",
+        price=29.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781562170332_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Heffner Publishing",
+        publication_date="2022-01-12",
+        on_hand=10,
+        description="Anna Karenina chronicles the doomed love affair between Anna and the dashing Count Vronsky. Married to a much older man, tragedy unfolds when Anna risks all in pursuit a more passionate and fulfilling life. Often described as one of the greatest novels ever written."
+    )
     
 
     
@@ -488,6 +548,11 @@ def seed_books():
     db.session.add(the_little_friend) #28
     db.session.add(fahrenheit_451) #29
     db.session.add(catcher_in_the_rye) #30
+    db.session.add(the_ex_hex) #31
+    db.session.add(hollywood_wives) #32
+    db.session.add(valley_of_the_dolls) #33
+    db.session.add(anna_karenina) #34
+
     db.session.commit()
 
 

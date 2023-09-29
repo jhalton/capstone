@@ -10,10 +10,14 @@
   list-style-type: none;
   width: auto;
   margin: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .collection-detail--li:hover {
   cursor: pointer;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+  transition: 0.25s ease-in-out 0s;
 }
 
 .collection-detail--li img {
