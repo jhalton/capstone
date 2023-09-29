@@ -29,8 +29,6 @@ const NavSearchBar = () => {
 
   return (
     <div>
-      {" "}
-      {/*onClick={() => setActiveSearch(true)} */}
       <i
         className="fa-solid fa-magnifying-glass"
         style={{ color: "#000000" }}

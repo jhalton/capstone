@@ -17,23 +17,19 @@ function Navigation({ isLoaded }) {
 
   return (
     <div className="main-navigation--container">
-      <ul>
-        <li>
-          <NavLink exact to="/">
-            <LogoComponent />
-          </NavLink>
-        </li>
-        {isLoaded && (
-          <div className="main-navigation--loaded-div">
-            <li>
-              <NavSearchBar />
-            </li>
-            <li>
-              <ProfileButton user={sessionUser} />
-            </li>
-          </div>
-        )}
-      </ul>
+      <div className="main-navigation--logo">
+        <NavLink exact to="/">
+          <LogoComponent />
+        </NavLink>
+      </div>
+      {/* {isLoaded && ( */}{" "}
+      <div className="main-navigation--searchbar">
+        <NavSearchBar />
+      </div>
+      <div className="main-navigation--profile-button">
+        <ProfileButton user={sessionUser} />
+      </div>{" "}
+      {/* )} */}
     </div>
   );
 }

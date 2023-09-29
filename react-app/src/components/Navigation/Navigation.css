@@ -1,8 +1,5 @@
 /* Profile dropdown */
 .profile-dropdown {
-  /* display: flex;
-  flex-direction: column;
-  align-content: center; */
   position: absolute;
   z-index: 1;
   background-color: #ffffff;
@@ -24,7 +21,13 @@
 .main-navigation--container {
   border-bottom: 1px solid rgb(150, 150, 150);
   text-decoration: none;
-  /* display: flex; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1920px;
+  gap: 2rem;
+  height: 100px;
+  padding: 0 40px;
 }
 
 .main-navigation--loaded-div {
@@ -32,11 +35,20 @@
   justify-content: baseline;
 }
 
+.main-navigation--logo {
+  grid-area: logo;
+}
+
+/* .main-navigation--searchbar {
+  min-width: 500px;
+  width: fit-content;
+} */
+
+.main-navigation--profile-button {
+  grid-area: profile;
+}
+
 .main-navigation--container a,
 a:visited {
   text-decoration: none;
-}
-
-.main-navigation--container li {
-  list-style: none;
 }
