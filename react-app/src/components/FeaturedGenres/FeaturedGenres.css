@@ -1,3 +1,53 @@
 .featured-genres--container {
   border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featured-genres--tiles {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.featured-genres--type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.genre-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5c809e;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.genre-icon:hover {
+  background-color: #6f99bb;
+  cursor: pointer;
+}
+
+.featured-genres--type > p {
+  margin-top: 0;
+}
+
+.featured-genres--browse-link {
+  margin-bottom: 20px;
+  color: #344e41;
+}
+
+.featured-genres--browse-link:hover {
+  font-weight: bold;
+  cursor: pointer;
+  color: #0b5f38;
 }
