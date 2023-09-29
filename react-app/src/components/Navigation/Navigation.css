@@ -21,6 +21,13 @@
   align-items: center;
 }
 
+.main-nav--profile-greeting {
+  color: #0b5f38;
+}
+.main-nav--profile-greeting:hover {
+  cursor: default;
+}
+
 /* Main nav */
 
 .hidden {

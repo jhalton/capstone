@@ -303,6 +303,156 @@ def seed_books():
         on_hand=13,
         description="Years ago, when House of Leaves was first being passed around, it was nothing more than a badly bundled heap of paper, parts of which would occasionally surface on the Internet. No one could have anticipated the small but devoted following this terrifying story would soon command. Starting with an odd assortment of marginalized youth—musicians, tattoo artists, programmers, strippers, environmentalists, and adrenaline junkies—the book eventually made its way into the hands of older generations, who not only found themselves in those strangely arranged pages but also discovered a way back into the lives of their estranged children. Now made available in book form, complete with the original colored words, vertical footnotes, and second and third appendices, the story remains unchanged. Similarly, the cultural fascination with House of Leaves remains as fervent and as imaginative as ever. The novel has gone on to inspire doctorate-level courses and masters theses, cultural phenomena like the online urban legend of “the backrooms,” and incredible works of art in entirely unrealted mediums from music to video games. Neither Pulitzer Prize-winning photojournalist Will Navidson nor his companion Karen Green was prepared to face the consequences of the impossibility of their new home, until the day their two little children wandered off and their voices eerily began to return another story—of creature darkness, of an ever-growing abyss behind a closet door, and of that unholy growl which soon enough would tear through their walls and consume all their dreams."
     )
+    the_secret_history = Book(
+        title="The Secret History", 
+        author_first_name="Donna",
+        author_last_name="Tartt", 
+        genre="Fiction",
+        format="Paperback",
+        isbn="9781400031702",
+        price=18.00,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781400031702_p0_v10_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Knopf Doubleday Publishing Group",
+        publication_date="2004-04-13",
+        on_hand=15,
+        description="Under the influence of a charismatic classics professor, a group of clever, eccentric misfits at a New England college discover a way of thought and life a world away from their banal contemporaries. But their search for the transcendent leads them down a dangerous path, beyond human constructs of morality."
+    )
+    the_midnight_library = Book(
+        title="The Midnight Library", 
+        author_first_name="Matt",
+        author_last_name="Haig", 
+        genre="Fiction",
+        format="Paperback",
+        isbn="9780525559498",
+        price=18.00,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780525559498_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Penguin Publishing Group",
+        publication_date="2023-05-09",
+        on_hand=15,
+        description="Somewhere out beyond the edge of the universe there is a library that contains an infinite number of books, each one the story of another reality. One tells the story of your life as it is, along with another book for the other life you could have lived if you had made a different choice at any point in your life. While we all wonder how our lives might have been, what if you had the chance to go to the library and see for yourself? Would any of these other lives truly be better? In The Midnight Library, Matt Haig's enchanting blockbuster novel, Nora Seed finds herself faced with this decision. Faced with the possibility of changing her life for a new one, following a different career, undoing old breakups, realizing her dreams of becoming a glaciologist; she must search within herself as she travels through the Midnight Library to decide what is truly fulfilling in life, and what makes it worth living in the first place."
+    )
+    firekeepers_daughter = Book(
+        title="Firekeeper's Daughter", 
+        author_first_name="Angeline",
+        author_last_name="Boulley", 
+        genre="Fiction",
+        format="Paperback",
+        isbn="9781250766564",
+        price=19.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781250766564_p0_v11_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Henry Holt and Co. (BYR)",
+        publication_date="2021-03-16",
+        on_hand=15,
+        description="Eighteen-year-old Daunis Fontaine has never quite fit in, both in her hometown and on the nearby Ojibwe reservation. She dreams of a fresh start at college, but when family tragedy strikes, Daunis puts her future on hold to look after her fragile mother. The only bright spot is meeting Jamie, the charming new recruit on her brother Levi’s hockey team. Yet even as Daunis falls for Jamie, she senses the dashing hockey star is hiding something. Everything comes to light when Daunis witnesses a shocking murder, thrusting her into an FBI investigation of a lethal new drug. Reluctantly, Daunis agrees to go undercover, drawing on her knowledge of chemistry and Ojibwe traditional medicine to track down the source. But the search for truth is more complicated than Daunis imagined, exposing secrets and old scars. At the same time, she grows concerned with an investigation that seems more focused on punishing the offenders than protecting the victims. Now, as the deceptions—and deaths—keep growing, Daunis must learn what it means to be a strong Anishinaabe kwe (Ojibwe woman) and how far she’ll go for her community, even if it tears apart the only world she’s ever known."
+    )
+    where_the_crawdads_sing = Book(
+        title="Where the Crawdads Sing", 
+        author_first_name="Delia",
+        author_last_name="Owens", 
+        genre="Fiction",
+        format="Paperback",
+        isbn="9780735219106",
+        price=18.00,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780735219106_p0_v11_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Penguin Publishing Group",
+        publication_date="2021-03-30",
+        on_hand=15,
+        description="For years, rumors of the “Marsh Girl” have haunted Barkley Cove, a quiet town on the North Carolina coast. So in late 1969, when handsome Chase Andrews is found dead, the locals immediately suspect Kya Clark, the so-called Marsh Girl. But Kya is not what they say. Sensitive and intelligent, she has survived for years alone in the marsh that she calls home, finding friends in the gulls and lessons in the sand. Then the time comes when she yearns to be touched and loved. When two young men from town become intrigued by her wild beauty, Kya opens herself to a new life—until the unthinkable happens. Where the Crawdads Sing is at once an exquisite ode to the natural world, a heartbreaking coming-of-age story, and a surprising tale of possible murder. Owens reminds us that we are forever shaped by the children we once were, and that we are all subject to the beautiful and violent secrets that nature keeps."
+    )
+    stardust = Book(
+        title="Stardust", 
+        author_first_name="Neil",
+        author_last_name="Gaiman", 
+        genre="Fantasy",
+        format="Paperback",
+        isbn="9780061689246",
+        price=15.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780061689246_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="HarperCollins Publishers",
+        publication_date="2008-12-23",
+        on_hand=15,
+        description="Catch a fallen star . . . Tristran Thorn promised to bring back a fallen star. So he sets out on a journey to fulfill the request of his beloved, the hauntingly beautiful Victoria Forester—and stumbles into the enchanted realm that lies beyond the wall of his English country town. Rich with adventure and magic, Stardust is one of master storyteller Neil Gaiman's most beloved tales, and the inspiration for the hit movie."
+    )
+    in_a_dark_dark_wood = Book(
+        title="In a Dark, Dark Wood", 
+        author_first_name="Ruth",
+        author_last_name="Ware", 
+        genre="Thriller",
+        format="Paperback",
+        isbn="	9781501112331",
+        price=17.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781501112331_p0_v7_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B300x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Gallery/Scout Press",
+        publication_date="2016-04-19",
+        on_hand=10,
+        description="When reclusive writer Leonora is invited to the English countryside for a weekend away, she reluctantly agrees to make the trip. But as the first night falls, revelations unfold among friends old and new, an unnerving memory shatters Leonora’s reserve, and a haunting realization creeps in: the party is not alone in the woods."
+    )
+    the_goldfinch = Book(
+        title="The Goldfinch", 
+        author_first_name="Donna",
+        author_last_name="Tartt", 
+        genre="Fiction",
+        format="Paperback",
+        isbn="9780316055444",
+        price=20.00,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780316055444_p0_v4_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Little, Brown and Company",
+        publication_date="2015-04-07",
+        on_hand=10,
+        description="Theo Decker, a 13-year-old New Yorker, miraculously survives an accident that kills his mother. Abandoned by his father, Theo is taken in by the family of a wealthy friend. Bewildered by his strange new home on Park Avenue, disturbed by schoolmates who don't know how to talk to him, and tormented above all by a longing for his mother, he clings to the one thing that reminds him of her: a small, mysteriously captivating painting that ultimately draws Theo into a wealthy and insular art community. As an adult, Theo moves silkily between the drawing rooms of the rich and the dusty labyrinth of an antiques store where he works. He is alienated and in love — and at the center of a narrowing, ever more dangerous circle. The Goldfinch is a mesmerizing, stay-up-all-night and tell-all-your-friends triumph, an old-fashioned story of loss and obsession, survival and self-invention. From the streets of New York to the dark corners of the art underworld, this 'soaring masterpiece' examines the devastating impact of grief and the ruthless machinations of fate (Ron Charles, Washington Post)."
+    )
+    the_little_friend = Book(
+        title="The Little Friend", 
+        author_first_name="Donna",
+        author_last_name="Tartt", 
+        genre="Fiction",
+        format="Paperback",
+        isbn="9781400031696",
+        price=19.00,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781400031696_p0_v2_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Knopf Doubleday Publishing Group",
+        publication_date="2003-10-28",
+        on_hand=10,
+        description="The setting is Alexandria, Mississippi, where one Mother’s Day a little boy named Robin Cleve Dufresnes was found hanging from a tree in his parents’ yard. Twelve years later Robin’s murder is still unsolved and his family remains devastated. So it is that Robin’s sister Harriet—unnervingly bright, insufferably determined, and unduly influenced by the fiction of Kipling and Robert Louis Stevenson—sets out to unmask his killer. Aided only by her worshipful friend Hely, Harriet crosses her town’s rigid lines of race and caste and burrows deep into her family’s history of loss. Filled with hairpin turns of plot and “a bustling, ridiculous humanity worthy of Dickens” (The New York Times Book Review), The Little Friend is a work of myriad enchantments by a writer of prodigious talent."
+    )
+    fahrenheit_451= Book(
+        title="Fahrenheit 451", 
+        author_first_name="Ray",
+        author_last_name="Bradbury", 
+        genre="Science Fiction",
+        format="Paperback",
+        isbn="9781451673319",
+        price=17.00,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781451673319_p0_v11_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Simon & Schuster",
+        publication_date="2012-01-10",
+        on_hand=10,
+        description="Ray Bradbury's internationally acclaimed novel Fahrenheit 451 is a masterwork of twentieth-century literature set in a bleak, dystopian future. Guy Montag is a fireman. In his world, where television rules and literature is on the brink of extinction, firemen start fires rather than put them out. His job is to destroy the most illegal of commodities, the printed book, along with the houses in which they are hidden. Montag never questions the destruction and ruin his actions produce, returning each day to his bland life and wife, Mildred, who spends all day with her television “family.” But then he meets an eccentric young neighbor, Clarisse, who introduces him to a past where people didn’t live in fear and to a present where one sees the world through the ideas in books instead of the mindless chatter of television. When Mildred attempts suicide and Clarisse suddenly disappears, Montag begins to question everything he has ever known. He starts hiding books in his home, and when his pilfering is discovered, the fireman has to run for his life."
+    )
+    catcher_in_the_rye= Book(
+        title="The Catcher in the Rye", 
+        author_first_name="J.D.",
+        author_last_name="Salinger", 
+        genre="Fiction",
+        format="Paperback",
+        isbn="9780316769174",
+        price=16.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780316769174_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Little, Brown and Company",
+        publication_date="2001-01-30",
+        on_hand=10,
+        description="The hero-narrator of The Catcher in the Rye is an ancient child of sixteen, a native New Yorker named Holden Caufield. Through circumstances that tend to preclude adult, secondhand description, he leaves his prep school in Pennsylvania and goes underground in New York City for three days."
+    )
     
 
     
@@ -328,6 +478,16 @@ def seed_books():
     db.session.add(fight_club) #18
     db.session.add(the_burning_girls) #19
     db.session.add(house_of_leaves) #20
+    db.session.add(the_secret_history) #21
+    db.session.add(the_midnight_library) #22
+    db.session.add(firekeepers_daughter) # 23
+    db.session.add(where_the_crawdads_sing) #24
+    db.session.add(stardust) #25
+    db.session.add(in_a_dark_dark_wood) #26
+    db.session.add(the_goldfinch) #27
+    db.session.add(the_little_friend) #28
+    db.session.add(fahrenheit_451) #29
+    db.session.add(catcher_in_the_rye) #30
     db.session.commit()
 
 

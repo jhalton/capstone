@@ -46,7 +46,12 @@ function ProfileButton({ user }) {
         className="fas fa-user-circle fa-xl main-nav--profile-icon"
         onClick={openMenu}
       />
-      {user ? <span> Hi, {user?.firstName} |</span> : null}
+      {user ? (
+        <span className="main-nav--profile-greeting">
+          {" "}
+          Hi, {user?.firstName} |
+        </span>
+      ) : null}
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <div>

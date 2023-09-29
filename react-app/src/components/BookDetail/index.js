@@ -28,6 +28,9 @@ const BookDetail = () => {
     return <LoadingSpinner />;
   }
 
+  //Returns the price as a $x.xx amount, even if price is integer
+  const floatPrice = book.price !== undefined ? book.price.toFixed(2) : "";
+
   return (
     <div className="book-detail--container">
       <div className="book-detail--title">
@@ -115,7 +118,7 @@ const BookDetail = () => {
       </div>
 
       <span className="book-detail--numRatings">( {book.numRatings} )</span>
-      <h2 className="book-detail--price">${book.price}</h2>
+      <h2 className="book-detail--price">${floatPrice}</h2>
       <span className="book-detail--format">{book.format}</span>
       <button className="book-detail--cart-button" onClick={comingSoon}>
         Add to Cart

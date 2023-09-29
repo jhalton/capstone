@@ -26,7 +26,7 @@ const LandingPage = () => {
     return <LoadingSpinner />;
   }
   return (
-    <div>
+    <div className="landing--container">
       <div className="landing-featured-carousel--container">
         <h2 className="landing-featured-carousel--heading">Featured</h2>
         <Carousel className="landing-featured-carousel--component">
