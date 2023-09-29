@@ -9,6 +9,7 @@ yellow:
 
 green:
 0b5f38 (used for LoadingSpinner and user greeting)
+344e41 (used for featured items carousel on landing)
 
 blue:
 5c809e (logo)

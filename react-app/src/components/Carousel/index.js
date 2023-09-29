@@ -13,19 +13,22 @@ const Carousel = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       if (!paused) {
-  //         updateIndex(activeIndex + 1);
-  //       }
-  //     }, 3000);
+  //Does this automatically move to the next item? Yes. Does it
+  //go insane and flip out rather than smoothly transition? Also yes.
+  //       ↓                    ↓                    ↓
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (!paused) {
+  //       updateIndex(activeIndex + 1);
+  //     }
+  //   }, 3000);
 
-  //     return () => {
-  //       if (interval) {
-  //         clearInterval();
-  //       }
-  //     };
-  //   });
+  //   return () => {
+  //     if (interval) {
+  //       clearInterval();
+  //     }
+  //   };
+  // }, []);
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {

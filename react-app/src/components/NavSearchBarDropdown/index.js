@@ -2,7 +2,7 @@ import "./NavSearchBarDropdown.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavSearchBarDropdown = ({ populate, closeSearch, search }) => {
+const NavSearchBarDropdown = ({ populate, closeSearch, search, setSearch }) => {
   return (
     <div className="nav-search-bar-dropdown--container">
       {!populate.length && search ? <p>No matches found</p> : ""}

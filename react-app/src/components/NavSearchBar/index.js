@@ -1,5 +1,5 @@
 import "./NavSearchBar.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import { allBooks } from "../../store/books";
 import NavSearchBarDropdown from "../NavSearchBarDropdown";
@@ -8,6 +8,7 @@ const NavSearchBar = () => {
   const [search, setSearch] = useState("");
   const [populate, setPopulate] = useState([]);
   const books = useSelector(allBooks);
+  const searchInputRef = useRef();
 
   useEffect(() => {
     if (search) {
@@ -27,6 +28,21 @@ const NavSearchBar = () => {
     setSearch("");
   };
 
+  //-----Clicking outside the search closes the dropdown by setting to ""-----
+  const handleDocClick = (e) => {
+    if (searchInputRef.current && !searchInputRef.current.contains(e.target)) {
+      setSearch("");
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleDocClick);
+    return () => {
+      document.removeEventListener("click", handleDocClick);
+    };
+  }, []);
+  //-------------------------------------------------------------------------
+
   return (
     <div>
       <i
@@ -34,6 +50,7 @@ const NavSearchBar = () => {
         style={{ color: "#000000" }}
       ></i>
       <input
+        ref={searchInputRef}
         id="nav-search-bar"
         type="text"
         placeholder="Search for book or author..."
