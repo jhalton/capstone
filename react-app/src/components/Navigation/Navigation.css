@@ -6,11 +6,19 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   padding: 10px;
+  right: 10%;
+  top: 8%;
 }
 
 .main-nav--admin-link:hover {
   cursor: pointer;
   font-weight: bold;
+}
+
+.main-navigation--profile-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Main nav */
@@ -39,16 +47,48 @@
   grid-area: logo;
 }
 
-/* .main-navigation--searchbar {
-  min-width: 500px;
-  width: fit-content;
-} */
+.main-navigation--little-buttons {
+  display: flex;
+  gap: 0.5em;
+}
+
+.main-navigation--wishlist {
+  color: #000000;
+}
 
 .main-navigation--profile-button {
   grid-area: profile;
 }
 
+.main-navigation--wishlist > button {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #e6a2a2;
+}
+
+.main-navigation--wishlist > button:hover,
+.main-navigation--cart:hover,
+.main-navigation--profile-button:hover {
+  cursor: pointer;
+}
+
+.main-navigation--cart {
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-navigation--container a,
 a:visited {
   text-decoration: none;
+}
+
+.main-navigation--container li {
+  list-style: none;
 }

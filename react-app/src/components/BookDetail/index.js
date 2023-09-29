@@ -8,6 +8,7 @@ import OpenModalButton from "../OpenModalButton";
 import EditBookModal from "../EditBookModal";
 import DeleteBookModal from "../DeleteBookModal";
 import { useModal } from "../../context/Modal";
+import { comingSoon } from "../../Resources/helperFunctions";
 
 const BookDetail = () => {
   const dispatch = useDispatch();
@@ -116,8 +117,12 @@ const BookDetail = () => {
       <span className="book-detail--numRatings">( {book.numRatings} )</span>
       <h2 className="book-detail--price">${book.price}</h2>
       <span className="book-detail--format">{book.format}</span>
-      <button className="book-detail--cart-button">Add to Cart</button>
-      <button className="book-detail--wishlist-button">Add to Wishlisht</button>
+      <button className="book-detail--cart-button" onClick={comingSoon}>
+        Add to Cart
+      </button>
+      <button className="book-detail--wishlist-button" onClick={comingSoon}>
+        Add to Wishlisht
+      </button>
       <div className="book-detail--description">
         <h2>Overview</h2>
         <span>{book.description}</span>
