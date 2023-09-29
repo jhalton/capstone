@@ -1,0 +1,19 @@
+.landing-featured-genre--tile-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.landing-featured-genre--tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-featured-genre--book:hover {
+  cursor: pointer;
+}
+
+.landing-featured-genre--book {
+  max-width: 250px;
+  max-height: 350px;
+}

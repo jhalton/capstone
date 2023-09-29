@@ -1,7 +1,9 @@
 import "./FeaturedGenreBooks.css";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { allCollections } from "../../store/collections";
+import { useHistory } from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner";
 
 const FeaturedGenreBooks = ({
   fiction,
@@ -12,9 +14,12 @@ const FeaturedGenreBooks = ({
   scienceFiction,
   autobiography,
 }) => {
-  const dispatch = useDispatch();
   const collections = useSelector(allCollections);
+  const history = useHistory();
 
+  if (!collections) {
+    return <LoadingSpinner />;
+  }
   //------------------Selected collections----------------------------------
   const selectedFiction = collections.filter(
     (selected) => selected.name === "Fiction"
@@ -45,16 +50,23 @@ const FeaturedGenreBooks = ({
   )[0].Books;
 
   //------------------------------------------------------------------------
+
   if (fiction) {
     return (
       <div>
         <h1>Fiction</h1>
-        {selectedFiction.map((book) => (
-          <div key={book.id}>
-            <span>{book.title}</span>
-            <img src={book.frontImage} alt={book.title} />
-          </div>
-        ))}
+        <div className="landing-featured-genre--tile-row">
+          {selectedFiction.slice(0, 4).map((book) => (
+            <div key={book.id} className="landing-featured-genre--tile">
+              <img
+                src={book.frontImage}
+                alt={book.title}
+                className="landing-featured-genre--book"
+                onClick={() => history.push(`/books/${book.id}`)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
@@ -63,12 +75,18 @@ const FeaturedGenreBooks = ({
     return (
       <div>
         <h1>Nonfiction</h1>
-        {selectedNonfiction.map((book) => (
-          <div key={book.id}>
-            <span>{book.title}</span>
-            <img src={book.frontImage} alt={book.title} />
-          </div>
-        ))}
+        <div className="landing-featured-genre--tile-row">
+          {selectedNonfiction.slice(0, 4).map((book) => (
+            <div key={book.id} className="landing-featured-genre--tile">
+              <img
+                src={book.frontImage}
+                alt={book.title}
+                className="landing-featured-genre--book"
+                onClick={() => history.push(`/books/${book.id}`)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
@@ -77,12 +95,18 @@ const FeaturedGenreBooks = ({
     return (
       <div>
         <h1>Horror</h1>
-        {selectedHorror.map((book) => (
-          <div key={book.id}>
-            <span>{book.title}</span>
-            <img src={book.frontImage} alt={book.title} />
-          </div>
-        ))}
+        <div className="landing-featured-genre--tile-row">
+          {selectedHorror.slice(0, 4).map((book) => (
+            <div key={book.id} className="landing-featured-genre--tile">
+              <img
+                src={book.frontImage}
+                alt={book.title}
+                className="landing-featured-genre--book"
+                onClick={() => history.push(`/books/${book.id}`)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
@@ -91,12 +115,18 @@ const FeaturedGenreBooks = ({
     return (
       <div>
         <h1>Romance</h1>
-        {selectedRomance.map((book) => (
-          <div key={book.id}>
-            <span>{book.title}</span>
-            <img src={book.frontImage} alt={book.title} />
-          </div>
-        ))}
+        <div className="landing-featured-genre--tile-row">
+          {selectedRomance.slice(0, 4).map((book) => (
+            <div key={book.id} className="landing-featured-genre--tile">
+              <img
+                src={book.frontImage}
+                alt={book.title}
+                className="landing-featured-genre--book"
+                onClick={() => history.push(`/books/${book.id}`)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
@@ -105,12 +135,18 @@ const FeaturedGenreBooks = ({
     return (
       <div>
         <h1>Young Adult</h1>
-        {selectedYoungAdult.map((book) => (
-          <div key={book.id}>
-            <span>{book.title}</span>
-            <img src={book.frontImage} alt={book.title} />
-          </div>
-        ))}
+        <div className="landing-featured-genre--tile-row">
+          {selectedYoungAdult.slice(0, 4).map((book) => (
+            <div key={book.id} className="landing-featured-genre--tile">
+              <img
+                src={book.frontImage}
+                alt={book.title}
+                className="landing-featured-genre--book"
+                onClick={() => history.push(`/books/${book.id}`)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
@@ -119,12 +155,18 @@ const FeaturedGenreBooks = ({
     return (
       <div>
         <h1>Science Fiction</h1>
-        {selectedScienceFiction.map((book) => (
-          <div key={book.id}>
-            <span>{book.title}</span>
-            <img src={book.frontImage} alt={book.title} />
-          </div>
-        ))}
+        <div className="landing-featured-genre--tile-row">
+          {selectedScienceFiction.slice(0, 4).map((book) => (
+            <div key={book.id} className="landing-featured-genre--tile">
+              <img
+                src={book.frontImage}
+                alt={book.title}
+                className="landing-featured-genre--book"
+                onClick={() => history.push(`/books/${book.id}`)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
@@ -133,12 +175,18 @@ const FeaturedGenreBooks = ({
     return (
       <div>
         <h1>Autobiography</h1>
-        {selectedAutobiography.map((book) => (
-          <div key={book.id}>
-            <span>{book.title}</span>
-            <img src={book.frontImage} alt={book.title} />
-          </div>
-        ))}
+        <div className="landing-featured-genre--tile-row">
+          {selectedAutobiography.slice(0, 4).map((book) => (
+            <div key={book.id} className="landing-featured-genre--tile">
+              <img
+                src={book.frontImage}
+                alt={book.title}
+                className="landing-featured-genre--book"
+                onClick={() => history.push(`/books/${book.id}`)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
