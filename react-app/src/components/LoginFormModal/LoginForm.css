@@ -33,3 +33,13 @@
   background-color: #585123;
   color: #e4d7c5;
 }
+
+.login-modal--demo {
+  display: flex;
+  gap: 5px;
+}
+
+.login-modal--demo > span:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

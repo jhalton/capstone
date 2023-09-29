@@ -21,6 +21,26 @@ function LoginFormModal() {
     }
   };
 
+  const handleDemoAdminLogin = async (e) => {
+    e.preventDefault();
+    const data = await dispatch(login("admin@aa.io", "password"));
+    if (data) {
+      setErrors(data);
+    } else {
+      closeModal();
+    }
+  };
+
+  const handleDemoConsumerLogin = async (e) => {
+    e.preventDefault();
+    const data = await dispatch(login("demo@aa.io", "password"));
+    if (data) {
+      setErrors(data);
+    } else {
+      closeModal();
+    }
+  };
+
   return (
     <div className="login-modal--container">
       <h1>Log In</h1>
@@ -49,6 +69,10 @@ function LoginFormModal() {
 
         <button type="submit">Log In</button>
       </form>
+      <div className="login-modal--demo">
+        <span onClick={handleDemoConsumerLogin}>Demo Consumer</span>|
+        <span onClick={handleDemoAdminLogin}>Demo Admin</span>
+      </div>
     </div>
   );
 }
