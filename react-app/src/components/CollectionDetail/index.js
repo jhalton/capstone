@@ -25,7 +25,7 @@ const CollectionDetail = () => {
   useEffect(() => {
     dispatch(getCollectionById(collectionId));
     dispatch(getAllBooks());
-  }, [dispatch, collectionId, closeModal]);
+  }, [dispatch, collectionId, closeModal, collection?.length]);
 
   if (!collection || !books) {
     return <LoadingSpinner />;

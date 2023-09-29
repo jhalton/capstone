@@ -34,6 +34,11 @@ const AddBookToCollectionModal = ({ collectionId, books }) => {
     closeModal();
   };
 
+  const handleSelect = (item) => {
+    setBook(item);
+    setSearch(`${item?.title}`);
+  };
+
   return (
     <div className="add-book-to-collection--container">
       <h1>Add Book to Collection</h1>
@@ -51,7 +56,7 @@ const AddBookToCollectionModal = ({ collectionId, books }) => {
               key={item.id}
               value={item}
               className="add-book-to-collection--li"
-              onClick={() => setBook(item)}
+              onClick={() => handleSelect(item)}
             >
               <div className="add-book-to-collection--searchtile">
                 <p>

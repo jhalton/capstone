@@ -2,17 +2,20 @@ import "./DeleteBookFromCollectionModal.css";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
-import { deleteBookFromCollection } from "../../store/collections";
+import {
+  deleteBookFromCollection,
+  getCollectionById,
+} from "../../store/collections";
 
 const DeleteBookFromCollectionModal = ({ book, collectionId }) => {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
-  console.log("DELETE MODAL", book);
 
   const handleRemove = (e) => {
     e.preventDefault();
 
     dispatch(deleteBookFromCollection(collectionId, book.id));
+    dispatch(getCollectionById(collectionId));
     closeModal();
   };
 

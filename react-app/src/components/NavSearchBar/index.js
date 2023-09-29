@@ -28,7 +28,7 @@ const NavSearchBar = () => {
     setSearch("");
   };
 
-  //-----Clicking outside the search closes the dropdown by setting to ""-----
+  //-----Clicking outside the search closes the dropdown by setting search to ""-----
   const handleDocClick = (e) => {
     if (searchInputRef.current && !searchInputRef.current.contains(e.target)) {
       setSearch("");

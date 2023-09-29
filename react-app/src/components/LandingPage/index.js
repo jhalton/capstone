@@ -7,6 +7,7 @@ import { allBooks, getAllBooks } from "../../store/books";
 import LoadingSpinner from "../LoadingSpinner";
 import { allCollections, getAllCollections } from "../../store/collections";
 import { useHistory } from "react-router-dom";
+import FeaturedGenres from "../FeaturedGenres";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -47,6 +48,7 @@ const LandingPage = () => {
           ))}
         </Carousel>
       </div>
+      <FeaturedGenres />
     </div>
   );
 };

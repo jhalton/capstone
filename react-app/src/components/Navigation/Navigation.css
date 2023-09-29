@@ -30,11 +30,15 @@
 
 /* Main nav */
 
+.navigation--main {
+  border-bottom: 1px solid rgb(150, 150, 150);
+  max-width: 1920px;
+}
+
 .hidden {
   display: none;
 }
 .main-navigation--container {
-  border-bottom: 1px solid rgb(150, 150, 150);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -98,4 +102,22 @@ a:visited {
 
 .main-navigation--container li {
   list-style: none;
+}
+
+.main-navigation--clickable-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.main-navigation--clickable-nav > span:hover {
+  cursor: pointer;
+  font-weight: bold;
+  color: #0b5f38;
+}
+
+.main-navigation--clickable-nav > span:active {
+  color: #0b5f38bd;
 }
