@@ -34,7 +34,7 @@ const CollectionDetail = () => {
   return (
     <div className="collection-detail--container">
       <h1>{collectionInfo.name}</h1>
-      {user.accountType === "Admin" ? (
+      {user?.accountType === "Admin" ? (
         <OpenModalButton
           modalComponent={
             <EditCollectionModal
@@ -46,7 +46,7 @@ const CollectionDetail = () => {
         />
       ) : null}
       <p>{collectionInfo.description}</p>
-      {user.accountType === "Admin" ? (
+      {user?.accountType === "Admin" ? (
         <div>
           <OpenModalButton
             modalComponent={
@@ -74,7 +74,7 @@ const CollectionDetail = () => {
                 alt={book.title}
                 onClick={() => history.push(`/books/${book.id}`)}
               />
-              {user.accountType === "Admin" ? (
+              {user?.accountType === "Admin" ? (
                 <OpenModalButton
                   modalComponent={
                     <DeleteBookFromCollectionModal
