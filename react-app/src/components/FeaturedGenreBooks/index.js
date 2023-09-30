@@ -23,31 +23,31 @@ const FeaturedGenreBooks = ({
   //------------------Selected collections----------------------------------
   const selectedFiction = collections.filter(
     (selected) => selected.name === "Fiction"
-  )[0].Books;
+  )[0]?.Books;
 
   const selectedNonfiction = collections.filter(
     (selected) => selected.name === "Nonfiction"
-  )[0].Books;
+  )[0]?.Books;
 
   const selectedHorror = collections.filter(
     (selected) => selected.name === "Horror"
-  )[0].Books;
+  )[0]?.Books;
 
   const selectedRomance = collections.filter(
     (selected) => selected.name === "Romance"
-  )[0].Books;
+  )[0]?.Books;
 
   const selectedYoungAdult = collections.filter(
     (selected) => selected.name === "Young Adult"
-  )[0].Books;
+  )[0]?.Books;
 
   const selectedScienceFiction = collections.filter(
     (selected) => selected.name === "Science Fiction"
-  )[0].Books;
+  )[0]?.Books;
 
   const selectedAutobiography = collections.filter(
     (selected) => selected.name === "Autobiography"
-  )[0].Books;
+  )[0]?.Books;
 
   //------------------------------------------------------------------------
 

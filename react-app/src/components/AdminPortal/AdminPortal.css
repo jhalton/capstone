@@ -2,6 +2,14 @@
   display: flex;
 }
 
+.admin-portal-main--collections {
+  width: 100%;
+}
+
+.admin-portal--main-collections > h1 {
+  left: 50%;
+}
+
 .admin-portal-main--collections-ul {
   display: flex;
   flex-wrap: wrap;

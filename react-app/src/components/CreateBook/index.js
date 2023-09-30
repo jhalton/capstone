@@ -55,110 +55,150 @@ const CreateBook = () => {
     <div className="create-book--container">
       <h1>Create New Book</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          id="title"
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+        <label htmlFor="title" className="create-book--form-label">
+          Title
+          <input
+            id="title"
+            type="text"
+            // placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </label>
+
         {errors.title && <p>{errors.title}</p>}
-        <input
-          id="authorFirstName"
-          type="text"
-          placeholder="Author's first name"
-          value={author_first_name}
-          onChange={(e) => setAuthorFirstName(e.target.value)}
-        />
+        <label htmlFor="authorFirstName" className="create-book--form-label">
+          Author's first name
+          <input
+            id="authorFirstName"
+            type="text"
+            // placeholder="Author's first name"
+            value={author_first_name}
+            onChange={(e) => setAuthorFirstName(e.target.value)}
+          />
+        </label>
         {errors.author_first_name && <p>{errors.author_first_name}</p>}
-        <input
-          id="authorLastName"
-          type="text"
-          placeholder="Author's last name"
-          value={author_last_name}
-          onChange={(e) => setAuthorLastName(e.target.value)}
-        />
+        <label htmlFor="authorLastName" className="create-book--form-label">
+          Author's last name
+          <input
+            id="authorLastName"
+            type="text"
+            // placeholder="Author's last name"
+            value={author_last_name}
+            onChange={(e) => setAuthorLastName(e.target.value)}
+          />
+        </label>
         {errors.author_last_name && <p>{errors.author_last_name}</p>}
-        <select id="genre" onChange={(e) => setGenre(e.target.value)}>
-          <option value="">Genre</option>
-          {genreOptions.map((genre) => (
-            <option key={genre} value={genre}>
-              {genre}
-            </option>
-          ))}
-        </select>
+        <label htmlFor="genre" className="create-book--form-label">
+          Genre
+          <select id="genre" onChange={(e) => setGenre(e.target.value)}>
+            <option value="Choose one..."></option>
+            {genreOptions.map((genre) => (
+              <option key={genre} value={genre}>
+                {genre}
+              </option>
+            ))}
+          </select>
+        </label>
         {errors.genre && <p>errors.genre</p>}
-        <select id="format" onChange={(e) => setFormat(e.target.value)}>
-          <option value="">Format</option>
-          {formatOptions.map((format) => (
-            <option key={format} value={format}>
-              {format}
-            </option>
-          ))}
-        </select>
+        <label htmlFor="format" className="create-book--form-label">
+          Format
+          <select id="format" onChange={(e) => setFormat(e.target.value)}>
+            <option value=""></option>
+            {formatOptions.map((format) => (
+              <option key={format} value={format}>
+                {format}
+              </option>
+            ))}
+          </select>
+        </label>
         {errors.format && <p>{errors.format}</p>}
-        <input
-          id="isbn"
-          type="text"
-          placeholder="ISBN"
-          value={isbn}
-          onChange={(e) => setIsbn(e.target.value)}
-        />
+        <label htmlFor="isbn" className="create-book--form-label">
+          ISBN
+          <input
+            id="isbn"
+            type="text"
+            // placeholder="ISBN"
+            value={isbn}
+            onChange={(e) => setIsbn(e.target.value)}
+          />
+        </label>
         {errors.isbn && <p>{errors.isbn}</p>}
-        <input
-          id="price"
-          type="number"
-          placeholder="Price (USD)"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
+        <label htmlFor="price" className="create-book--form-label">
+          Price (USD)
+          <input
+            id="price"
+            type="number"
+            // placeholder="Price (USD)"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+        </label>
         {errors.price && <p>{errors.price}</p>}
-        <input
-          id="frontImage"
-          type="text"
-          placeholder="Front cover image"
-          value={front_image}
-          onChange={(e) => setFrontImage(e.target.value)}
-        />
+        <label htmlFor="frontImage" className="create-book--form-label">
+          Front cover image
+          <input
+            id="frontImage"
+            type="text"
+            // placeholder="Front cover image"
+            value={front_image}
+            onChange={(e) => setFrontImage(e.target.value)}
+          />
+        </label>
         {errors.front_image && <p>{errors.front_image}</p>}
-        <input
-          id="backImage"
-          type="text"
-          placeholder="Back cover image (optional)"
-          value={back_image}
-          onChange={(e) => setBackImage(e.target.value)}
-        />
+        <label htmlFor="backImage" className="create-book--form-label">
+          Back cover image
+          <input
+            id="backImage"
+            type="text"
+            // placeholder="Back cover image (optional)"
+            value={back_image}
+            onChange={(e) => setBackImage(e.target.value)}
+          />
+        </label>
         {errors.back_image && <p>{errors.back_image}</p>}
-        <input
-          id="publisher"
-          type="text"
-          placeholder="Publisher"
-          value={publisher}
-          onChange={(e) => setPublisher(e.target.value)}
-        />
+        <label htmlFor="publisher" className="create-book--form-label">
+          Publisher
+          <input
+            id="publisher"
+            type="text"
+            // placeholder="Publisher"
+            value={publisher}
+            onChange={(e) => setPublisher(e.target.value)}
+          />
+        </label>
         {errors.publisher && <p>{errors.publisher}</p>}
-        <input
-          id="publicationDate"
-          type="text"
-          placeholder="Publication date YYYY/MM/DD"
-          value={publication_date}
-          onChange={(e) => setPublicationDate(e.target.value)}
-        />
+        <label htmlFor="publicationDate" className="create-book--form-label">
+          Publication date (YYYY-MM-DD)
+          <input
+            id="publicationDate"
+            type="text"
+            // placeholder="Publication date YYYY/MM/DD"
+            value={publication_date}
+            onChange={(e) => setPublicationDate(e.target.value)}
+          />
+        </label>
         {errors.publication_date && <p>{errors.publication_date}</p>}
-        <input
-          id="onHand"
-          type="number"
-          placeholder="On hand"
-          value={on_hand}
-          onChange={(e) => setOnHand(e.target.value)}
-        />
+        <label htmlFor="onHand" className="create-book--form-label">
+          On hand
+          <input
+            id="onHand"
+            type="number"
+            // placeholder="On hand"
+            value={on_hand}
+            onChange={(e) => setOnHand(e.target.value)}
+          />
+        </label>
         {errors.on_hand && <p>{errors.on_hand}</p>}
-        <textarea
-          id="description"
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+        <label htmlFor="description" className="create-book--form-label">
+          Description
+          <textarea
+            id="description"
+            // placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </label>
         {errors.description && <p>{errors.description}</p>}
         <button type="submit">Create New Book</button>
       </form>

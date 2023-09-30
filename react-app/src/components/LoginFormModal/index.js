@@ -14,8 +14,8 @@ function LoginFormModal() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
-    if (data) {
-      setErrors(data);
+    if (data?.errors) {
+      setErrors(data?.errors);
     } else {
       closeModal();
     }
@@ -24,8 +24,8 @@ function LoginFormModal() {
   const handleDemoAdminLogin = async (e) => {
     e.preventDefault();
     const data = await dispatch(login("admin@aa.io", "password"));
-    if (data) {
-      setErrors(data);
+    if (data?.errors) {
+      setErrors(data.errors);
     } else {
       closeModal();
     }
@@ -34,8 +34,8 @@ function LoginFormModal() {
   const handleDemoConsumerLogin = async (e) => {
     e.preventDefault();
     const data = await dispatch(login("demo@aa.io", "password"));
-    if (data) {
-      setErrors(data);
+    if (data?.errors) {
+      setErrors(data.errors);
     } else {
       closeModal();
     }
@@ -45,12 +45,6 @@ function LoginFormModal() {
     <div className="login-modal--container">
       <h1>Log In</h1>
       <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
-        </ul>
-
         <input
           type="text"
           placeholder="Email"
@@ -58,7 +52,7 @@ function LoginFormModal() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-
+        {errors.email && <p className="errors">{errors.email}</p>}
         <input
           type="password"
           placeholder="Password"
@@ -66,6 +60,7 @@ function LoginFormModal() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+        {errors.password && <p className="errors">{errors.password}</p>}
 
         <button type="submit">Log In</button>
       </form>

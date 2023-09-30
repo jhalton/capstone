@@ -11,12 +11,25 @@
   align-items: center;
 }
 
-.create-collection--container > form > input,
-textarea {
-  width: 500px;
+.create-collection--container input {
+  width: 100%;
   background-color: #e1e5eb;
   border-radius: 15px;
   border: none;
   min-height: 30px;
   margin: 5px;
+}
+
+.create-collection--container textarea {
+  width: 100%;
+  background-color: #e1e5eb;
+  border-radius: 15px;
+  border: none;
+  min-height: 60px;
+  margin: 5px;
+}
+
+.create-collection--form-label {
+  color: rgb(126, 126, 126);
+  width: 500px;
 }

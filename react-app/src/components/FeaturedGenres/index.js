@@ -2,9 +2,13 @@ import "./FeaturedGenres.css";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import FeaturedGenreBooks from "../FeaturedGenreBooks";
+import LoadingSpinner from "../LoadingSpinner";
+import { useSelector } from "react-redux";
+import { allCollections } from "../../store/collections";
 
 const FeaturedGenres = () => {
   const history = useHistory();
+  const collections = useSelector(allCollections);
   const [fiction, setFiction] = useState(false);
   const [nonfiction, setNonfiction] = useState(false);
   const [horror, setHorror] = useState(false);
@@ -84,6 +88,10 @@ const FeaturedGenres = () => {
     setAutobiography(true);
   };
   //-----------------------------------------------------------------------
+
+  if (!collections) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="featured-genres--container">

@@ -2,9 +2,11 @@ import "./CreateCollection.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createCollection, getAllCollections } from "../../store/collections";
+import { useHistory } from "react-router-dom";
 
 const CreateCollection = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -24,6 +26,7 @@ const CreateCollection = () => {
       setErrors(data?.errors);
     } else {
       dispatch(getAllCollections());
+      history.push(`/collections/${data.id}`);
     }
   };
 
@@ -31,20 +34,26 @@ const CreateCollection = () => {
     <div className="create-collection--container">
       <h1>Create New Collection</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          id="name"
-          type="text"
-          placeholder="Collection name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <label htmlFor="name" className="create-collection--form-label">
+          Name
+          <input
+            id="name"
+            type="text"
+            // placeholder="Collection name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
         {errors.name && <p>errors.name</p>}
-        <textarea
-          id="name"
-          placeholder="Collection description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+        <label htmlFor="description" className="create-collection--form-label">
+          Description
+          <textarea
+            id="description"
+            // placeholder="Collection description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </label>
         {errors.description && <p>errors.description</p>}
         <button type="submit">Create Collection</button>
       </form>

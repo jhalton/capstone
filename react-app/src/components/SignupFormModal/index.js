@@ -37,15 +37,16 @@ function SignupFormModal() {
           password
         )
       );
-      if (data) {
-        setErrors(data);
+      if (data?.errors) {
+        setErrors(data?.errors);
       } else {
         closeModal();
       }
     } else {
-      setErrors([
-        "Confirm Password field must be the same as the Password field",
-      ]);
+      setErrors({
+        password:
+          "Confirm Password field must be the same as the Password field",
+      });
     }
   };
 
@@ -61,6 +62,7 @@ function SignupFormModal() {
             onChange={(e) => setFirstName(e.target.value)}
           />
         </label>
+        {errors.first_name && <p className="errors">{errors.first_name}</p>}
         <label>
           Last name
           <input
@@ -69,6 +71,7 @@ function SignupFormModal() {
             onChange={(e) => setLastName(e.target.value)}
           />
         </label>
+        {errors.last_name && <p className="errors">{errors.last_name}</p>}
         <label>
           Email
           <input
@@ -78,6 +81,7 @@ function SignupFormModal() {
             required
           />
         </label>
+        {errors.email && <p className="errors">{errors.email}</p>}
         <label>
           Phone
           <input
@@ -86,6 +90,7 @@ function SignupFormModal() {
             onChange={(e) => setPhone(e.target.value)}
           />
         </label>
+        {errors.phone && <p className="errors">{errors.phone}</p>}
         <label>
           Street address
           <input
@@ -94,6 +99,9 @@ function SignupFormModal() {
             onChange={(e) => setStreetAddress(e.target.value)}
           />
         </label>
+        {errors.street_address && (
+          <p className="errors">{errors.street_address}</p>
+        )}
         <label>
           City
           <input
@@ -102,6 +110,7 @@ function SignupFormModal() {
             onChange={(e) => setCity(e.target.value)}
           />
         </label>
+        {errors.city && <p className="errors">{errors.city}</p>}
         <label>
           State
           <input
@@ -110,12 +119,14 @@ function SignupFormModal() {
             onChange={(e) => setState(e.target.value)}
           />
         </label>
+        {errors.state && <p className="errors">{errors.state}</p>}
         <label className="sign-up--modal-accounttype">
           Account Type
           <select onChange={(e) => setAccountType(e.target.value)}>
             <option value={account_type}>Consumer</option>
           </select>
         </label>
+        {errors.account_type && <p className="errors">{errors.account_type}</p>}
         <label>
           Membership
           <select
@@ -126,6 +137,7 @@ function SignupFormModal() {
             <option value={false}>No</option>
           </select>
         </label>
+        {errors.membership && <p className="errors">{errors.membership}</p>}
         <label>
           Password
           <input
@@ -135,6 +147,7 @@ function SignupFormModal() {
             required
           />
         </label>
+        {errors.password && <p className="errors">{errors.password}</p>}
         <label>
           Confirm Password
           <input
