@@ -768,6 +768,111 @@ def seed_books():
         on_hand=10,
         description="Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life, rarely traveling any farther than his pantry or cellar. But his contentment is disturbed when the wizard Gandalf and a company of dwarves arrive on his doorstep one day to whisk him away on an adventure. They have launched a plot to raid the treasure hoard guarded by Smaug the Magnificent, a large and very dangerous dragon. Bilbo reluctantly joins their quest, unaware that on his journey to the Lonely Mountain he will encounter both a magic ring and a frightening creature known as Gollum. Written for J.R.R. Tolkien's own children, The Hobbit has sold many millions of copies worldwide and established itself as a modern classic."
     )
+    harry_potter_and_the_sorcerers_stone = Book(
+        title="Harry Potter and the Sorcerer's Stone", 
+        author_first_name="J. K.",
+        author_last_name="Rowling", 
+        genre="Fantasy",
+        format="Paperback",
+        isbn="9781338878929",
+        price=12.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781338878929_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Scholastic, Inc.",
+        publication_date="2023-05-02",
+        on_hand=10,
+        description="Harry Potter has never been the star of a Quidditch team, scoring points while riding a broom far above the ground. He knows no spells, has never helped to hatch a dragon, and has never worn a cloak of invisibility. All he knows is a miserable life with the Dursleys, his horrible aunt and uncle, and their abominable son, Dudley - a great big swollen spoiled bully. Harry's room is a tiny closet at the foot of the stairs, and he hasn't had a birthday party in eleven years. But all that is about to change when a mysterious letter arrives by owl messenger: a letter with an invitation to an incredible place that Harry - and anyone who reads about him - will find unforgettable."
+    )
+    harry_potter_and_the_chamber_of_secrets = Book(
+        title="Harry Potter and the Chamber of Secrets", 
+        author_first_name="J. K.",
+        author_last_name="Rowling", 
+        genre="Fantasy",
+        format="Paperback",
+        isbn="9781338878936",
+        price=12.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781338878936_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Scholastic, Inc.",
+        publication_date="2023-05-02",
+        on_hand=10,
+        description="The Dursleys were so mean and hideous that summer that all Harry Potter wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he's packing his bags, Harry receives a warning from a strange, impish creature named Dobby who says that if Harry Potter returns to Hogwarts, disaster will strike. And strike it does. For in Harry's second year at Hogwarts, fresh torments and horrors arise, including an outrageously stuck-up new professor, Gilderoy Lockhart, a spirit named Moaning Myrtle who haunts the girls' bathroom, and the unwanted attentions of Ron Weasley's younger sister, Ginny."
+    )
+    harry_potter_and_the_prisoner_of_azkaban = Book(
+        title="Harry Potter and the Prisoner of Azkaban", 
+        author_first_name="J. K.",
+        author_last_name="Rowling", 
+        genre="Fantasy",
+        format="Paperback",
+        isbn="9780439136358",
+        price=12.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9781338878943_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Scholastic, Inc.",
+        publication_date="1999-10-01",
+        on_hand=10,
+        description="For twelve long years, the dread fortress of Azkaban held an infamous prisoner named Sirius Black. Convicted of killing thirteen people with a single curse, he was said to be the heir apparent to the Dark Lord, Voldemort.Now he has escaped, leaving only two clues as to where he might be headed: Harry Potter's defeat of You-Know-Who was Black's downfall as well. And the Azkaban guards heard Black muttering in his sleep, 'He's at Hogwarts . . . he's at Hogwarts.'Harry Potter isn't safe, not even within the walls of his magical school, surrounded by his friends. Because on top of it all, there may well be a traitor in their midst."
+    )
+    harry_potter_and_the_goblet_of_fire = Book(
+        title="Harry Potter and the Goblet of Fire", 
+        author_first_name="J. K.",
+        author_last_name="Rowling", 
+        genre="Fantasy",
+        format="Paperback",
+        isbn="9780439139601",
+        price=12.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780439139601_p0_v1_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Scholastic, Inc.",
+        publication_date="2002-09-01",
+        on_hand=10,
+        description="Harry Potter is midway through his training as a wizard and his coming of age. Harry wants to get away from the pernicious Dursleys and go to the International Quidditch Cup. He wants to find out about the mysterious event that's supposed to take place at Hogwarts this year, an event involving two other rival schools of magic, and a competition that hasn't happened for a hundred years. He wants to be a normal, fourteen-year-old wizard. But unfortunately for Harry Potter, he's not normal - even by wizarding standards. And in his case, different can be deadly."
+    )
+    harry_potter_and_order_of_the_phoenix = Book(
+        title="Harry Potter and the Order of the Phoenix", 
+        author_first_name="J. K.",
+        author_last_name="Rowling", 
+        genre="Fantasy",
+        format="Paperback",
+        isbn="9780439358071",
+        price=12.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780439358071_p0_v4_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Scholastic, Inc.",
+        publication_date="2004-09-01",
+        on_hand=10,
+        description="The most eagerly anticipated book in history becomes the biggest paperback release of 2004! The book that took the world by storm....In his fifth year at Hogwart's, Harry faces challenges at every turn, from the dark threat of He-Who-Must-Not-Be- Named and the unreliability of the government of the magical world to the rise of Ron Weasley as the keeper of the Gryffindor Quidditch Team. Along the way he learns about the strength of his friends, the fierceness of his enemies, and the meaning of sacrifice."
+    )
+    harry_potter_and_the_half_blood_prince = Book(
+        title="Harry Potter and the Half Blood Prince", 
+        author_first_name="J. K.",
+        author_last_name="Rowling", 
+        genre="Fantasy",
+        format="Paperback",
+        isbn="9780439785969",
+        price=12.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780439785969_p0_v3_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Scholastic, Inc.",
+        publication_date="2006-09-01",
+        on_hand=10,
+        description="The war against Voldemort is not going well; even the Muggles have been affected. Dumbledore is absent from Hogwarts for long stretches of time, and the Order of the Phoenix has already suffered losses. And yet . . . As with all wars, life goes on. Sixth-year students learn to Apparate. Teenagers flirt and fight and fall in love. Harry receives some extraordinary help in Potions from the mysterious Half-Blood Prince. And with Dumbledore's guidance, he seeks out the full, complex story of the boy who became Lord Voldemort — and thus finds what may be his only vulnerability."
+    )
+    harry_potter_and_the_deathly_hallows = Book(
+        title="Harry Potter and the Deathly Hallows", 
+        author_first_name="J. K.",
+        author_last_name="Rowling", 
+        genre="Fantasy",
+        format="Paperback",
+        isbn="9780545139700",
+        price=14.99,
+        front_image="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780545139700_p0_v5_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D",
+        back_image=None,
+        publisher="Scholastic, Inc.",
+        publication_date="2009-07-07",
+        on_hand=10,
+        description="It all comes down to this - a final faceoff between good and evil. You plan to pull out all the stops, but every time you solve one mystery, three more evolve. Do you stay the course you started, despite your lack of progress? Do you detour and follow a new lead that may not help? Do you listen to your instincts, or your friends? Lord Voldemort is preparing for battle and so must Harry. With Ron and Hermione at his side, he's trying to hunt down Voldemort's Horcruxes, escape danger at every turn, and find a way to defeat evil once and for all. How does it all end? Find out in Harry Potter and the Deathly Hallows."
+    )
     
 
     
@@ -824,6 +929,14 @@ def seed_books():
     db.session.add(the_martian) #49 Science Fiction
     db.session.add(do_androids_dream_of_electric_sheep) #50 Science fiction
     db.session.add(the_hobbit) #51 Fantasy
+    db.session.add(harry_potter_and_the_sorcerers_stone) # 52 Fantasy/Young Adult
+    db.session.add(harry_potter_and_the_chamber_of_secrets) #53 Fantasy/Young Adult
+    db.session.add(harry_potter_and_the_prisoner_of_azkaban) #54 Fantasy/Young Adult
+    db.session.add(harry_potter_and_the_goblet_of_fire) #55 Fantasy/Young Adult
+    db.session.add(harry_potter_and_order_of_the_phoenix) #56 Fantasy/Young Adult
+    db.session.add(harry_potter_and_the_half_blood_prince) #57 Fantasy/Young Adult
+    db.session.add(harry_potter_and_the_deathly_hallows) #58 Fantasy/Young Adult
+
 
     db.session.commit()
 

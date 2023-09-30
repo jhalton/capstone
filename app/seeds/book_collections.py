@@ -48,6 +48,13 @@ def seed_book_collections():
     co9_bo50 = book_collections.insert().values(collection_id=9, book_id=50) #science fiction
     co10_bo25 = book_collections.insert().values(collection_id=10, book_id=25) #fantasy
     co10_bo51 = book_collections.insert().values(collection_id=10, book_id=51) #fantasy
+    co10_bo52 = book_collections.insert().values(collection_id=10, book_id=52) #fantasy
+    co10_bo53 = book_collections.insert().values(collection_id=10, book_id=53) #fantasy
+    co10_bo54 = book_collections.insert().values(collection_id=10, book_id=54) #fantasy
+    co10_bo55 = book_collections.insert().values(collection_id=10, book_id=55) #fantasy
+    co10_bo56 = book_collections.insert().values(collection_id=10, book_id=56) #fantasy
+    co10_bo57 = book_collections.insert().values(collection_id=10, book_id=57) #fantasy
+    co10_bo58 = book_collections.insert().values(collection_id=10, book_id=58) #fantasy
 
 
     db.session.execute(co1_bo1)
@@ -96,6 +103,13 @@ def seed_book_collections():
     db.session.execute(co3_bo17)
     db.session.execute(co3_bo21)
     db.session.execute(co3_bo22)
+    db.session.execute(co10_bo52)
+    db.session.execute(co10_bo53)
+    db.session.execute(co10_bo54)
+    db.session.execute(co10_bo55)
+    db.session.execute(co10_bo56)
+    db.session.execute(co10_bo57)
+    db.session.execute(co10_bo58)
     db.session.commit()
 
 
