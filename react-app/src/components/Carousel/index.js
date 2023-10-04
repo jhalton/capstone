@@ -54,18 +54,18 @@ const Carousel = ({ children }) => {
         })}
       </div>
       <div className="carousel--indicators">
-        <button onClick={() => updateIndex(activeIndex - 1)}>
-          <i
-            className="fa-solid fa-angle-left"
-            style={{ color: "#000000" }}
-          ></i>
-        </button>
-        <button onClick={() => updateIndex(activeIndex + 1)}>
-          <i
-            className="fa-solid fa-angle-right"
-            style={{ color: "#000000" }}
-          ></i>
-        </button>
+        {/* <button > */}
+        <i
+          onClick={() => updateIndex(activeIndex - 1)}
+          className="fa-solid fa-angle-left fa-2xl carousel-indicator--arrow"
+        ></i>
+        {/* </button>
+        <button > */}
+        <i
+          onClick={() => updateIndex(activeIndex + 1)}
+          className="fa-solid fa-angle-right fa-2xl carousel-indicator--arrow"
+        ></i>
+        {/* </button> */}
       </div>
     </div>
   );

@@ -192,8 +192,12 @@ const FeaturedGenreBooks = ({
   }
 
   return (
-    <div>
-      <h1>Featured Genre Books Component</h1>
+    <div className="landing-featured-genre--no-genre-selected">
+      <h2>Take a peek at some great reads from popular genres!</h2>
+      <img
+        src="https://64.media.tumblr.com/bef973026fdab180cbdc3a2537297801/tumblr_inline_oyvtcu49Y01rxppp7_500.gifv"
+        alt="moving-book-pages"
+      />
     </div>
   );
 };

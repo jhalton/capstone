@@ -34,3 +34,18 @@ select {
   color: rgb(126, 126, 126);
   width: 500px;
 }
+
+.create-book--container button {
+  background-color: #5c809e;
+  color: #ffffff;
+  border: none;
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 1rem;
+}
+
+.create-book--container button:hover {
+  cursor: pointer;
+  background-color: #6e98bb;
+}

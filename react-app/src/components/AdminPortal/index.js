@@ -57,7 +57,9 @@ const AdminPortal = () => {
         setCreateBook={setCreateBook}
       />
       <div className="admin-portal-main--collections">
-        <h1>View Collections</h1>
+        <h1 className="admin-portal-main--collections-header">
+          View Collections
+        </h1>
         <ul className="admin-portal-main--collections-ul">
           {collections?.map((collection) => (
             <li

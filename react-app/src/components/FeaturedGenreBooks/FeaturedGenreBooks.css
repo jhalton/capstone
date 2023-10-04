@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 2s ease-in-out;
 }
 
 .landing-featured-genre--book:hover {
@@ -16,4 +17,11 @@
 .landing-featured-genre--book {
   max-width: 250px;
   max-height: 350px;
+  transition: 2s ease-in-out;
+}
+
+.landing-featured-genre--no-genre-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -147,12 +147,6 @@ const FeaturedGenres = () => {
           <p>Autobiography</p>
         </div>
       </div>
-      <span
-        onClick={() => history.push("/collections")}
-        className="featured-genres--browse-link"
-      >
-        Browse All Collections
-      </span>
       <div>
         <FeaturedGenreBooks
           fiction={fiction}
@@ -164,6 +158,12 @@ const FeaturedGenres = () => {
           autobiography={autobiography}
         />
       </div>
+      <span
+        onClick={() => history.push("/collections")}
+        className="featured-genres--browse-link"
+      >
+        Browse All Collections
+      </span>
     </div>
   );
 };

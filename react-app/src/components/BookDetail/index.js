@@ -18,6 +18,7 @@ const BookDetail = () => {
   const user = useSelector((state) => state.session.user);
   const { closeModal } = useModal();
 
+  console.log("BOOK DETAIL", book);
   useEffect(() => {
     dispatch(getBookById(bookId));
 
@@ -118,6 +119,9 @@ const BookDetail = () => {
       </div>
 
       <span className="book-detail--numRatings">( {book.numRatings} )</span>
+      <span className="book-detail-write-review-text" onClick={comingSoon}>
+        Write a review
+      </span>
       <h2 className="book-detail--price">${floatPrice}</h2>
       <span className="book-detail--format">{book.format}</span>
       <button className="book-detail--cart-button" onClick={comingSoon}>

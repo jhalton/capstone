@@ -24,10 +24,12 @@ const DeleteBookModal = ({ bookId }) => {
   };
 
   return (
-    <div>
-      <h1>Delete Book Modal Component</h1>
-      <button onClick={handleDelete}>Delete Book</button>
-      <button onClick={handleKeep}>Keep</button>
+    <div className="delete-book--container">
+      <h1>Delete book?</h1>
+      <div className="delete-book--buttons">
+        <button onClick={handleDelete}>Delete Book</button>
+        <button onClick={handleKeep}>Keep</button>
+      </div>
     </div>
   );
 };

@@ -6,8 +6,9 @@
   width: 100%;
 }
 
-.admin-portal--main-collections > h1 {
-  left: 50%;
+.admin-portal-main--collections-header {
+  display: flex;
+  justify-content: center;
 }
 
 .admin-portal-main--collections-ul {
@@ -30,6 +31,11 @@
   max-width: 300px;
   margin: 25px;
   padding: 10px;
+}
+
+.admin-portal-main--collection-tile:hover {
+  background-color: #4e759149;
+  transition: 0.25s ease-in-out;
 }
 
 .admin-portal-main--collection-tile:hover {
