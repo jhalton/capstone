@@ -16,8 +16,8 @@
 
 .collection-detail--li:hover {
   cursor: pointer;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
-  transition: 0.25s ease-in-out 0s;
+  background-color: #4e759149;
+  transition: 0.25s ease-in-out;
 }
 
 .collection-detail--li img {

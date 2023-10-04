@@ -33,24 +33,32 @@ const EditCollectionModal = ({ collectionId, collection }) => {
   };
 
   return (
-    <div>
+    <div className="edit-collection-modal--container">
       <h1>Edit Collection </h1>
       <form>
-        <input
-          id="name"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <label>
+          Collection name
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
         {errors.name && <p>{errors.name}</p>}
-        <textarea
-          id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+        <label>
+          Description
+          <textarea
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </label>
         {errors.description && <p>{errors.description}</p>}
-        <button onClick={handleChanges}>Save changes</button>
-        <button onClick={handleCancel}>Cancel</button>
+        <div>
+          <button onClick={handleChanges}>Save changes</button>
+          <button onClick={handleCancel}>Cancel</button>
+        </div>
       </form>
     </div>
   );

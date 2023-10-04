@@ -3,9 +3,13 @@ import React, { useEffect } from "react";
 
 import Carousel, { CarouselItem } from "../Carousel";
 import { useSelector, useDispatch } from "react-redux";
-import { allBooks, getAllBooks } from "../../store/books";
+import { allBooks, clearAllBooks, getAllBooks } from "../../store/books";
 import LoadingSpinner from "../LoadingSpinner";
-import { allCollections, getAllCollections } from "../../store/collections";
+import {
+  allCollections,
+  clearAllCollections,
+  getAllCollections,
+} from "../../store/collections";
 import { useHistory } from "react-router-dom";
 import FeaturedGenres from "../FeaturedGenres";
 
@@ -21,6 +25,11 @@ const LandingPage = () => {
   useEffect(() => {
     dispatch(getAllBooks());
     dispatch(getAllCollections());
+
+    return () => {
+      clearAllCollections();
+      clearAllBooks();
+    };
   }, [dispatch]);
 
   if (!books || !collections) {

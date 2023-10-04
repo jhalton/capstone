@@ -20,6 +20,7 @@ const FeaturedGenreBooks = ({
   if (!collections) {
     return <LoadingSpinner />;
   }
+
   //------------------Selected collections----------------------------------
   const selectedFiction = collections.filter(
     (selected) => selected.name === "Fiction"
@@ -54,7 +55,12 @@ const FeaturedGenreBooks = ({
   if (fiction) {
     return (
       <div>
-        <h1>Fiction</h1>
+        <h1
+          className="landing-featured-genre--header"
+          onClick={() => history.push("/collections/3")}
+        >
+          Fiction
+        </h1>
         <div className="landing-featured-genre--tile-row">
           {selectedFiction.slice(0, 4).map((book) => (
             <div key={book.id} className="landing-featured-genre--tile">
@@ -74,7 +80,12 @@ const FeaturedGenreBooks = ({
   if (nonfiction) {
     return (
       <div>
-        <h1>Nonfiction</h1>
+        <h1
+          className="landing-featured-genre--header"
+          onClick={() => history.push("/collections/5")}
+        >
+          Nonfiction
+        </h1>
         <div className="landing-featured-genre--tile-row">
           {selectedNonfiction.slice(0, 4).map((book) => (
             <div key={book.id} className="landing-featured-genre--tile">
@@ -94,7 +105,12 @@ const FeaturedGenreBooks = ({
   if (horror) {
     return (
       <div>
-        <h1>Horror</h1>
+        <h1
+          className="landing-featured-genre--header"
+          onClick={() => history.push("/collections/2")}
+        >
+          Horror
+        </h1>
         <div className="landing-featured-genre--tile-row">
           {selectedHorror.slice(0, 4).map((book) => (
             <div key={book.id} className="landing-featured-genre--tile">
@@ -114,7 +130,12 @@ const FeaturedGenreBooks = ({
   if (romance) {
     return (
       <div>
-        <h1>Romance</h1>
+        <h1
+          className="landing-featured-genre--header"
+          onClick={() => history.push("/collections/4")}
+        >
+          Romance
+        </h1>
         <div className="landing-featured-genre--tile-row">
           {selectedRomance.slice(0, 4).map((book) => (
             <div key={book.id} className="landing-featured-genre--tile">
@@ -134,7 +155,12 @@ const FeaturedGenreBooks = ({
   if (youngAdult) {
     return (
       <div>
-        <h1>Young Adult</h1>
+        <h1
+          className="landing-featured-genre--header"
+          onClick={() => history.push("/collections/6")}
+        >
+          Young Adult
+        </h1>
         <div className="landing-featured-genre--tile-row">
           {selectedYoungAdult.slice(0, 4).map((book) => (
             <div key={book.id} className="landing-featured-genre--tile">
@@ -154,7 +180,12 @@ const FeaturedGenreBooks = ({
   if (scienceFiction) {
     return (
       <div>
-        <h1>Science Fiction</h1>
+        <h1
+          className="landing-featured-genre--header"
+          onClick={() => history.push("/collections/9")}
+        >
+          Science Fiction
+        </h1>
         <div className="landing-featured-genre--tile-row">
           {selectedScienceFiction.slice(0, 4).map((book) => (
             <div key={book.id} className="landing-featured-genre--tile">
@@ -174,7 +205,12 @@ const FeaturedGenreBooks = ({
   if (autobiography) {
     return (
       <div>
-        <h1>Autobiography</h1>
+        <h1
+          className="landing-featured-genre--header"
+          onClick={() => history.push("/collections/7")}
+        >
+          Autobiography
+        </h1>
         <div className="landing-featured-genre--tile-row">
           {selectedAutobiography.slice(0, 4).map((book) => (
             <div key={book.id} className="landing-featured-genre--tile">

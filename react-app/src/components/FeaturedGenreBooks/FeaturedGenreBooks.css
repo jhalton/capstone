@@ -1,6 +1,12 @@
+.landing-featured-genre--header:hover {
+  cursor: pointer;
+  color: #0b5f38;
+}
+
 .landing-featured-genre--tile-row {
   display: flex;
   gap: 2rem;
+  transition: all 0.5s ease-in;
 }
 
 .landing-featured-genre--tile {

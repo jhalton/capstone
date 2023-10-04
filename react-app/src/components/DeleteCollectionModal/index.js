@@ -24,10 +24,12 @@ const DeleteCollectionModal = ({ collectionId }) => {
   };
 
   return (
-    <div>
+    <div className="delete-collection--container">
       <h1>Delete this collection?</h1>
-      <button onClick={handleDelete}>Delete</button>
-      <button onClick={handleKeep}>Keep</button>
+      <div>
+        <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleKeep}>Keep</button>
+      </div>
     </div>
   );
 };

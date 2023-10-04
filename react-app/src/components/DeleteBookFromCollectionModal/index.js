@@ -23,7 +23,7 @@ const DeleteBookFromCollectionModal = ({ book, collectionId }) => {
     closeModal();
   };
   return (
-    <div>
+    <div className="delete-book-from-collection--container">
       <h2>Remove {book.title} from this collection?</h2>
       <div>
         <button onClick={handleRemove}>Remove</button>
