@@ -11,7 +11,7 @@ export const CarouselItem = ({ children, width }) => {
 
 const Carousel = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
+  // const [paused, setPaused] = useState(false);
 
   //Does this automatically move to the next item? Yes. Does it
   //go insane and flip out rather than smoothly transition? Also yes.
@@ -42,8 +42,8 @@ const Carousel = ({ children }) => {
   return (
     <div
       className="carousel"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      // onMouseEnter={() => setPaused(true)}
+      // onMouseLeave={() => setPaused(false)}
     >
       <div
         className="carousel-inner"

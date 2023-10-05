@@ -29,3 +29,13 @@
 .landing-featured--img:hover {
   cursor: pointer;
 }
+
+/* Featured Book Blurb */
+.landing-book-blurb-hidden {
+  display: none;
+}
+
+.landing-book-blurb--visible {
+  display: flex;
+  flex-wrap: wrap;
+}
