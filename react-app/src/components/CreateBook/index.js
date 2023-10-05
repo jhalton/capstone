@@ -206,12 +206,7 @@ const CreateBook = () => {
           />
         </label>
         {errors.description && <p className="errors">{errors.description}</p>}
-        <button
-          type="submit"
-          disabled={Object.keys(errors).length ? true : false}
-        >
-          Create New Book
-        </button>
+        <button type="submit">Create New Book</button>
       </form>
     </div>
   );

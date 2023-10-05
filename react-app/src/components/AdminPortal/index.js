@@ -7,6 +7,7 @@ import { allCollections, getAllCollections } from "../../store/collections";
 import { useHistory } from "react-router-dom";
 import CreateBook from "../CreateBook";
 import CreateCollection from "../CreateCollection";
+import { Redirect } from "react-router-dom";
 
 const AdminPortal = () => {
   const dispatch = useDispatch();
@@ -14,10 +15,15 @@ const AdminPortal = () => {
   const history = useHistory();
   const [createCollection, setCreateCollection] = useState(false);
   const [createBook, setCreateBook] = useState(false);
+  const user = useSelector((state) => state.session.user);
 
   useEffect(() => {
     dispatch(getAllCollections());
   }, [dispatch]);
+
+  if (user.accountType !== "Admin") {
+    return <Redirect to="/" />;
+  }
 
   if (!collections) {
     return <LoadingSpinner />;
