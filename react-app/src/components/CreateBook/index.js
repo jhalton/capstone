@@ -66,7 +66,7 @@ const CreateBook = () => {
           />
         </label>
 
-        {errors.title && <p>{errors.title}</p>}
+        {errors.title && <p className="errors">{errors.title}</p>}
         <label htmlFor="authorFirstName" className="create-book--form-label">
           Author's first name
           <input
@@ -77,7 +77,9 @@ const CreateBook = () => {
             onChange={(e) => setAuthorFirstName(e.target.value)}
           />
         </label>
-        {errors.author_first_name && <p>{errors.author_first_name}</p>}
+        {errors.author_first_name && (
+          <p className="errors">{errors.author_first_name}</p>
+        )}
         <label htmlFor="authorLastName" className="create-book--form-label">
           Author's last name
           <input
@@ -88,7 +90,9 @@ const CreateBook = () => {
             onChange={(e) => setAuthorLastName(e.target.value)}
           />
         </label>
-        {errors.author_last_name && <p>{errors.author_last_name}</p>}
+        {errors.author_last_name && (
+          <p className="errors">{errors.author_last_name}</p>
+        )}
         <label htmlFor="genre" className="create-book--form-label">
           Genre
           <select id="genre" onChange={(e) => setGenre(e.target.value)}>
@@ -100,7 +104,7 @@ const CreateBook = () => {
             ))}
           </select>
         </label>
-        {errors.genre && <p>errors.genre</p>}
+        {errors.genre && <p className="errors">errors.genre</p>}
         <label htmlFor="format" className="create-book--form-label">
           Format
           <select id="format" onChange={(e) => setFormat(e.target.value)}>
@@ -112,7 +116,7 @@ const CreateBook = () => {
             ))}
           </select>
         </label>
-        {errors.format && <p>{errors.format}</p>}
+        {errors.format && <p className="errors">{errors.format}</p>}
         <label htmlFor="isbn" className="create-book--form-label">
           ISBN
           <input
@@ -123,7 +127,7 @@ const CreateBook = () => {
             onChange={(e) => setIsbn(e.target.value)}
           />
         </label>
-        {errors.isbn && <p>{errors.isbn}</p>}
+        {errors.isbn && <p className="errors">{errors.isbn}</p>}
         <label htmlFor="price" className="create-book--form-label">
           Price (USD)
           <input
@@ -134,7 +138,7 @@ const CreateBook = () => {
             onChange={(e) => setPrice(e.target.value)}
           />
         </label>
-        {errors.price && <p>{errors.price}</p>}
+        {errors.price && <p className="errors">{errors.price}</p>}
         <label htmlFor="frontImage" className="create-book--form-label">
           Front cover image
           <input
@@ -145,7 +149,7 @@ const CreateBook = () => {
             onChange={(e) => setFrontImage(e.target.value)}
           />
         </label>
-        {errors.front_image && <p>{errors.front_image}</p>}
+        {errors.front_image && <p className="errors">{errors.front_image}</p>}
         <label htmlFor="backImage" className="create-book--form-label">
           Back cover image
           <input
@@ -156,7 +160,7 @@ const CreateBook = () => {
             onChange={(e) => setBackImage(e.target.value)}
           />
         </label>
-        {errors.back_image && <p>{errors.back_image}</p>}
+        {errors.back_image && <p className="errors">{errors.back_image}</p>}
         <label htmlFor="publisher" className="create-book--form-label">
           Publisher
           <input
@@ -167,7 +171,7 @@ const CreateBook = () => {
             onChange={(e) => setPublisher(e.target.value)}
           />
         </label>
-        {errors.publisher && <p>{errors.publisher}</p>}
+        {errors.publisher && <p className="errors">{errors.publisher}</p>}
         <label htmlFor="publicationDate" className="create-book--form-label">
           Publication date (YYYY-MM-DD)
           <input
@@ -178,7 +182,9 @@ const CreateBook = () => {
             onChange={(e) => setPublicationDate(e.target.value)}
           />
         </label>
-        {errors.publication_date && <p>{errors.publication_date}</p>}
+        {errors.publication_date && (
+          <p className="errors">{errors.publication_date}</p>
+        )}
         <label htmlFor="onHand" className="create-book--form-label">
           On hand
           <input
@@ -189,7 +195,7 @@ const CreateBook = () => {
             onChange={(e) => setOnHand(e.target.value)}
           />
         </label>
-        {errors.on_hand && <p>{errors.on_hand}</p>}
+        {errors.on_hand && <p className="errors">{errors.on_hand}</p>}
         <label htmlFor="description" className="create-book--form-label">
           Description
           <textarea
@@ -199,8 +205,13 @@ const CreateBook = () => {
             onChange={(e) => setDescription(e.target.value)}
           />
         </label>
-        {errors.description && <p>{errors.description}</p>}
-        <button type="submit">Create New Book</button>
+        {errors.description && <p className="errors">{errors.description}</p>}
+        <button
+          type="submit"
+          disabled={Object.keys(errors).length ? true : false}
+        >
+          Create New Book
+        </button>
       </form>
     </div>
   );

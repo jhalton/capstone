@@ -109,7 +109,7 @@ export const createCollection = (collection) => async (dispatch) => {
     return data;
   } else if (response.status < 500) {
     const data = await response.json();
-    return data.errors;
+    return data;
   } else {
     return ["Oops! An error occurred. Please try again."];
   }

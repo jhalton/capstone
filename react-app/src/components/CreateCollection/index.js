@@ -44,7 +44,7 @@ const CreateCollection = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </label>
-        {errors.name && <p>errors.name</p>}
+        {errors.name && <p className="errors">{errors.name}</p>}
         <label htmlFor="description" className="create-collection--form-label">
           Description
           <textarea
@@ -54,7 +54,7 @@ const CreateCollection = () => {
             onChange={(e) => setDescription(e.target.value)}
           />
         </label>
-        {errors.description && <p>errors.description</p>}
+        {errors.description && <p className="errors">{errors.description}</p>}
         <button type="submit">Create Collection</button>
       </form>
     </div>

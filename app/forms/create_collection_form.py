@@ -10,5 +10,5 @@ def collection_name_exists(form, field):
         raise ValidationError('A collection with this name already exists')
 
 class CreateCollectionForm(FlaskForm):
-    name = StringField('Name', validators=[DataRequired()])
+    name = StringField('Name', validators=[DataRequired(), collection_name_exists])
     description = StringField("Description")
