@@ -24,7 +24,7 @@ const AddBookToCollectionModal = ({ collectionId, books, collection }) => {
     } else {
       setPopulate([]);
     }
-  }, [search, books, collection]);
+  }, [search, books, collection, closeModal]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

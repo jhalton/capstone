@@ -13,7 +13,7 @@ const EditCollectionModal = ({ collectionId, collection }) => {
 
   useEffect(() => {
     dispatch(getCollectionById(collectionId));
-  }, [dispatch, collectionId, collection]);
+  }, [dispatch, collectionId, collection, closeModal]);
 
   const handleChanges = (e) => {
     e.preventDefault();

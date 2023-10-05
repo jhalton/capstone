@@ -12,7 +12,7 @@ const DeleteBookModal = ({ bookId, collection }) => {
 
   useEffect(() => {
     dispatch(getBookById(bookId));
-  }, [dispatch, bookId, collection]);
+  }, [dispatch, bookId, collection, closeModal]);
 
   const handleDelete = (e) => {
     e.preventDefault();
