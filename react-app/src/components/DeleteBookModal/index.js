@@ -1,14 +1,18 @@
 import "./DeleteBookModal.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { useModal } from "../../context/Modal";
 import { useDispatch } from "react-redux";
-import { deleteBook } from "../../store/books";
+import { deleteBook, getBookById } from "../../store/books";
 import { useHistory } from "react-router-dom";
 
-const DeleteBookModal = ({ bookId }) => {
+const DeleteBookModal = ({ bookId, collection }) => {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
   const history = useHistory();
+
+  useEffect(() => {
+    dispatch(getBookById(bookId));
+  }, [dispatch, bookId, collection]);
 
   const handleDelete = (e) => {
     e.preventDefault();

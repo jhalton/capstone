@@ -1,8 +1,8 @@
 import "./EditCollectionModal.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useModal } from "../../context/Modal";
 import { useDispatch } from "react-redux";
-import { editCollection } from "../../store/collections";
+import { editCollection, getCollectionById } from "../../store/collections";
 
 const EditCollectionModal = ({ collectionId, collection }) => {
   const dispatch = useDispatch();
@@ -10,6 +10,10 @@ const EditCollectionModal = ({ collectionId, collection }) => {
   const [name, setName] = useState(collection.name);
   const [description, setDescription] = useState(collection.description);
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    dispatch(getCollectionById(collectionId));
+  }, [dispatch, collectionId, collection]);
 
   const handleChanges = (e) => {
     e.preventDefault();

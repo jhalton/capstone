@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addBookToCollection } from "../../store/collections";
 import { useModal } from "../../context/Modal";
 
-const AddBookToCollectionModal = ({ collectionId, books }) => {
+const AddBookToCollectionModal = ({ collectionId, books, collection }) => {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
   const [book, setBook] = useState("");
@@ -24,7 +24,7 @@ const AddBookToCollectionModal = ({ collectionId, books }) => {
     } else {
       setPopulate([]);
     }
-  }, [search, books]);
+  }, [search, books, collection]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

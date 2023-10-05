@@ -23,7 +23,7 @@ const BookDetail = () => {
     dispatch(getBookById(bookId));
 
     return () => dispatch(clearCurrentBook());
-  }, [dispatch, bookId, closeModal]);
+  }, [dispatch, bookId, closeModal, book]);
 
   if (!book) {
     return <LoadingSpinner />;

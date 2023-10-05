@@ -25,7 +25,7 @@ const CollectionDetail = () => {
   useEffect(() => {
     dispatch(getCollectionById(collectionId));
     dispatch(getAllBooks());
-  }, [dispatch, collectionId, closeModal, collection?.length]);
+  }, [dispatch, collectionId, closeModal]);
 
   if (!collection || !books) {
     return <LoadingSpinner />;
@@ -55,6 +55,7 @@ const CollectionDetail = () => {
                 <AddBookToCollectionModal
                   collectionId={collectionId}
                   books={books}
+                  collection={collection}
                 />
               }
               buttonText={"Add Books"}
@@ -83,6 +84,7 @@ const CollectionDetail = () => {
                     <DeleteBookFromCollectionModal
                       book={book}
                       collectionId={collectionId}
+                      collection={collection}
                     />
                   }
                   buttonText={
