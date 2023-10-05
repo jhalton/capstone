@@ -63,16 +63,16 @@ const AdminPortal = () => {
         <ul className="admin-portal-main--collections-ul">
           {collections?.map((collection) => (
             <li
-              key={collection.id}
+              key={collection?.id}
               className="admin-portal-main--collections-li"
             >
-              <h3>{collection.name}</h3>
+              <h3>{collection?.name}</h3>
               <div
                 className="admin-portal-main--collection-tile"
                 onClick={() => history.push(`/collections/${collection.id}`)}
               >
-                {collection.Books.length ? (
-                  collection.Books?.slice(0, 4).map((book) => (
+                {collection?.Books?.length ? (
+                  collection?.Books?.slice(0, 4).map((book) => (
                     <div
                       key={book?.id}
                       className="admin-portal-main--collection-tile-book"

@@ -42,6 +42,10 @@
   cursor: pointer;
 }
 
+.admin-portal-main--collection-tile-book {
+  padding: 5px;
+}
+
 .admin-portal-main--collection-tile-book img {
   width: 100%;
 }

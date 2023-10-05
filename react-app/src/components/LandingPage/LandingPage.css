@@ -10,6 +10,11 @@
   justify-content: center;
 }
 
+.landing-featured-carousel--heading:hover {
+  cursor: pointer;
+  color: #0b5f38;
+}
+
 .landing-featured-carousel-item--component {
   margin-top: 0;
 }

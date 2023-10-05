@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { signUp } from "../../store/session";
 import "./SignupForm.css";
+import LoginFormModal from "../LoginFormModal";
 
 function SignupFormModal() {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function SignupFormModal() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  const { closeModal } = useModal();
+  const { closeModal, setModalContent } = useModal();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -159,7 +160,15 @@ function SignupFormModal() {
           />
         </label>
         <button type="submit">Sign Up</button>
-        <span>Already have an account? Log in</span>
+        <span className="sign-up-modal--existing-user">
+          <span>Already have an account?</span>{" "}
+          <span
+            className="sign-up-modal--existing-user-login"
+            onClick={() => setModalContent(<LoginFormModal />)}
+          >
+            Log in
+          </span>
+        </span>
       </form>
     </>
   );

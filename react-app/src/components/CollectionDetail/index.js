@@ -33,38 +33,41 @@ const CollectionDetail = () => {
 
   return (
     <div className="collection-detail--container">
-      <h1>{collectionInfo.name}</h1>
-      {user?.accountType === "Admin" ? (
-        <OpenModalButton
-          modalComponent={
-            <EditCollectionModal
-              collectionId={collectionId}
-              collection={collectionInfo}
-            />
-          }
-          buttonText={"Edit"}
-        />
-      ) : null}
-      <p>{collectionInfo.description}</p>
-      {user?.accountType === "Admin" ? (
-        <div>
+      <div className="collection-detail--name&desc">
+        <h1 className="collection-detail--header">{collectionInfo.name}</h1>
+        {user?.accountType === "Admin" ? (
           <OpenModalButton
             modalComponent={
-              <AddBookToCollectionModal
+              <EditCollectionModal
                 collectionId={collectionId}
-                books={books}
+                collection={collectionInfo}
               />
             }
-            buttonText={"Add books"}
+            buttonText={"Edit"}
           />
-          <OpenModalButton
-            modalComponent={
-              <DeleteCollectionModal collectionId={collectionId} />
-            }
-            buttonText={"Delete collection"}
-          />
-        </div>
-      ) : null}
+        ) : null}
+
+        <p>{collectionInfo.description}</p>
+        {user?.accountType === "Admin" ? (
+          <div>
+            <OpenModalButton
+              modalComponent={
+                <AddBookToCollectionModal
+                  collectionId={collectionId}
+                  books={books}
+                />
+              }
+              buttonText={"Add Books"}
+            />
+            <OpenModalButton
+              modalComponent={
+                <DeleteCollectionModal collectionId={collectionId} />
+              }
+              buttonText={"Delete Collection"}
+            />
+          </div>
+        ) : null}
+      </div>
       <div className="collection-detail--tile">
         <ul className="collection-detail--ul">
           {collection.map((book) => (

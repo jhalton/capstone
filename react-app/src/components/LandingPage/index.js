@@ -38,7 +38,12 @@ const LandingPage = () => {
   return (
     <div className="landing--container">
       <div className="landing-featured-carousel--container">
-        <h2 className="landing-featured-carousel--heading">Featured</h2>
+        <h2
+          onClick={() => history.push("/collections/1")}
+          className="landing-featured-carousel--heading"
+        >
+          Featured
+        </h2>
         <Carousel className="landing-featured-carousel--component">
           {featuredBooks?.map((book, index) => (
             <CarouselItem

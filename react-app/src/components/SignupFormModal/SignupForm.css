@@ -45,3 +45,17 @@ select {
   cursor: pointer;
   background-color: #6e98bb;
 }
+
+.sign-up--modal--existing-user {
+  display: flex;
+  flex-direction: row;
+}
+
+.sign-up--modal--existing-user:hover {
+  cursor: default;
+}
+
+.sign-up-modal--existing-user-login:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

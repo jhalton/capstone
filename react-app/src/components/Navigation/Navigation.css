@@ -31,6 +31,33 @@
   cursor: default;
 }
 
+.main-nav-profile--logout {
+  background-color: #5c809e;
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.main-nav-profile--logout:hover {
+  cursor: pointer;
+  background-color: #6e98bb;
+}
+
+.login-button {
+  background-color: #5c809e;
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.login-button:hover {
+  cursor: pointer;
+  background-color: #6e98bb;
+}
+
 /* Main nav */
 
 .navigation--main {

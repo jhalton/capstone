@@ -1,3 +1,13 @@
+.collection-detail--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-detail--header {
+  display: flex;
+  margin: 0;
+}
+
 .collection-detail--ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

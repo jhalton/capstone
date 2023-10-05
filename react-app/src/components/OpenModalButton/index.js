@@ -19,7 +19,13 @@ function OpenModalButton({
 
   return (
     <button
-      className={user?.accountType === "Admin" ? "admin-button" : null}
+      className={
+        !user
+          ? "login-button"
+          : user?.accountType === "Admin"
+          ? "admin-button"
+          : null
+      }
       onClick={onClick}
     >
       {buttonText}
