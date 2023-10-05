@@ -18,6 +18,10 @@
   align-items: center;
 }
 
+.profile-dropdown > div:hover {
+  cursor: default;
+}
+
 .main-nav--admin-link {
   font-weight: bold;
   width: max-content;
