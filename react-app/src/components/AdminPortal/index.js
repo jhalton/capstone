@@ -21,7 +21,7 @@ const AdminPortal = () => {
     dispatch(getAllCollections());
   }, [dispatch]);
 
-  if (user.accountType !== "Admin") {
+  if (user?.accountType !== "Admin") {
     return <Redirect to="/" />;
   }
 

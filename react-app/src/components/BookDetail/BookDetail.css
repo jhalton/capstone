@@ -54,7 +54,7 @@
 .book-detail-write-review-text:hover {
   cursor: pointer;
   font-weight: bold;
-  color: #0b5f38;
+  color: #5c809e;
 }
 
 .book-detail--price {
@@ -68,30 +68,32 @@
 .book-detail--cart-button {
   grid-area: cart-bttn;
   margin: 5px;
-  background-color: #344e41;
+  background-color: #113b58;
   color: #ffffff;
   border-radius: 5px;
   padding: 2px;
+  border: none;
 }
 
 .book-detail--wishlist-button {
   grid-area: wishlist-bttn;
   margin: 5px;
-  background-color: #344e41;
+  background-color: #113b58;
   color: #ffffff;
   border-radius: 5px;
   padding: 2px;
+  border: none;
 }
 
 .book-detail--cart-button:hover,
 .book-detail--wishlist-button:hover {
   cursor: pointer;
-  background-color: #416151;
+  background-color: #5c809e;
 }
 
 .book-detail--cart-button:active,
 .book-detail--wishlist-button:active {
-  background-color: #486b5a;
+  background-color: #5c809e;
 }
 
 .book-detail--description {

@@ -10,10 +10,12 @@ yellow:
 
 green:
 0b5f38 (used for LoadingSpinner and user greeting)
-344e41 (used for featured items carousel on landing)
+344e41 (used for featured items carousel on landing) \*\*swapped for blue
 
 blue:
 5c809e (logo)
+113b58 (carousel item)
+6f99bb (genre icon: hover)
 
 purple:
 

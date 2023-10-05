@@ -26,12 +26,12 @@
 }
 
 .carousel-indicator--arrow:hover {
-  color: #344e41;
+  color: #5c809e;
   cursor: pointer;
 }
 
 .carousel-indicator--arrow:active {
-  color: #25382f;
+  color: #47637a;
 }
 
 /* Carousel item */

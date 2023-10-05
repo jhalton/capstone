@@ -45,12 +45,12 @@
 
 .featured-genres--browse-link {
   margin-top: 30px;
-  color: #344e41;
+  color: #113b58;
   font-size: 20px;
 }
 
 .featured-genres--browse-link:hover {
   font-weight: bold;
   cursor: pointer;
-  color: #0b5f38;
+  color: #5c809e;
 }

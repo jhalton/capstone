@@ -45,10 +45,7 @@ const NavSearchBar = () => {
 
   return (
     <div>
-      <i
-        className="fa-solid fa-magnifying-glass"
-        style={{ color: "#000000" }}
-      ></i>
+      <i className="fa-solid fa-magnifying-glass"></i>
       <input
         ref={searchInputRef}
         id="nav-search-bar"
