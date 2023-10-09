@@ -1,5 +1,11 @@
 .browse-collections--container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.browse-collections--container p {
+  margin: 0;
 }
 
 .browse-collections--ul {
@@ -13,6 +19,10 @@
   align-items: center;
   list-style-type: none;
   max-width: 400px;
+}
+
+.browse-collections--li h3 {
+  margin-bottom: 0;
 }
 
 .browse-collections--tile {

@@ -41,6 +41,7 @@
 
 .main-nav--profile-greeting {
   color: #5c809e;
+  margin-left: 5px;
 }
 .main-nav--profile-greeting:hover {
   cursor: default;

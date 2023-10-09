@@ -9,7 +9,8 @@ def admin_required(f):
     def decorated_function(*args, **kwargs):
         if not is_admin():
             # return redirect(url_for('login'))
-            return {'message': "Shhh! It's a secret for Admin only!"}
+            return redirect(url_for('/'))
+            # return {'message': "Shhh! It's a secret for Admin only!"}
         return f(*args, **kwargs)
     return decorated_function
 

@@ -21,6 +21,7 @@ const BrowseCollections = () => {
   return (
     <div className="browse-collections--container">
       <h1>Browse Collections</h1>
+      <p>Click on a collection to view all books in that collection</p>
       <ul className="browse-collections--ul">
         {collections?.map((collection) => (
           <li key={collection.id} className="browse-collections--li">
