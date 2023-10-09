@@ -5,14 +5,14 @@ import { useDispatch } from "react-redux";
 import { deleteBook, getBookById } from "../../store/books";
 import { useHistory } from "react-router-dom";
 
-const DeleteBookModal = ({ bookId, collection }) => {
+const DeleteBookModal = ({ bookId }) => {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
   const history = useHistory();
 
   useEffect(() => {
     dispatch(getBookById(bookId));
-  }, [dispatch, bookId, collection, closeModal]);
+  }, [dispatch, bookId, closeModal]);
 
   const handleDelete = (e) => {
     e.preventDefault();
