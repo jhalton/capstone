@@ -107,7 +107,7 @@ def add_books_to_collection(id):
 
     db.session.commit()
 
-    return {'message': "Books successfully added to the collection"}
+    return {'message': "Books successfully added to the collection"}, 201
 
 
 
