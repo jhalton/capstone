@@ -6,4 +6,5 @@ from .collection import Collection
 from .cart import Cart
 from .review import Review
 from .book_collections import book_collections
+from .wishlist_books import wishlist_books
 from .db import environment, SCHEMA
