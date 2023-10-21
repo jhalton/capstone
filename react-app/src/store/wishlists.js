@@ -204,6 +204,35 @@ const initialState = {
 const wishlistsReducer = (state = initialState, action) => {
   const newState = { ...state };
   switch (action.type) {
+    case GET_WISHLISTS:
+      const allWishlists = {};
+      action.payload.Wishlists.forEach(
+        (wishlist) => (allWishlists[wishlist.id] = wishlist)
+      );
+      return { ...newState, allWishlists };
+    case GET_ONE_WISHLIST:
+      return { ...newState, currentWishlist: action.payload };
+    case ADD_WISHLIST:
+      return {
+        ...newState,
+        allWishlists: {
+          [action.payload.id]: action.payload,
+        },
+      };
+    case REMOVE_WISHLIST:
+      delete newState[action.payload.id];
+      return newState;
+    case ADD_BOOKS_TO_WISHLIST:
+      const updatedWishlist = { ...newState.currentWishlist };
+      updatedWishlist[action.payload.id] = action.payload;
+      return { ...newState, currentWishlist: updatedWishlist };
+    case REMOVE_BOOKS_FROM_WISHLIST:
+      delete newState.currentWishlist[action.payload.id];
+      return newState;
+    case CLEAR_ALL_WISHLISTS:
+      return { ...newState, allWishlists: {} };
+    case CLEAR_ONE_WISHLIST:
+      return { ...newState, currentWishlist: {} };
     default:
       return state;
   }
