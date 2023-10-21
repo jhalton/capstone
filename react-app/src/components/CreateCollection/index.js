@@ -39,7 +39,6 @@ const CreateCollection = () => {
           <input
             id="name"
             type="text"
-            // placeholder="Collection name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -49,7 +48,6 @@ const CreateCollection = () => {
           Description
           <textarea
             id="description"
-            // placeholder="Collection description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
