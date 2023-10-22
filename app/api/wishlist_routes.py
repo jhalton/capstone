@@ -57,7 +57,8 @@ def create_wishlist():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         wishlist = Wishlist(
-            name = form.data['name']
+            name = form.data['name'],
+            user_id = current_user.id
         )
 
         db.session.add(wishlist)

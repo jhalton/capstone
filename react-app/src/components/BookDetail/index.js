@@ -9,6 +9,7 @@ import EditBookModal from "../EditBookModal";
 import DeleteBookModal from "../DeleteBookModal";
 import { useModal } from "../../context/Modal";
 import { comingSoon } from "../../Resources/helperFunctions";
+import AddBookToWishlistModal from "../AddBookToWishlist";
 
 const BookDetail = () => {
   const dispatch = useDispatch();
@@ -16,9 +17,12 @@ const BookDetail = () => {
   const { bookId } = useParams();
   const rating = book.avgRating;
   const user = useSelector((state) => state.session.user);
-  const { closeModal } = useModal();
+  const { closeModal, setModalContent } = useModal();
 
-  console.log("BOOK DETAIL", book);
+  const addToWishlist = () => {
+    setModalContent(<AddBookToWishlistModal book={book} />);
+  };
+
   useEffect(() => {
     dispatch(getBookById(bookId));
 
@@ -127,7 +131,7 @@ const BookDetail = () => {
       <button className="book-detail--cart-button" onClick={comingSoon}>
         Add to Cart
       </button>
-      <button className="book-detail--wishlist-button" onClick={comingSoon}>
+      <button className="book-detail--wishlist-button" onClick={addToWishlist}>
         Add to Wishlisht
       </button>
       <div className="book-detail--description">

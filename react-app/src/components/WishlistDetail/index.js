@@ -9,7 +9,8 @@ import LoadingSpinner from "../LoadingSpinner";
 const WishlistDetail = () => {
   const { wishlistId } = useParams();
   const dispatch = useDispatch();
-  const wishlist = useSelector(currentWishlist);
+  const wishlist = useSelector(currentWishlist).Books;
+  console.log("WISHLIST DETAIL", wishlist);
 
   useEffect(() => {
     dispatch(getWishlistById(wishlistId));
@@ -22,6 +23,9 @@ const WishlistDetail = () => {
   return (
     <div>
       <h1>Wishlist Detail Component</h1>
+      {wishlist.map((book) => (
+        <li key={book.id}>{book.title}</li>
+      ))}
     </div>
   );
 };
