@@ -12,6 +12,7 @@ import {
 } from "../../store/collections";
 import { useHistory } from "react-router-dom";
 import FeaturedGenres from "../FeaturedGenres";
+import { allWishlists, getAllWishlists } from "../../store/wishlists";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -21,10 +22,13 @@ const LandingPage = () => {
   const featuredBooks = collections.filter(
     (collection) => collection.id === 1
   )[0]?.Books;
+  const wishlists = useSelector(allWishlists);
+  console.log(wishlists);
 
   useEffect(() => {
     dispatch(getAllBooks());
     dispatch(getAllCollections());
+    dispatch(getAllWishlists());
 
     return () => {
       clearAllCollections();

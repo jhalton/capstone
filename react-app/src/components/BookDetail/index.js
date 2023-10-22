@@ -10,6 +10,7 @@ import DeleteBookModal from "../DeleteBookModal";
 import { useModal } from "../../context/Modal";
 import { comingSoon } from "../../Resources/helperFunctions";
 import AddBookToWishlistModal from "../AddBookToWishlist";
+import { getAllWishlists } from "../../store/wishlists";
 
 const BookDetail = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const BookDetail = () => {
 
   useEffect(() => {
     dispatch(getBookById(bookId));
+    dispatch(getAllWishlists());
 
     return () => dispatch(clearCurrentBook());
   }, [dispatch, bookId, closeModal]);

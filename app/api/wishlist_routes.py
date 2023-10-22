@@ -13,7 +13,7 @@ def all_wishlists():
     Query for all of a current user's wishlists
     """
 
-    wishlists = Wishlist.query.filter(wishlist.user_id == current_user.id).all()
+    wishlists = Wishlist.query.filter(Wishlist.user_id == current_user.id).all()
 
     wishlists_w_books = []
     for wishlist in wishlists:

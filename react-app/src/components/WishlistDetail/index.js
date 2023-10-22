@@ -10,7 +10,6 @@ const WishlistDetail = () => {
   const { wishlistId } = useParams();
   const dispatch = useDispatch();
   const wishlist = useSelector(currentWishlist).Books;
-  console.log("WISHLIST DETAIL", wishlist);
 
   useEffect(() => {
     dispatch(getWishlistById(wishlistId));
