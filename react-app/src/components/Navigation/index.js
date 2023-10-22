@@ -7,6 +7,7 @@ import LogoComponent from "../Logo";
 import NavSearchBar from "../NavSearchBar";
 import { getAllBooks } from "../../store/books";
 import { comingSoon } from "../../Resources/helperFunctions";
+import WishlistDropdown from "./WishlistDropdown.js";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -33,9 +34,7 @@ function Navigation({ isLoaded }) {
             <ProfileButton user={sessionUser} />
           </div>{" "}
           <div className="main-navigation--wishlist">
-            <button onClick={comingSoon}>
-              <i className="fa-solid fa-heart"></i>
-            </button>
+            <WishlistDropdown user={sessionUser} />
           </div>
           <i
             className="fa-solid fa-cart-shopping fa-lg main-navigation--cart"
