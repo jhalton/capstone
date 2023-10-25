@@ -19,22 +19,24 @@ const LandingPage = () => {
   const history = useHistory();
   const books = useSelector(allBooks);
   const collections = useSelector(allCollections);
+  const user = useSelector((state) => state.session.user);
   const featuredBooks = collections.filter(
     (collection) => collection.id === 1
   )[0]?.Books;
   const wishlists = useSelector(allWishlists);
-  console.log(wishlists);
 
   useEffect(() => {
     dispatch(getAllBooks());
     dispatch(getAllCollections());
-    dispatch(getAllWishlists());
+    if (user) {
+      dispatch(getAllWishlists());
+    }
 
     return () => {
       clearAllCollections();
       clearAllBooks();
     };
-  }, [dispatch]);
+  }, [dispatch, user]);
 
   if (!books || !collections) {
     return <LoadingSpinner />;

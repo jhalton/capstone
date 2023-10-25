@@ -7,26 +7,29 @@ from app.forms import CreateWishlistForm
 wishlist_routes = Blueprint('wishlists', __name__)
 
 @wishlist_routes.route('/')
-@login_required
+# @login_required
 def all_wishlists():
     """
     Query for all of a current user's wishlists
     """
+    if current_user:
 
-    wishlists = Wishlist.query.filter(Wishlist.user_id == current_user.id).all()
-
-    wishlists_w_books = []
-    for wishlist in wishlists:
-        wishlist_w_books = wishlist.to_dict()
-
-        if wishlist.books:
-            wishlist_w_books['Books'] = [book.to_dict() for book in wishlist.books]
-        else:
-            wishlist_w_books['Books'] = []
-
-        wishlists_w_books.append(wishlists_w_books)
-
-    return {'Wishlists': wishlists_w_books}
+        # wishlists = Wishlist.query.filter(Wishlist.user_id == current_user.id).all()
+        wishlists = Wishlist.query.all()
+    
+        wishlists_w_books = []
+        for wishlist in wishlists:
+            wishlist_w_books = wishlist.to_dict()
+            
+    
+            if wishlist.books:
+                wishlist_w_books['Books'] = [book.to_dict() for book in wishlist.books]
+            else:
+                wishlist_w_books['Books'] = []
+    
+            wishlists_w_books.append(wishlist_w_books)
+    
+        return {'Wishlists': wishlists_w_books}
 
 
 

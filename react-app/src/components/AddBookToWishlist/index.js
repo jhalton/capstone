@@ -25,7 +25,11 @@ const AddBookToWishlistModal = ({ book }) => {
       <h3>Choose a wishlist:</h3>
       <ul className="add-book-to-wishlist-modal--ul">
         {wishlists.map((wishlist) => (
-          <li key={wishlist.id} onClick={() => setWishlist(wishlist)}>
+          <li
+            key={wishlist.id}
+            onClick={() => setWishlist(wishlist)}
+            className="add-book-to-wishlist-modal--item"
+          >
             {wishlist.name}
           </li>
         ))}

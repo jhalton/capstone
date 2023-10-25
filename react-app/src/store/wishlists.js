@@ -206,9 +206,9 @@ const wishlistsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_WISHLISTS:
       const allWishlists = {};
-      action.payload.Wishlists.forEach(
-        (wishlist) => (allWishlists[wishlist.id] = wishlist)
-      );
+      action.payload.Wishlists.forEach((wishlist) => {
+        allWishlists[wishlist.id] = wishlist;
+      });
       return { ...newState, allWishlists };
     case GET_ONE_WISHLIST:
       return { ...newState, currentWishlist: action.payload };

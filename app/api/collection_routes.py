@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from flask_login import login_required
+from flask_login import login_required, current_user
 from .decorators import admin_required
 from app.models import Collection, book_collections, db, Book
 from app.forms import CreateCollectionForm
@@ -14,7 +14,7 @@ def all_collections():
     """
 
     collections = Collection.query.all()
-    
+   
     collections_w_books = []
     for collection in collections:
         collection_w_books = collection.to_dict()
