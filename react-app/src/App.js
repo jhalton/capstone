@@ -12,6 +12,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import AdminPortal from "./components/AdminPortal";
 import BookDetail from "./components/BookDetail";
 import WishlistDetail from "./components/WishlistDetail";
+import ViewWishlists from "./components/ViewWishlists";
 
 function App() {
   const dispatch = useDispatch();
@@ -45,6 +46,9 @@ function App() {
           </ProtectedRoute>
           <Route path="/books/:bookId">
             <BookDetail />
+          </Route>
+          <Route path="/wishlists/all">
+            <ViewWishlists />
           </Route>
           <Route path="/wishlists/:wishlistId">
             <WishlistDetail />

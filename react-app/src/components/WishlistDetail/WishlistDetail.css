@@ -1,0 +1,5 @@
+.wishlist-detail--back-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #113b58;
+}

@@ -1,15 +1,11 @@
 import "./Navigation.css";
 import React, { useState, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
-import { useHistory } from "react-router-dom";
 import CreateWishlistModal from "../CreateWishlistModal";
 
 const WishlistDropdown = ({ user }) => {
-  const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
-  const history = useHistory();
   const { setModalContent } = useModal();
 
   const openMenu = () => {
@@ -32,7 +28,6 @@ const WishlistDropdown = ({ user }) => {
   }, [showMenu]);
 
   const ulClassName = "wishlist-dropdown" + (showMenu ? "" : " hidden");
-  const closeMenu = () => setShowMenu(false);
 
   return (
     <>
@@ -46,6 +41,7 @@ const WishlistDropdown = ({ user }) => {
             <li onClick={() => setModalContent(<CreateWishlistModal />)}>
               Create Wishlist
             </li>
+            <li>View Wishlists</li>
           </div>
         ) : (
           <span>Log in</span>
