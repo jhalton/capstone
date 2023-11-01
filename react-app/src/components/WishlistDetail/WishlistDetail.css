@@ -3,3 +3,7 @@
   cursor: pointer;
   color: #113b58;
 }
+
+.wishlist-detail--delete-wishlist:hover {
+  cursor: pointer;
+}

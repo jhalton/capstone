@@ -2,11 +2,13 @@ import "./Navigation.css";
 import React, { useState, useEffect, useRef } from "react";
 import { useModal } from "../../context/Modal";
 import CreateWishlistModal from "../CreateWishlistModal";
+import { useHistory } from "react-router-dom";
 
 const WishlistDropdown = ({ user }) => {
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
   const { setModalContent } = useModal();
+  const history = useHistory();
 
   const openMenu = () => {
     if (showMenu) return;
@@ -41,7 +43,9 @@ const WishlistDropdown = ({ user }) => {
             <li onClick={() => setModalContent(<CreateWishlistModal />)}>
               Create Wishlist
             </li>
-            <li>View Wishlists</li>
+            <li onClick={() => history.push("/wishlists/all")}>
+              View Wishlists
+            </li>
           </div>
         ) : (
           <span>Log in</span>

@@ -10,6 +10,8 @@ import {
 } from "../../store/wishlists";
 import LoadingSpinner from "../LoadingSpinner";
 import { useHistory } from "react-router-dom";
+import { useModal } from "../../context/Modal";
+import DeleteWishlistModal from "../DeleteWishlistModal";
 
 const WishlistDetail = () => {
   const { wishlistId } = useParams();
@@ -17,6 +19,7 @@ const WishlistDetail = () => {
   const wishlist = useSelector(currentWishlist).Books;
   const wishlistInfo = useSelector(currentWishlist).Wishlist;
   const history = useHistory();
+  const { setModalContent } = useModal();
 
   useEffect(() => {
     dispatch(getWishlistById(wishlistId));
@@ -39,6 +42,14 @@ const WishlistDetail = () => {
         ← Back to Wishlists
       </span>
       <h1>{wishlistInfo.name}</h1>
+      <span
+        onClick={() =>
+          setModalContent(<DeleteWishlistModal wishlist={wishlistInfo} />)
+        }
+        className="wishlist-detail--delete-wishlist"
+      >
+        Delete Wishlist
+      </span>
       {wishlist.map((book) => (
         <li key={book.id}>{book.title}</li>
       ))}
