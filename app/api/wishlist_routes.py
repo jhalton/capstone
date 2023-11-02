@@ -7,7 +7,7 @@ from app.forms import CreateWishlistForm
 wishlist_routes = Blueprint('wishlists', __name__)
 
 @wishlist_routes.route('/all')
-# @login_required
+@login_required
 def all_wishlists():
     """
     Query for all of a current user's wishlists
@@ -15,7 +15,7 @@ def all_wishlists():
     if current_user:
 
         wishlists = Wishlist.query.filter(Wishlist.user_id == current_user.id).all()
-        # wishlists = Wishlist.query.all()
+       
     
         wishlists_w_books = []
         for wishlist in wishlists:
@@ -30,7 +30,7 @@ def all_wishlists():
             wishlists_w_books.append(wishlist_w_books)
     
         return {'Wishlists': wishlists_w_books}
-    pass
+    
 
 
 
@@ -42,9 +42,9 @@ def get_wishlist(id):
     """
     wishlist = Wishlist.query.get(id)
     if current_user.id != wishlist.user_id:
-        return {"message": "You can only access your own wishlists"}, 403
+        return {"errors": "You can only access your own wishlists"}, 403
     if not wishlist:
-        return {'message': "Wishlist couldn't be found"}, 404
+        return {'errors': "Wishlist couldn't be found"}, 404
     return {"Wishlist": wishlist.to_dict(), "Books": [book.to_dict_by_id() for book in wishlist.books]}
 
 

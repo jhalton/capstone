@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./WishlistDetail.css";
-import React from "react-redux";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
@@ -21,20 +21,22 @@ const WishlistDetail = () => {
   const history = useHistory();
   const { setModalContent } = useModal();
   const user = useSelector((state) => state.session.user);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getWishlistById(wishlistId));
+    setIsLoading(true);
+    dispatch(getWishlistById(wishlistId)).then(() => setIsLoading(false));
 
     return () => {
       dispatch(clearCurrentWishlist());
     };
   }, [dispatch, wishlistId]);
 
-  if (!wishlist) {
+  if (isLoading) {
     return <LoadingSpinner />;
   }
 
-  if (user.id !== wishlistInfo.userId) {
+  if (user.id !== wishlistInfo?.userId || !wishlistInfo) {
     return <Redirect to="/" />;
   }
 
