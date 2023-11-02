@@ -87,7 +87,7 @@ export const getWishlistById = (wishlistId) => async (dispatch) => {
     dispatch(getOneWishlist(data));
     return data;
   } else if (response.status < 500) {
-    const data = (await response).json();
+    const data = await response.json();
     return data.errors;
   } else {
     return ["Oops! An error occurred. Please try again."];

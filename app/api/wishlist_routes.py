@@ -136,7 +136,7 @@ def delete_books_from_wishlist(id, bookId):
 
 @wishlist_routes.route('/<int:id>/delete', methods=["DELETE"])
 @login_required
-def delete_wishlist():
+def delete_wishlist(id):
     """
     Deletes a wishlist
     """
