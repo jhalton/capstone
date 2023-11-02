@@ -9,7 +9,7 @@ import {
   getWishlistById,
 } from "../../store/wishlists";
 import LoadingSpinner from "../LoadingSpinner";
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import { useModal } from "../../context/Modal";
 import DeleteWishlistModal from "../DeleteWishlistModal";
 
@@ -20,6 +20,7 @@ const WishlistDetail = () => {
   const wishlistInfo = useSelector(currentWishlist).Wishlist;
   const history = useHistory();
   const { setModalContent } = useModal();
+  const user = useSelector((state) => state.session.user);
 
   useEffect(() => {
     dispatch(getWishlistById(wishlistId));
@@ -31,6 +32,10 @@ const WishlistDetail = () => {
 
   if (!wishlist) {
     return <LoadingSpinner />;
+  }
+
+  if (user.id !== wishlistInfo.userId) {
+    return <Redirect to="/" />;
   }
 
   return (

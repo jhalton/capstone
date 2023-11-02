@@ -65,7 +65,7 @@ const removeFromWishlist = (book) => {
 
 //---------------------------Thunk Action Creators----------------------------
 export const getAllWishlists = () => async (dispatch) => {
-  const response = await fetch("/api/wishlists");
+  const response = await fetch("/api/wishlists/all");
 
   if (response.ok) {
     const data = await response.json();

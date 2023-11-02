@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, redirect
 from flask_login import login_required, current_user
 from app.models import Wishlist, wishlist_books, db, Book
 from .auth_routes import validation_errors_to_error_messages
@@ -6,7 +6,7 @@ from app.forms import CreateWishlistForm
 
 wishlist_routes = Blueprint('wishlists', __name__)
 
-@wishlist_routes.route('/')
+@wishlist_routes.route('/all')
 # @login_required
 def all_wishlists():
     """
@@ -14,8 +14,8 @@ def all_wishlists():
     """
     if current_user:
 
-        # wishlists = Wishlist.query.filter(Wishlist.user_id == current_user.id).all()
-        wishlists = Wishlist.query.all()
+        wishlists = Wishlist.query.filter(Wishlist.user_id == current_user.id).all()
+        # wishlists = Wishlist.query.all()
     
         wishlists_w_books = []
         for wishlist in wishlists:
@@ -30,6 +30,7 @@ def all_wishlists():
             wishlists_w_books.append(wishlist_w_books)
     
         return {'Wishlists': wishlists_w_books}
+    pass
 
 
 
@@ -39,8 +40,7 @@ def get_wishlist(id):
     """
     Query for a wishlist by id
     """
-
-    wishlist = Wishlist.query.get(int(id))
+    wishlist = Wishlist.query.get(id)
     if current_user.id != wishlist.user_id:
         return {"message": "You can only access your own wishlists"}, 403
     if not wishlist:
