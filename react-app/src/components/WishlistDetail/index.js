@@ -13,6 +13,7 @@ import LoadingSpinner from "../LoadingSpinner";
 import { useHistory, Redirect } from "react-router-dom";
 import { useModal } from "../../context/Modal";
 import DeleteWishlistModal from "../DeleteWishlistModal";
+import RemoveBookFromWishlistModal from "../RemoveBookFromWishlistModal";
 
 const WishlistDetail = () => {
   const { wishlistId } = useParams();
@@ -46,12 +47,6 @@ const WishlistDetail = () => {
   //--------------------->Icon functions
   const handleNavToBook = (bookId) => {
     history.push(`/books/${bookId}`);
-  };
-
-  const handleRemoveFromWishlist = (bookId) => {
-    dispatch(deleteBookFromWishlist(wishlistId, bookId)).then(() =>
-      dispatch(getWishlistById(wishlistId))
-    );
   };
 
   const handleAddToCart = (bookId) => {
@@ -108,7 +103,14 @@ const WishlistDetail = () => {
             ></i>
             <i
               className="fa-solid fa-minus "
-              onClick={() => handleRemoveFromWishlist(book.id)}
+              onClick={() =>
+                setModalContent(
+                  <RemoveBookFromWishlistModal
+                    wishlist={wishlistInfo}
+                    bookId={book.id}
+                  />
+                )
+              }
             ></i>
             <i className="fa-solid fa-cart-plus "></i>
           </span>
