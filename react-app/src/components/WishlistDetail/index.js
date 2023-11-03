@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import {
   clearCurrentWishlist,
   currentWishlist,
+  deleteBookFromWishlist,
   getWishlistById,
 } from "../../store/wishlists";
 import LoadingSpinner from "../LoadingSpinner";
@@ -22,6 +23,7 @@ const WishlistDetail = () => {
   const { setModalContent } = useModal();
   const user = useSelector((state) => state.session.user);
   const [isLoading, setIsLoading] = useState(true);
+  const [viewIcons, setViewIcons] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
@@ -31,6 +33,32 @@ const WishlistDetail = () => {
       dispatch(clearCurrentWishlist());
     };
   }, [dispatch, wishlistId]);
+
+  //---------------Show icons helper functions------------------
+  const handleMouseEnter = (idx) => {
+    setViewIcons(idx);
+  };
+
+  const handleMouseLeave = () => {
+    setViewIcons(null);
+  };
+
+  //--------------------->Icon functions
+  const handleNavToBook = (bookId) => {
+    history.push(`/books/${bookId}`);
+  };
+
+  const handleRemoveFromWishlist = (bookId) => {
+    dispatch(deleteBookFromWishlist(wishlistId, bookId)).then(() =>
+      dispatch(getWishlistById(wishlistId))
+    );
+  };
+
+  const handleAddToCart = (bookId) => {
+    //This function will both add the item to the cart and remove it from the
+    //wishlist.
+  };
+  //------------------------------------------------------------
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -57,8 +85,34 @@ const WishlistDetail = () => {
       >
         Delete Wishlist
       </span>
-      {wishlist.map((book) => (
-        <li key={book.id}>{book.title}</li>
+      {wishlist.map((book, idx) => (
+        <li
+          key={book.id}
+          className="wishlist-detail--li"
+          onMouseEnter={() => handleMouseEnter(idx)}
+          onMouseLeave={handleMouseLeave}
+        >
+          <img
+            className="wishlist-detail--img"
+            src={book.frontImage}
+            alt={book.title}
+          />
+          <span
+            className={`wishlist-detail--li-functions${
+              viewIcons === idx ? " visible" : " hidden"
+            }`}
+          >
+            <i
+              class="fa-solid fa-eye "
+              onClick={() => handleNavToBook(book.id)}
+            ></i>
+            <i
+              className="fa-solid fa-minus "
+              onClick={() => handleRemoveFromWishlist(book.id)}
+            ></i>
+            <i className="fa-solid fa-cart-plus "></i>
+          </span>
+        </li>
       ))}
     </div>
   );

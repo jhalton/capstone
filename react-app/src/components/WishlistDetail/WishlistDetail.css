@@ -7,3 +7,45 @@
 .wishlist-detail--delete-wishlist:hover {
   cursor: pointer;
 }
+
+.wishlist-detail--li {
+  position: relative;
+  list-style-type: none;
+  width: fit-content;
+}
+
+.wishlist-detail--img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wishlist-detail--li-functions.visible {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.wishlist-detail--li-functions {
+  transition: 1s ease-in-out;
+}
+
+.wishlist-detail--li-functions i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin: 2px;
+  background-color: #dbdada;
+}
+
+.wishlist-detail--li-functions i:hover {
+  cursor: pointer;
+}
+
+.wishlist-detail--li-functions.hidden {
+  display: none;
+}

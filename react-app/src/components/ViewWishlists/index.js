@@ -31,10 +31,19 @@ const ViewWishlists = () => {
       <h1>{user.firstName}'s Wishlists</h1>
       {wishlists.map((wishlist) => (
         <li
+          className="view-wishlists--tile"
           key={wishlist.id}
           onClick={() => history.push(`/wishlists/${wishlist.id}`)}
         >
           {wishlist.name}
+          {wishlist.Books.map((book) => (
+            <img
+              className="view-wishlists--tile-img"
+              key={book.id}
+              src={book.frontImage}
+              alt={book.title}
+            />
+          ))}
         </li>
       ))}
     </div>
