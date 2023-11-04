@@ -26,17 +26,14 @@ const EditWishlistTitleModal = ({ wishlist }) => {
 
   return (
     <div className="edit-wishlist-title-modal--container">
-      <h3>Edit Wishlist Title</h3>
       <form onSubmit={handleSubmit}>
-        <label>
-          Edit wishlist name
-          <input
-            id="name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
+        <label>Edit wishlist name</label>
+        <input
+          id="name"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         {errors.name && <p className="errors">{errors.name}</p>}
         <div className="edit-wishlist-modal--buttons">
           <button type="submit">Save Changes</button>
