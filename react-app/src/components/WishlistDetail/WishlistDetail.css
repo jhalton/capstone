@@ -1,5 +1,8 @@
 .wishlist-detail--container {
   display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .wishlist-detail--back-link:hover {
@@ -12,15 +15,26 @@
   cursor: pointer;
 }
 
+.wishlist-detail--book-tiles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .wishlist-detail--li {
+  display: flex;
+  justify-content: center;
   position: relative;
   list-style-type: none;
   width: fit-content;
+  margin: 10px;
 }
 
 .wishlist-detail--img {
   max-width: 100%;
   height: auto;
+  max-height: 500px;
 }
 
 .wishlist-detail--li-functions.visible {
@@ -32,7 +46,7 @@
 }
 
 .wishlist-detail--li-functions {
-  transition: 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .wishlist-detail--li-functions i {

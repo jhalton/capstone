@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 import {
   clearCurrentWishlist,
   currentWishlist,
-  deleteBookFromWishlist,
   getWishlistById,
 } from "../../store/wishlists";
 import LoadingSpinner from "../LoadingSpinner";
@@ -14,6 +13,7 @@ import { useHistory, Redirect } from "react-router-dom";
 import { useModal } from "../../context/Modal";
 import DeleteWishlistModal from "../DeleteWishlistModal";
 import RemoveBookFromWishlistModal from "../RemoveBookFromWishlistModal";
+import QuickviewBookModal from "../QuickviewBookModal";
 
 const WishlistDetail = () => {
   const { wishlistId } = useParams();
@@ -45,9 +45,6 @@ const WishlistDetail = () => {
   };
 
   //--------------------->Icon functions
-  const handleNavToBook = (bookId) => {
-    history.push(`/books/${bookId}`);
-  };
 
   const handleAddToCart = (bookId) => {
     //This function will both add the item to the cart and remove it from the
@@ -80,42 +77,46 @@ const WishlistDetail = () => {
       >
         Delete Wishlist
       </span>
-      {wishlist.map((book, idx) => (
-        <li
-          key={book.id}
-          className="wishlist-detail--li"
-          onMouseEnter={() => handleMouseEnter(idx)}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            className="wishlist-detail--img"
-            src={book.frontImage}
-            alt={book.title}
-          />
-          <span
-            className={`wishlist-detail--li-functions${
-              viewIcons === idx ? " visible" : " hidden"
-            }`}
+      <div className="wishlist-detail--book-tiles">
+        {wishlist.map((book, idx) => (
+          <li
+            key={book.id}
+            className="wishlist-detail--li"
+            onMouseEnter={() => handleMouseEnter(idx)}
+            onMouseLeave={handleMouseLeave}
           >
-            <i
-              class="fa-solid fa-eye "
-              onClick={() => handleNavToBook(book.id)}
-            ></i>
-            <i
-              className="fa-solid fa-minus "
-              onClick={() =>
-                setModalContent(
-                  <RemoveBookFromWishlistModal
-                    wishlist={wishlistInfo}
-                    bookId={book.id}
-                  />
-                )
-              }
-            ></i>
-            <i className="fa-solid fa-cart-plus "></i>
-          </span>
-        </li>
-      ))}
+            <img
+              className="wishlist-detail--img"
+              src={book.frontImage}
+              alt={book.title}
+            />
+            <span
+              className={`wishlist-detail--li-functions${
+                viewIcons === idx ? " visible" : " hidden"
+              }`}
+            >
+              <i
+                class="fa-solid fa-eye "
+                onClick={() =>
+                  setModalContent(<QuickviewBookModal book={book} />)
+                }
+              ></i>
+              <i
+                className="fa-solid fa-minus "
+                onClick={() =>
+                  setModalContent(
+                    <RemoveBookFromWishlistModal
+                      wishlist={wishlistInfo}
+                      bookId={book.id}
+                    />
+                  )
+                }
+              ></i>
+              <i className="fa-solid fa-cart-plus "></i>
+            </span>
+          </li>
+        ))}
+      </div>
     </div>
   );
 };
