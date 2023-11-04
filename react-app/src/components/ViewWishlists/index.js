@@ -29,23 +29,27 @@ const ViewWishlists = () => {
   return (
     <div className="view-wishlists--container">
       <h1>{user.firstName}'s Wishlists</h1>
-      {wishlists.map((wishlist) => (
-        <li
-          className="view-wishlists--tile"
-          key={wishlist.id}
-          onClick={() => history.push(`/wishlists/${wishlist.id}`)}
-        >
-          {wishlist.name}
-          {wishlist.Books.map((book) => (
-            <img
-              className="view-wishlists--tile-img"
-              key={book.id}
-              src={book.frontImage}
-              alt={book.title}
-            />
-          ))}
-        </li>
-      ))}
+      <div className="view-wishlists--book-tiles">
+        {wishlists?.map((wishlist) => (
+          <li
+            className="view-wishlists--tile"
+            key={wishlist.id}
+            onClick={() => history.push(`/wishlists/${wishlist.id}`)}
+          >
+            {wishlist.name}
+            <div className="view-wishlists--books">
+              {wishlist?.Books?.slice(0, 4).map((book) => (
+                <img
+                  className="view-wishlists--tile-img"
+                  key={book.id}
+                  src={book.frontImage}
+                  alt={book.title}
+                />
+              ))}
+            </div>
+          </li>
+        ))}
+      </div>
     </div>
   );
 };

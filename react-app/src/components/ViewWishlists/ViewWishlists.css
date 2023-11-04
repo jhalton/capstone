@@ -1,0 +1,37 @@
+.view-wishlists--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.view-wishlists--book-tiles {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.view-wishlists--book-tiles:hover {
+  cursor: pointer;
+}
+
+.view-wishlists--tile {
+  width: 100%;
+}
+
+.view-wishlists--books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.view-wishlists--container li {
+  list-style-type: none;
+  border-bottom: solid 1px #000000;
+}
+
+.view-wishlists--tile-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+}

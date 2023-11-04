@@ -1,7 +1,7 @@
 import "./CreateWishlistModal.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createWishlist } from "../../store/wishlists";
+import { createWishlist, getAllWishlists } from "../../store/wishlists";
 import { useModal } from "../../context/Modal";
 
 const CreateWishlistModal = () => {
@@ -22,7 +22,7 @@ const CreateWishlistModal = () => {
     if (data?.errors) {
       setErrors(data?.errors);
     } else {
-      closeModal();
+      dispatch(getAllWishlists()).then(closeModal());
     }
   };
 

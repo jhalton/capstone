@@ -14,6 +14,7 @@ import { useModal } from "../../context/Modal";
 import DeleteWishlistModal from "../DeleteWishlistModal";
 import RemoveBookFromWishlistModal from "../RemoveBookFromWishlistModal";
 import QuickviewBookModal from "../QuickviewBookModal";
+import EditWishlistTitleModal from "../EditWishlistTitleModal";
 
 const WishlistDetail = () => {
   const { wishlistId } = useParams();
@@ -25,6 +26,7 @@ const WishlistDetail = () => {
   const user = useSelector((state) => state.session.user);
   const [isLoading, setIsLoading] = useState(true);
   const [viewIcons, setViewIcons] = useState(null);
+  const [viewEdit, setViewEdit] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -39,9 +41,16 @@ const WishlistDetail = () => {
   const handleMouseEnter = (idx) => {
     setViewIcons(idx);
   };
-
   const handleMouseLeave = () => {
     setViewIcons(null);
+  };
+
+  const showEdit = () => {
+    setViewEdit(true);
+  };
+
+  const hideEdit = () => {
+    setViewEdit(false);
   };
 
   //--------------------->Icon functions
@@ -68,7 +77,21 @@ const WishlistDetail = () => {
       >
         ← Back to Wishlists
       </span>
-      <h1>{wishlistInfo.name}</h1>
+      <div
+        onMouseEnter={showEdit}
+        onMouseLeave={hideEdit}
+        className="wishlist-detail--header-and-edit"
+      >
+        <h1>{wishlistInfo.name}</h1>
+        <i
+          className={`fa-regular fa-pen-to-square fa-sm wishlist-title-edit${
+            viewEdit ? " visible" : " hidden"
+          }`}
+          onClick={() =>
+            setModalContent(<EditWishlistTitleModal wishlist={wishlistInfo} />)
+          }
+        ></i>
+      </div>
       <span
         onClick={() =>
           setModalContent(<DeleteWishlistModal wishlist={wishlistInfo} />)
