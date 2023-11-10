@@ -1,9 +1,10 @@
 from flask import Blueprint, request
 from flask_login import login_required
 from .decorators import admin_required
-from app.models import Book, Collection, Review, db
+from app.models import Book, db
 from app.forms import CreateBookForm
 from .auth_routes import validation_errors_to_error_messages
+from app.api.aws import upload_file_to_s3, get_unique_filename, remove_file_from_s3, check_if_not_aws_file
 
 book_routes = Blueprint('books', __name__)
 
@@ -42,6 +43,17 @@ def create_book():
     # form manually to validate_on_submit can be used
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
+        if form.data['front_image']:
+            image = form.data['front_image']
+            image.filename = get_unique_filename(image.filename)
+            upload = upload_file_to_s3(image)
+            print("BOOK_ROUTES CREATE BOOK", upload)
+            if "url" not in upload:
+                return validation_errors_to_error_messages(upload), 400
+            url = upload['url']
+        else:
+            url = None
+
         book = Book (
             title = form.data['title'],
             author_first_name = form.data['author_first_name'],
@@ -50,7 +62,7 @@ def create_book():
             format = form.data['format'],
             isbn = form.data['isbn'],
             price = form.data['price'],
-            front_image = form.data['front_image'],
+            front_image = url,
             back_image = form.data['back_image'],
             publisher = form.data['publisher'],
             publication_date = form.data['publication_date'],
@@ -108,6 +120,8 @@ def delete_book(id):
     book = Book.query.get(int(id))
     if not book:
         return {'errors': "Book couldn't be found"}, 404
+    if book.front_image:
+        remove_file_from_s3(book.front_image)
     db.session.delete(book)
     db.session.commit()
     return {'message': 'Your book has been successfully deleted'}

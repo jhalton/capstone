@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { createBook } from "../../store/books";
 import { genreOptions, formatOptions } from "../../Resources/selectOptions";
 import { useHistory } from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner";
 
 const CreateBook = () => {
   const dispatch = useDispatch();
@@ -22,28 +23,33 @@ const CreateBook = () => {
   const [publication_date, setPublicationDate] = useState("");
   const [on_hand, setOnHand] = useState(0);
   const [description, setDescription] = useState("");
+  const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(false);
 
-    const book = {
-      title,
-      author_first_name,
-      author_last_name,
-      genre,
-      format,
-      isbn,
-      price,
-      front_image,
-      back_image,
-      publisher,
-      publication_date,
-      on_hand,
-      description,
-    };
+    const bookData = new FormData();
+    bookData.append("title", title);
+    bookData.append("author_first_name", author_first_name);
+    bookData.append("author_last_name", author_last_name);
+    bookData.append("genre", genre);
+    bookData.append("format", format);
+    bookData.append("isbn", isbn);
+    bookData.append("price", price);
+    bookData.append("front_image", front_image);
+    bookData.append("back_image", back_image);
+    bookData.append("publisher", publisher);
+    bookData.append("publication_date", publication_date);
+    bookData.append("on_hand", on_hand);
+    bookData.append("description", description);
 
-    const data = await dispatch(createBook(book));
+    // if (!front_image) return setErrors({ front_image: "Image required" });
+    setLoading(true);
+
+    const data = await dispatch(createBook(bookData));
+    setLoading(false);
     if (data?.errors) {
       setErrors(data?.errors);
     } else {
@@ -51,10 +57,12 @@ const CreateBook = () => {
     }
   };
 
+  if (loading) return <LoadingSpinner />;
+
   return (
     <div className="create-book--container">
       <h1>Create New Book</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
         <label htmlFor="title" className="create-book--form-label">
           Title
           <input
@@ -143,21 +151,23 @@ const CreateBook = () => {
           Front cover image
           <input
             id="frontImage"
-            type="text"
+            type="file"
+            accept="image/*"
             // placeholder="Front cover image"
-            value={front_image}
-            onChange={(e) => setFrontImage(e.target.value)}
+            // value={front_image}
+            onChange={(e) => setFrontImage(e.target.files[0])}
           />
         </label>
         {errors.front_image && <p className="errors">{errors.front_image}</p>}
         <label htmlFor="backImage" className="create-book--form-label">
-          Back cover image
+          Back cover image (optional)
           <input
             id="backImage"
-            type="text"
+            type="file"
+            accept="image/*"
             // placeholder="Back cover image (optional)"
             value={back_image}
-            onChange={(e) => setBackImage(e.target.value)}
+            onChange={(e) => setBackImage(e.target.files[0])}
           />
         </label>
         {errors.back_image && <p className="errors">{errors.back_image}</p>}

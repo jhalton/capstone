@@ -1,6 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, IntegerField
 from wtforms.validators import DataRequired, ValidationError, Optional
+from flask_wtf.file import FileField, FileAllowed, FileRequired
+from app.api.aws import ALLOWED_EXTENSIONS
 from app.models import Book
 
 
@@ -55,8 +57,8 @@ class CreateBookForm(FlaskForm):
     format = StringField("Format")
     isbn = StringField("ISBN", validators=[DataRequired("ISBN is required"), book_exists])
     price = FloatField("Price", validators=[DataRequired("Price is required"), min_price])
-    front_image = StringField("Front cover", validators=[DataRequired("Cover image is required")])
-    back_image = StringField("Back cover")
+    front_image = FileField("Front cover", validators=[FileRequired("Cover image is required"), FileAllowed(list(ALLOWED_EXTENSIONS))])
+    back_image = FileField("Back cover")
     publisher = StringField("Publisher")
     publication_date = StringField("Publication date")
     on_hand = IntegerField("On hand", validators=[DataRequired("On hand is required"), min_on_hand])
