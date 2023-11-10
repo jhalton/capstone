@@ -89,7 +89,18 @@ def edit_book(id):
     if not book:
         return {'errors': "Book couldn't be found"}, 404
     
+
+    
     if form.validate_on_submit():
+        if form.data['front_image']:
+            image = form.data['front_image']
+            image.filename = get_unique_filename(image.filename)
+            upload = upload_file_to_s3(image)
+            print(upload)
+            if "url" not in upload:
+                return validation_errors_to_error_messages(upload), 400
+            url = upload["url"]
+            book.front_image = url
         book.title = form.data['title']
         book.author_first_name = form.data['author_first_name']
         book.author_last_name = form.data['author_last_name']
@@ -97,7 +108,6 @@ def edit_book(id):
         book.format = form.data['format']
         book.isbn = form.data['isbn']
         book.price = form.data['price']
-        book.front_image = form.data['front_image']
         book.back_image = form.data['back_image']
         book.publisher = form.data['publisher']
         book.publication_date = form.data['publication_date']

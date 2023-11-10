@@ -29,23 +29,23 @@ const EditBookModal = ({ book }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const changes = {
-      title,
-      author_first_name,
-      author_last_name,
-      genre,
-      format,
-      isbn,
-      price,
-      front_image,
-      back_image,
-      publisher,
-      publication_date,
-      on_hand,
-      description,
-    };
+    const bookData = new FormData();
+    bookData.append("title", title);
+    bookData.append("author_first_name", author_first_name);
+    bookData.append("author_last_name", author_last_name);
+    bookData.append("genre", genre);
+    bookData.append("format", format);
+    bookData.append("isbn", isbn);
+    bookData.append("price", price);
+    bookData.append("front_image", front_image);
+    bookData.append("back_image", back_image);
+    bookData.append("publisher", publisher);
+    bookData.append("publication_date", publication_date);
+    bookData.append("on_hand", on_hand);
+    bookData.append("description", description);
 
-    const data = await dispatch(editBook(book.id, changes));
+    const data = await dispatch(editBook(book.id, bookData));
+
     if (data?.errors) {
       setErrors(data?.errors);
     } else {
@@ -61,7 +61,7 @@ const EditBookModal = ({ book }) => {
   return (
     <div className="edit-book--container">
       <h1 className="edit-book--header">Edit Book Info</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
         <label htmlFor="title" className="edit-book--form-label">
           Title
           <input
@@ -147,9 +147,10 @@ const EditBookModal = ({ book }) => {
           Front cover image
           <input
             id="frontImage"
-            type="text"
+            type="file"
             value={front_image}
-            onChange={(e) => setFrontImage(e.target.value)}
+            accept="image/*"
+            onChange={(e) => setFrontImage(e.target.files[0])}
           />
         </label>
 

@@ -104,8 +104,8 @@ export const createBook = (book) => async (dispatch) => {
 export const editBook = (bookId, book) => async (dispatch) => {
   const response = await fetch(`/api/books/${bookId}/edit`, {
     method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(book),
+    // headers: { "Content-Type": "application/json" },
+    body: book,
   });
 
   if (response.ok) {
