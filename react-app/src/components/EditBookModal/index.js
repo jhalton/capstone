@@ -18,7 +18,10 @@ const EditBookModal = ({ book }) => {
   const [format, setFormat] = useState(book.format);
   const [isbn, setIsbn] = useState(book.isbn);
   const [price, setPrice] = useState(book.price);
+
   const [front_image, setFrontImage] = useState(book.frontImage);
+  const [updateFrontImage, setUpdateFrontImage] = useState(false);
+
   const [back_image, setBackImage] = useState(book.backImage);
   const [publisher, setPublisher] = useState(book.publisher);
   const [publication_date, setPublicationDate] = useState(book.publicationDate);
@@ -37,7 +40,12 @@ const EditBookModal = ({ book }) => {
     bookData.append("format", format);
     bookData.append("isbn", isbn);
     bookData.append("price", price);
-    bookData.append("front_image", front_image);
+
+    //Conditionally includes or excludes front_image from update
+    if (updateFrontImage && front_image) {
+      bookData.append("front_image", front_image);
+    }
+
     bookData.append("back_image", back_image);
     bookData.append("publisher", publisher);
     bookData.append("publication_date", publication_date);
@@ -56,6 +64,11 @@ const EditBookModal = ({ book }) => {
   const handleCancel = (e) => {
     e.preventDefault();
     closeModal();
+  };
+
+  const handleFrontImageChange = (file) => {
+    setFrontImage(file);
+    setUpdateFrontImage(true);
   };
 
   return (
@@ -148,9 +161,9 @@ const EditBookModal = ({ book }) => {
           <input
             id="frontImage"
             type="file"
-            value={front_image}
+            // value={front_image}
             accept="image/*"
-            onChange={(e) => setFrontImage(e.target.files[0])}
+            onChange={(e) => handleFrontImageChange(e.target.files[0])}
           />
         </label>
 

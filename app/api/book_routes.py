@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from flask_login import login_required
 from .decorators import admin_required
 from app.models import Book, db
-from app.forms import CreateBookForm
+from app.forms import CreateBookForm, UpdateBookForm
 from .auth_routes import validation_errors_to_error_messages
 from app.api.aws import upload_file_to_s3, get_unique_filename, remove_file_from_s3, check_if_not_aws_file
 
@@ -81,7 +81,7 @@ def edit_book(id):
     """
     Updates a book
     """
-    form = CreateBookForm()
+    form = UpdateBookForm()
     # Get the csrf_token from the request cookie and put it into the
     # form manually to validate_on_submit can be used
     form['csrf_token'].data = request.cookies['csrf_token']
@@ -92,11 +92,12 @@ def edit_book(id):
 
     
     if form.validate_on_submit():
-        if form.data['front_image']:
+        # if form.data['front_image']:
+        if 'front_image' in request.files and form.data['front_image']:
             image = form.data['front_image']
             image.filename = get_unique_filename(image.filename)
             upload = upload_file_to_s3(image)
-            print(upload)
+            print('BOOK_ROUTES UPDATE BOOK', upload)
             if "url" not in upload:
                 return validation_errors_to_error_messages(upload), 400
             url = upload["url"]

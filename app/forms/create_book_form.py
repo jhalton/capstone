@@ -63,3 +63,7 @@ class CreateBookForm(FlaskForm):
     publication_date = StringField("Publication date")
     on_hand = IntegerField("On hand", validators=[DataRequired("On hand is required"), min_on_hand])
     description = StringField("Overview")
+
+#A 'like' form that allows for edits without requiring a file upload for images
+class UpdateBookForm(CreateBookForm):
+    front_image = FileField('Front cover', validators=[FileAllowed(list(ALLOWED_EXTENSIONS))])
