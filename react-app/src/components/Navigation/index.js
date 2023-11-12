@@ -10,12 +10,14 @@ import { comingSoon } from "../../Resources/helperFunctions";
 import WishlistDropdown from "./WishlistDropdown.js";
 import FictionDropdown from "./FictionDropdown.js";
 import NonfictionDropdown from "./NonfictionDropdown.js";
+import BooksDropdown from "./BooksDropdown.js";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const [showFiction, setShowFiction] = useState(false);
   const [showNonfiction, setShowNonfiction] = useState(false);
+  const [showBooks, setShowBooks] = useState(false);
 
   useEffect(() => {
     dispatch(getAllBooks());
@@ -53,10 +55,16 @@ function Navigation({ isLoaded }) {
       <div className="main-navigation--clickable-nav">
         <span
           className="main-navigation--clickable-nav-category"
-          onClick={comingSoon}
+          onMouseEnter={() => setShowBooks(true)}
+          onMouseLeave={() => setShowBooks(false)}
         >
           {" "}
           Books{" "}
+          {showBooks ? (
+            <span>
+              <BooksDropdown />
+            </span>
+          ) : null}
         </span>
         {"  ||  "}
         <span

@@ -4,7 +4,7 @@
   margin-top: 30px;
   display: inline-block;
   position: relative;
-  background: #0b5f38;
+  background: #113b58;
   border-radius: 15% 15% 35% 35%;
 }
 .loading-spinner::after {
@@ -13,7 +13,7 @@
   position: absolute;
   left: 45px;
   top: 8px;
-  border: 4px solid #0b5f38;
+  border: 4px solid #113b58;
   width: 16px;
   height: 20px;
   border-radius: 0 4px 4px 0;
@@ -23,7 +23,7 @@
   position: absolute;
   width: 1px;
   height: 10px;
-  color: #0b5f38;
+  color: #113b58;
   top: -15px;
   left: 11px;
   box-sizing: border-box;
@@ -32,16 +32,16 @@
 
 @keyframes animloader {
   0% {
-    box-shadow: 2px 0px rgba(255, 255, 255, 0),
-      12px 0px rgba(255, 255, 255, 0.3), 20px 0px rgba(255, 255, 255, 0);
+    box-shadow: 2px 0px rgba(7, 7, 7, 0), 12px 0px rgba(7, 7, 7, 0.3),
+      20px 0px rgba(7, 7, 7, 0);
   }
   50% {
-    box-shadow: 2px -5px rgba(255, 255, 255, 0.5),
-      12px -3px rgba(255, 255, 255, 0.5), 20px -2px rgba(255, 255, 255, 0.6);
+    box-shadow: 2px -5px rgba(7, 7, 7, 0.5), 12px -3px rgba(7, 7, 7, 0.5),
+      20px -2px rgba(7, 7, 7, 0.6);
   }
   100% {
-    box-shadow: 2px -8px rgba(255, 255, 255, 0),
-      12px -5px rgba(255, 255, 255, 0), 20px -5px rgba(255, 255, 255, 0);
+    box-shadow: 2px -8px rgba(7, 7, 7, 0), 12px -5px rgba(7, 7, 7, 0),
+      20px -5px rgba(7, 7, 7, 0);
   }
 }
 
