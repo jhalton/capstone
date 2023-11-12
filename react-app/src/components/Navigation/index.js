@@ -11,6 +11,11 @@ import WishlistDropdown from "./WishlistDropdown.js";
 import FictionDropdown from "./FictionDropdown.js";
 import NonfictionDropdown from "./NonfictionDropdown.js";
 import BooksDropdown from "./BooksDropdown.js";
+import EBookDropdown from "./EBookDropdown.js";
+import AudiobookDropdown from "./AudiobookDropdown.js";
+import TeenYaDropdown from "./TeenYaDropdown.js";
+import KidsDropdown from "./KidsDropdown.js";
+import MusicMoviesDropdown from "./MusicMoviesDropdown.js";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -18,14 +23,15 @@ function Navigation({ isLoaded }) {
   const [showFiction, setShowFiction] = useState(false);
   const [showNonfiction, setShowNonfiction] = useState(false);
   const [showBooks, setShowBooks] = useState(false);
+  const [showEBook, setShowEBook] = useState(false);
+  const [showAudiobooks, setShowAudiobooks] = useState(false);
+  const [showYoungAdult, setShowYoungAdult] = useState(false);
+  const [showKids, setShowKids] = useState(false);
+  const [showMusicMovies, setShowMusicMovies] = useState(false);
 
   useEffect(() => {
     dispatch(getAllBooks());
   }, [dispatch]);
-
-  //----------------Show dropdowns helper functions--------------------
-
-  //-------------------------------------------------------------------
 
   return (
     <div className="navigation--main">
@@ -97,42 +103,72 @@ function Navigation({ isLoaded }) {
         {"  ||  "}
         <span
           className="main-navigation--clickable-nav-category"
-          onClick={comingSoon}
+          onMouseEnter={() => setShowEBook(true)}
+          onMouseLeave={() => setShowEBook(false)}
         >
           {" "}
           eBooks{" "}
+          {showEBook ? (
+            <span>
+              <EBookDropdown />
+            </span>
+          ) : null}
         </span>
         {"  ||  "}
         <span
           className="main-navigation--clickable-nav-category"
-          onClick={comingSoon}
+          onMouseEnter={() => setShowAudiobooks(true)}
+          onMouseLeave={() => setShowAudiobooks(false)}
         >
           {" "}
           Audiobooks{" "}
+          {showAudiobooks ? (
+            <span>
+              <AudiobookDropdown />
+            </span>
+          ) : null}
         </span>
         {"  ||  "}
         <span
           className="main-navigation--clickable-nav-category"
-          onClick={comingSoon}
+          onMouseEnter={() => setShowYoungAdult(true)}
+          onMouseLeave={() => setShowYoungAdult(false)}
         >
           {" "}
           Teens & YA{" "}
+          {showYoungAdult ? (
+            <span>
+              <TeenYaDropdown />
+            </span>
+          ) : null}
         </span>
         {"  ||  "}
         <span
           className="main-navigation--clickable-nav-category"
-          onClick={comingSoon}
+          onMouseEnter={() => setShowKids(true)}
+          onMouseLeave={() => setShowKids(false)}
         >
           {" "}
           Kids{" "}
+          {showKids ? (
+            <span>
+              <KidsDropdown />
+            </span>
+          ) : null}
         </span>
         {"  ||  "}
         <span
           className="main-navigation--clickable-nav-category"
-          onClick={comingSoon}
+          onMouseEnter={() => setShowMusicMovies(true)}
+          onMouseLeave={() => setShowMusicMovies(false)}
         >
           {" "}
           Music & Movies{" "}
+          {showMusicMovies ? (
+            <span>
+              <MusicMoviesDropdown />
+            </span>
+          ) : null}
         </span>
       </div>
     </div>

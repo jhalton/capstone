@@ -3,8 +3,8 @@ import React from "react";
 
 const KidsDropdown = () => {
   return (
-    <div>
-      <h1>Kids Dropdown</h1>
+    <div className="category-dropdown--container">
+      <span className="category-dropdown--empty">No Kids</span>
     </div>
   );
 };

@@ -3,8 +3,8 @@ import React from "react";
 
 const EBookDropdown = () => {
   return (
-    <div>
-      <h1>eBook Dropdown</h1>
+    <div className="category-dropdown--container">
+      <span className="category-dropdown--empty">No eBooks</span>
     </div>
   );
 };

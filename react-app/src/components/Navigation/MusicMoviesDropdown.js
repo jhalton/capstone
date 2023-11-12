@@ -3,8 +3,8 @@ import React from "react";
 
 const MusicMoviesDropdown = () => {
   return (
-    <div>
-      <h1>Music & Movies Dropdown</h1>
+    <div className="category-dropdown--container">
+      <span className="category-dropdown--empty">No Music & Movies</span>
     </div>
   );
 };
