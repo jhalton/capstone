@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import ProfileButton from "./ProfileButton";
@@ -8,14 +8,22 @@ import NavSearchBar from "../NavSearchBar";
 import { getAllBooks } from "../../store/books";
 import { comingSoon } from "../../Resources/helperFunctions";
 import WishlistDropdown from "./WishlistDropdown.js";
+import FictionDropdown from "./FictionDropdown.js";
+import NonfictionDropdown from "./NonfictionDropdown.js";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
+  const [showFiction, setShowFiction] = useState(false);
+  const [showNonfiction, setShowNonfiction] = useState(false);
 
   useEffect(() => {
     dispatch(getAllBooks());
   }, [dispatch]);
+
+  //----------------Show dropdowns helper functions--------------------
+
+  //-------------------------------------------------------------------
 
   return (
     <div className="navigation--main">
@@ -43,21 +51,81 @@ function Navigation({ isLoaded }) {
         </div>
       </div>
       <div className="main-navigation--clickable-nav">
-        <span onClick={comingSoon}> Books </span>
+        <span
+          className="main-navigation--clickable-nav-category"
+          onClick={comingSoon}
+        >
+          {" "}
+          Books{" "}
+        </span>
         {"  ||  "}
-        <span onClick={comingSoon}> Fiction </span>
+        <span
+          className="main-navigation--clickable-nav-category"
+          onMouseEnter={() => setShowFiction(true)}
+          onMouseLeave={() => setShowFiction(false)}
+        >
+          {" "}
+          Fiction{" "}
+          {showFiction ? (
+            <span>
+              <FictionDropdown />
+            </span>
+          ) : null}
+        </span>
         {"  ||  "}
-        <span onClick={comingSoon}> Nonfiction </span>
+        <span
+          className="main-navigation--clickable-nav-category"
+          onMouseEnter={() => setShowNonfiction(true)}
+          onMouseLeave={() => setShowNonfiction(false)}
+        >
+          {" "}
+          Nonfiction{" "}
+          {showNonfiction ? (
+            <span>
+              <NonfictionDropdown />
+            </span>
+          ) : null}
+        </span>
         {"  ||  "}
-        <span onClick={comingSoon}> eBooks </span>
+        <span
+          className="main-navigation--clickable-nav-category"
+          onClick={comingSoon}
+        >
+          {" "}
+          eBooks{" "}
+        </span>
         {"  ||  "}
-        <span onClick={comingSoon}> Audiobooks </span>
+        <span
+          className="main-navigation--clickable-nav-category"
+          onClick={comingSoon}
+        >
+          {" "}
+          Audiobooks{" "}
+        </span>
         {"  ||  "}
-        <span onClick={comingSoon}> Teens & YA </span>
+        <span
+          className="main-navigation--clickable-nav-category"
+          onClick={comingSoon}
+        >
+          {" "}
+          Teens & YA{" "}
+        </span>
         {"  ||  "}
-        <span onClick={comingSoon}> Kids </span>
+        <span
+          className="main-navigation--clickable-nav-category"
+          onClick={comingSoon}
+        >
+          {" "}
+          Kids{" "}
+        </span>
         {"  ||  "}
-        <span onClick={comingSoon}> Music & Movies </span>
+        <span
+          className="main-navigation--clickable-nav-category"
+          onClick={comingSoon}
+        >
+          {" "}
+          Music & Movies{" "}
+        </span>
       </div>
     </div>
   );

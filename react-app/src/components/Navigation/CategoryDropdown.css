@@ -1,0 +1,19 @@
+.category-dropdown--container {
+  position: absolute;
+  z-index: 1;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 0);
+  width: fit-content;
+  text-align: center;
+}
+
+.category-dropdown--genre:hover {
+  color: #113b58;
+}

@@ -171,6 +171,10 @@ a:visited {
   color: #113b58bd;
 }
 
+.main-navigation--clickable-nav-category {
+  position: relative;
+}
+
 /* -------------------Wishlist Dropdown---------------------------- */
 
 .wishlist-dropdown--icon {

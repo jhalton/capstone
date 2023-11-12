@@ -3,7 +3,7 @@ import React from "react";
 
 const NonfictionDropdown = () => {
   return (
-    <div>
+    <div className="category-dropdown--container">
       <h1>Nonfiction Dropdown</h1>
     </div>
   );

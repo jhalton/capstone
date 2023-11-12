@@ -13,9 +13,9 @@ green:
 344e41 (used for featured items carousel on landing) \*\*swapped for blue
 
 blue:
-5c809e (logo)
-113b58 (carousel item)
-6f99bb (genre icon: hover)
+5c809e (logo, medium blue)
+113b58 (carousel item, dark blue)
+6f99bb (genre icon: hover, light blue)
 
 purple:
 
