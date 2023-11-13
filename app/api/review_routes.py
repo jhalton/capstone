@@ -1,6 +1,7 @@
-from flask import Blueprint
+from flask import Blueprint, request
 from flask_login import login_required
-from app.models import Review
+from app.models import Review, Book
+from app.forms import CreateReviewForm
 
 review_routes = Blueprint('reviews', __name__)
 
@@ -15,3 +16,21 @@ def review_by_id(id):
         return review.to_dict()
     else: 
         {'message': "Review couldn't be found"}, 404
+
+
+@review_routes.route('/<int:id>/new', methods=["POST"])
+@login_required
+def create_book_review(id):
+    """
+    Create a review for a book
+    """
+    form = CreateReviewForm()
+    # Get the csrf_token from the request cookie and put it into the
+    # form manually to validate_on_submit can be used
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    book = Book.query.get(int(id))
+    if not book:
+        return {'errors': "Book couldn't be found"}, 404
+    
+    pass

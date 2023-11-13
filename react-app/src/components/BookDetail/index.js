@@ -11,6 +11,7 @@ import { useModal } from "../../context/Modal";
 import { comingSoon } from "../../Resources/helperFunctions";
 import AddBookToWishlistModal from "../AddBookToWishlist";
 import { getAllWishlists } from "../../store/wishlists";
+import ViewReviews from "../ViewReviews";
 
 const BookDetail = () => {
   const dispatch = useDispatch();
@@ -39,106 +40,114 @@ const BookDetail = () => {
   const floatPrice = book.price !== undefined ? book.price.toFixed(2) : "";
 
   return (
-    <div className="book-detail--container">
-      <div className="book-detail--title">
-        <h1>{book.title}</h1>
-        {user?.accountType === "Admin" ? (
-          <div>
-            <OpenModalButton
-              modalComponent={<EditBookModal book={book} />}
-              buttonText={
-                <i
-                  className="fa-regular fa-pen-to-square admin-button"
-                  style={{ color: "#000000" }}
-                ></i>
-              }
-            />
-            <OpenModalButton
-              modalComponent={<DeleteBookModal bookId={bookId} />}
-              buttonText={
-                <i
-                  className="fa-regular fa-trash-can admin-button"
-                  style={{ color: "#000000" }}
-                ></i>
-              }
-              className="admin-button"
-            />
+    <div>
+      <div className="book-detail--container">
+        <div className="book-detail--title">
+          <h1>{book.title}</h1>
+          {user?.accountType === "Admin" ? (
+            <div>
+              <OpenModalButton
+                modalComponent={<EditBookModal book={book} />}
+                buttonText={
+                  <i
+                    className="fa-regular fa-pen-to-square admin-button"
+                    style={{ color: "#000000" }}
+                  ></i>
+                }
+              />
+              <OpenModalButton
+                modalComponent={<DeleteBookModal bookId={bookId} />}
+                buttonText={
+                  <i
+                    className="fa-regular fa-trash-can admin-button"
+                    style={{ color: "#000000" }}
+                  ></i>
+                }
+                className="admin-button"
+              />
+            </div>
+          ) : null}
+        </div>
+        <img
+          className="book-detail--img"
+          src={book.frontImage}
+          alt={book.title}
+        />
+        <p className="book-detail--author">
+          by {book.authorFirstName} {book.authorLastName}
+        </p>
+
+        <div className="book-detail--stars">
+          <div
+            className={
+              rating >= 1
+                ? "book-detail--rating-filled"
+                : "book-detail--rating-empty"
+            }
+          >
+            <i className="fa-solid fa-star "></i>
           </div>
-        ) : null}
-      </div>
-      <img
-        className="book-detail--img"
-        src={book.frontImage}
-        alt={book.title}
-      />
-      <p className="book-detail--author">
-        by {book.authorFirstName} {book.authorLastName}
-      </p>
+          <div
+            className={
+              rating >= 1.7
+                ? "book-detail--rating-filled"
+                : "book-detail--rating-empty"
+            }
+          >
+            <i className="fa-solid fa-star "></i>
+          </div>
+          <div
+            className={
+              rating >= 2.7
+                ? "book-detail--rating-filled"
+                : "book-detail--rating-empty"
+            }
+          >
+            <i className="fa-solid fa-star "></i>
+          </div>
+          <div
+            className={
+              rating >= 3.7
+                ? "book-detail--rating-filled"
+                : "book-detail--rating-empty"
+            }
+          >
+            <i className="fa-solid fa-star "></i>
+          </div>
+          <div
+            className={
+              rating >= 4.7
+                ? "book-detail--rating-filled"
+                : "book-detail--rating-empty"
+            }
+          >
+            <i className="fa-solid fa-star "></i>
+          </div>
+          <span className="book-detail--rating">{rating}</span>
+        </div>
 
-      <div className="book-detail--stars">
-        <div
-          className={
-            rating >= 1
-              ? "book-detail--rating-filled"
-              : "book-detail--rating-empty"
-          }
+        <span className="book-detail--numRatings">( {book.numRatings} )</span>
+        <span className="book-detail-write-review-text" onClick={comingSoon}>
+          Write a review
+        </span>
+        <h2 className="book-detail--price">${floatPrice}</h2>
+        <span className="book-detail--format">{book.format}</span>
+        <button className="book-detail--cart-button" onClick={comingSoon}>
+          Add to Cart
+        </button>
+        <button
+          className="book-detail--wishlist-button"
+          onClick={addToWishlist}
         >
-          <i className="fa-solid fa-star "></i>
+          Add to Wishlisht
+        </button>
+        <div className="book-detail--description">
+          <h2>Overview</h2>
+          <span>{book.description}</span>
         </div>
-        <div
-          className={
-            rating >= 1.7
-              ? "book-detail--rating-filled"
-              : "book-detail--rating-empty"
-          }
-        >
-          <i className="fa-solid fa-star "></i>
-        </div>
-        <div
-          className={
-            rating >= 2.7
-              ? "book-detail--rating-filled"
-              : "book-detail--rating-empty"
-          }
-        >
-          <i className="fa-solid fa-star "></i>
-        </div>
-        <div
-          className={
-            rating >= 3.7
-              ? "book-detail--rating-filled"
-              : "book-detail--rating-empty"
-          }
-        >
-          <i className="fa-solid fa-star "></i>
-        </div>
-        <div
-          className={
-            rating >= 4.7
-              ? "book-detail--rating-filled"
-              : "book-detail--rating-empty"
-          }
-        >
-          <i className="fa-solid fa-star "></i>
-        </div>
-        <span className="book-detail--rating">{rating}</span>
       </div>
-
-      <span className="book-detail--numRatings">( {book.numRatings} )</span>
-      <span className="book-detail-write-review-text" onClick={comingSoon}>
-        Write a review
-      </span>
-      <h2 className="book-detail--price">${floatPrice}</h2>
-      <span className="book-detail--format">{book.format}</span>
-      <button className="book-detail--cart-button" onClick={comingSoon}>
-        Add to Cart
-      </button>
-      <button className="book-detail--wishlist-button" onClick={addToWishlist}>
-        Add to Wishlisht
-      </button>
-      <div className="book-detail--description">
-        <h2>Overview</h2>
-        <span>{book.description}</span>
+      <div className="book-detail-reviews--container">
+        <ViewReviews book={book} />
       </div>
     </div>
   );
