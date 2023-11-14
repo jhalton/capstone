@@ -2,6 +2,7 @@ import "./ViewReviews.css";
 import React from "react";
 import { useModal } from "../../context/Modal";
 import EditReviewModal from "../EditReviewModal";
+import DeleteReviewModal from "../DeleteReviewModal";
 
 const ViewReviews = ({ book, reviews, user }) => {
   const { setModalContent } = useModal();
@@ -13,6 +14,13 @@ const ViewReviews = ({ book, reviews, user }) => {
           <li key={review.id}>
             <span className="book-detail-reviews--review-li">
               {review.rating}
+              {review.pen_name}
+              {review.review}
+              {review.spoiler ? (
+                <span>Yes, spoiler</span>
+              ) : (
+                <span>No spoiler</span>
+              )}
               {review.userId === user.id ? (
                 <span>
                   <i
@@ -25,6 +33,12 @@ const ViewReviews = ({ book, reviews, user }) => {
                           user={user}
                         />
                       )
+                    }
+                  ></i>
+                  <i
+                    class="fa-regular fa-trash-can"
+                    onClick={() =>
+                      setModalContent(<DeleteReviewModal review={review} />)
                     }
                   ></i>
                 </span>
