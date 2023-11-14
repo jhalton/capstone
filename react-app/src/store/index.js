@@ -4,12 +4,14 @@ import session from "./session";
 import collection from "./collections";
 import book from "./books";
 import wishlist from "./wishlists";
+import review from "./reviews";
 
 const rootReducer = combineReducers({
   session,
   collection,
   book,
   wishlist,
+  review,
 });
 
 let enhancer;
