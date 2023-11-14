@@ -12,6 +12,8 @@ import { comingSoon } from "../../Resources/helperFunctions";
 import AddBookToWishlistModal from "../AddBookToWishlist";
 import { getAllWishlists } from "../../store/wishlists";
 import ViewReviews from "../ViewReviews";
+import { allReviews, getAllReviews } from "../../store/reviews";
+import CreateReviewModal from "../CreateReviewModal";
 
 const BookDetail = () => {
   const dispatch = useDispatch();
@@ -19,7 +21,9 @@ const BookDetail = () => {
   const { bookId } = useParams();
   const rating = book.avgRating;
   const user = useSelector((state) => state.session.user);
+  const reviews = useSelector(allReviews);
   const { closeModal, setModalContent } = useModal();
+  console.log("BOOK DETAIL REVIEWS", reviews);
 
   const addToWishlist = () => {
     setModalContent(<AddBookToWishlistModal book={book} />);
@@ -28,7 +32,7 @@ const BookDetail = () => {
   useEffect(() => {
     dispatch(getBookById(bookId));
     dispatch(getAllWishlists());
-
+    dispatch(getAllReviews(bookId));
     return () => dispatch(clearCurrentBook());
   }, [dispatch, bookId, closeModal]);
 
@@ -127,7 +131,10 @@ const BookDetail = () => {
         </div>
 
         <span className="book-detail--numRatings">( {book.numRatings} )</span>
-        <span className="book-detail-write-review-text" onClick={comingSoon}>
+        <span
+          className="book-detail-write-review-text"
+          onClick={() => setModalContent(<CreateReviewModal />)}
+        >
           Write a review
         </span>
         <h2 className="book-detail--price">${floatPrice}</h2>
@@ -147,7 +154,7 @@ const BookDetail = () => {
         </div>
       </div>
       <div className="book-detail-reviews--container">
-        <ViewReviews book={book} />
+        <ViewReviews book={book} reviews={reviews} />
       </div>
     </div>
   );

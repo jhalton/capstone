@@ -31,7 +31,7 @@ class Review(db.Model):
     
     def to_dict_book_reviews(self):
         review = self.to_dict()
-        review["Book"] = self.book.to_dict_review()
+        review["Book"] = self.book.to_dict()
         return review
     
     
