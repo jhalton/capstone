@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { editReview, getAllReviews } from "../../store/reviews";
-import LoadingSpinner from "../LoadingSpinner";
 
 const EditReviewModal = ({ bookId, reviewDetails }) => {
   const dispatch = useDispatch();
@@ -13,6 +12,7 @@ const EditReviewModal = ({ bookId, reviewDetails }) => {
   const [spoiler, setSpoiler] = useState(reviewDetails.spoiler);
   const [rating, setRating] = useState(reviewDetails.rating);
   const [errors, setErrors] = useState({});
+  const reviewId = reviewDetails.id;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,17 +24,13 @@ const EditReviewModal = ({ bookId, reviewDetails }) => {
       spoiler,
     };
 
-    const data = await dispatch(editReview(reviewDetails.id, reviewData));
+    const data = await dispatch(editReview(reviewId, reviewData));
     if (data?.errors) {
       setErrors(data?.errors);
     } else {
       dispatch(getAllReviews(bookId)).then(closeModal());
     }
   };
-
-  if (!reviewDetails) {
-    return <LoadingSpinner />;
-  }
 
   return (
     <div className="edit-review-modal--container">

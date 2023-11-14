@@ -22,6 +22,7 @@ const ViewReviews = ({ book, reviews, user }) => {
                         <EditReviewModal
                           bookId={book.id}
                           reviewDetails={review}
+                          user={user}
                         />
                       )
                     }

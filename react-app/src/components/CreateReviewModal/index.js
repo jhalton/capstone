@@ -12,7 +12,6 @@ const CreateReviewModal = ({ user, bookId }) => {
   const [errors, setErrors] = useState({});
   const { closeModal } = useModal();
   const dispatch = useDispatch();
-  console.log("CREATE REVIEW MODAL ERRORS", errors);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
