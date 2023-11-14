@@ -16,7 +16,7 @@ const CreateWishlistModal = () => {
     const wishlist = {
       name,
     };
-    console.log("WISHLIST MODAL", wishlist);
+
     const data = await dispatch(createWishlist(wishlist));
 
     if (data?.errors) {

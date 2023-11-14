@@ -23,7 +23,6 @@ const BookDetail = () => {
   const user = useSelector((state) => state.session.user);
   const reviews = useSelector(allReviews);
   const { closeModal, setModalContent } = useModal();
-  console.log("BOOK DETAIL REVIEWS", reviews);
 
   const addToWishlist = () => {
     setModalContent(<AddBookToWishlistModal book={book} />);
@@ -133,7 +132,9 @@ const BookDetail = () => {
         <span className="book-detail--numRatings">( {book.numRatings} )</span>
         <span
           className="book-detail-write-review-text"
-          onClick={() => setModalContent(<CreateReviewModal user={user} />)}
+          onClick={() =>
+            setModalContent(<CreateReviewModal user={user} bookId={bookId} />)
+          }
         >
           Write a review
         </span>

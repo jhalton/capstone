@@ -1,8 +1,8 @@
 from flask import Blueprint, request
-from flask_login import login_required
+from flask_login import login_required, current_user
 from .decorators import admin_required
-from app.models import Book, db
-from app.forms import CreateBookForm, UpdateBookForm
+from app.models import Book, Review, db
+from app.forms import CreateBookForm, UpdateBookForm, CreateReviewForm
 from .auth_routes import validation_errors_to_error_messages
 from app.api.aws import upload_file_to_s3, get_unique_filename, remove_file_from_s3, check_if_not_aws_file
 
@@ -150,3 +150,32 @@ def get_book_reviews(id):
     if not book:
         return {'errors': "Book couldn't be found"}, 404
     return {"Reviews": [review.to_dict_book_reviews() for review in book.reviews]}
+
+@book_routes.route('/<int:id>/new_review', methods=["POST"])
+@login_required
+def create_book_review(id):
+    """
+    Create a review for a book
+    """
+    form = CreateReviewForm()
+    # Get the csrf_token from the request cookie and put it into the
+    # form manually to validate_on_submit can be used
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    book = Book.query.get(int(id))
+    if not book:
+        return {'errors': "Book couldn't be found"}, 404
+    
+    if form.validate_on_submit():
+        review = Review (
+          rating = form.data['rating'],
+          review = form.data['review'], 
+          user_id = current_user.id, 
+          book_id = book.id,
+          spoiler = form.data['spoiler'],
+          pen_name = form.data['pen_name'],  
+        )
+        db.session.add(review)
+        db.session.commit()
+        return review.to_dict(), 201
+    return validation_errors_to_error_messages(form.errors), 400

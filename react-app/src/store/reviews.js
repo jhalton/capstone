@@ -57,7 +57,7 @@ export const getAllReviews = (bookId) => async (dispatch) => {
     return data;
   } else if (response.status < 500) {
     const data = await response.json();
-    return data.errors;
+    return data;
   } else {
     return ["Oops! An error occurred. Please try again."];
   }
@@ -73,7 +73,7 @@ export const getReviewById = (reviewId) => async (dispatch) => {
     return data;
   } else if (response.status < 500) {
     const data = await response.json();
-    return data.errors;
+    return data;
   } else {
     return ["Oops! An error occurred. Please try again."];
   }
@@ -81,8 +81,9 @@ export const getReviewById = (reviewId) => async (dispatch) => {
 
 //Create a review
 export const createReview = (bookId, review) => async (dispatch) => {
-  const response = await fetch("/api/reviews/new", {
+  const response = await fetch(`/api/books/${bookId}/new_review`, {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(review),
   });
 
@@ -92,7 +93,7 @@ export const createReview = (bookId, review) => async (dispatch) => {
     return data;
   } else if (response.status < 500) {
     const data = await response.json();
-    return data.errors;
+    return data;
   } else {
     return ["Oops! An error occurred. Please try again."];
   }
@@ -111,7 +112,7 @@ export const editReview = (reviewId, review) => async (dispatch) => {
     return data;
   } else if (response.status < 500) {
     const data = await response.json();
-    return data.errors;
+    return data;
   } else {
     return ["Oops! An error occurred. Please try again."];
   }
@@ -129,7 +130,7 @@ export const deleteReview = (reviewId) => async (dispatch) => {
     return data;
   } else if (response.status < 500) {
     const data = await response.json();
-    return data.errors;
+    return data;
   } else {
     return ["Oops! An error occurred. Please try again."];
   }
