@@ -133,7 +133,7 @@ const BookDetail = () => {
         <span className="book-detail--numRatings">( {book.numRatings} )</span>
         <span
           className="book-detail-write-review-text"
-          onClick={() => setModalContent(<CreateReviewModal />)}
+          onClick={() => setModalContent(<CreateReviewModal user={user} />)}
         >
           Write a review
         </span>
