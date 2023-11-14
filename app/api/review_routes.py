@@ -50,7 +50,7 @@ def edit_book_review(id):
 
 @review_routes.route("/<int:id>/delete", methods=["DELETE"])
 @login_required
-def delete_book_review():
+def delete_book_review(id):
     """
     Deletes a book review
     """

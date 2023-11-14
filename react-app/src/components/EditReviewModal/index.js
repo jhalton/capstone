@@ -4,10 +4,12 @@ import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { editReview, getAllReviews } from "../../store/reviews";
 
-const EditReviewModal = ({ bookId, reviewDetails }) => {
+const EditReviewModal = ({ bookId, reviewDetails, user }) => {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
-  const [pen_name, setPenName] = useState(reviewDetails.pen_name);
+  const [pen_name, setPenName] = useState(
+    reviewDetails.penName || user.firstName
+  );
   const [review, setReview] = useState(reviewDetails.review);
   const [spoiler, setSpoiler] = useState(reviewDetails.spoiler);
   const [rating, setRating] = useState(reviewDetails.rating);
