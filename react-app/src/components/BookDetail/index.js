@@ -155,7 +155,7 @@ const BookDetail = () => {
         </div>
       </div>
       <div className="book-detail-reviews--container">
-        <ViewReviews book={book} reviews={reviews} />
+        <ViewReviews book={book} reviews={reviews} user={user} />
       </div>
     </div>
   );
