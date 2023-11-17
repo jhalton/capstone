@@ -14,6 +14,7 @@ import { getAllWishlists } from "../../store/wishlists";
 import ViewReviews from "../ViewReviews";
 import { allReviews, getAllReviews } from "../../store/reviews";
 import CreateReviewModal from "../CreateReviewModal";
+import LoginFormModal from "../LoginFormModal";
 
 const BookDetail = () => {
   const dispatch = useDispatch();
@@ -153,12 +154,22 @@ const BookDetail = () => {
         <button className="book-detail--cart-button" onClick={comingSoon}>
           Add to Cart
         </button>
-        <button
-          className="book-detail--wishlist-button"
-          onClick={addToWishlist}
-        >
-          Add to Wishlisht
-        </button>
+        {user ? (
+          <button
+            className="book-detail--wishlist-button"
+            onClick={addToWishlist}
+          >
+            Add to Wishlisht
+          </button>
+        ) : (
+          <button
+            className="book-detail--wishlist-button"
+            onClick={() => setModalContent(<LoginFormModal />)}
+          >
+            Log in to Add to Wishlist
+          </button>
+        )}
+
         <div className="book-detail--description">
           <h2>Overview</h2>
           <span>{book.description}</span>
