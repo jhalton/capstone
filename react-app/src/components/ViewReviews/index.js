@@ -6,15 +6,18 @@ import DeleteReviewModal from "../DeleteReviewModal";
 
 const ViewReviews = ({ book, reviews, user }) => {
   const { setModalContent } = useModal();
-  const [showSpoiler, setShowSpoiler] = useState(false);
+  const [showSpoilers, setShowSpoilers] = useState(false);
 
   const handleToggleSpoiler = () => {
-    setShowSpoiler(!showSpoiler);
+    setShowSpoilers(!showSpoilers);
   };
+  const hasSpoilers =
+    "book-detail-reviews--review-spoiler" + (showSpoilers ? " revealed" : "");
+  console.log("VIEW REVIEWS hasSpoilers", typeof hasSpoilers);
 
   return (
     <div className="book-detail-reviews--container">
-      <h1>View Reviews</h1>
+      <h1>Reviews</h1>
       <div className="book-detail-reviews--reviews">
         {reviews
           .sort((a, b) => b.id - a.id)
@@ -31,9 +34,7 @@ const ViewReviews = ({ book, reviews, user }) => {
                 <span
                   className={
                     review.spoiler
-                      ? `book-detail-reviews--review-spoiler ${
-                          showSpoiler ? "revealed" : ""
-                        }`
+                      ? `${hasSpoilers}`
                       : "book-detail-reviews--review"
                   }
                   onClick={review.spoiler ? handleToggleSpoiler : null}
