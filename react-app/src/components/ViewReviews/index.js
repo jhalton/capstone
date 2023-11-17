@@ -14,19 +14,43 @@ const ViewReviews = ({ book, reviews, user }) => {
           .sort((a, b) => b.id - a.id)
           .map((review) => (
             <li key={review?.id}>
-              <span className="book-detail-reviews--review-li">
-                {review.rating}
-                {review.penName}
-                {review.review}
+              <span
+                className={
+                  !review.spoiler
+                    ? "book-detail-reviews--review-li"
+                    : "book-detail-reviews--review-li spoiler"
+                }
+              >
+                <span className="book-detail-reviews--rating">
+                  {review.rating}
+                  <i className="fa-solid fa-star"></i>
+                </span>
+                <span className="book-detail-reviews--penName">
+                  {review.penName ? review.penName : "Anonymous"}
+                </span>
+                <span
+                  className={
+                    review.spoiler
+                      ? "book-detail-reviews--review-spoiler"
+                      : "book-detail-reviews--review"
+                  }
+                >
+                  {review.review}
+                </span>
                 {review.spoiler ? (
-                  <span>Yes, spoiler</span>
+                  <span className="book-detail-reviews--spoiler">
+                    Spoiler?{" "}
+                    <i className="fa-solid fa-check yes-spoiler-check"></i>
+                  </span>
                 ) : (
-                  <span>No spoiler</span>
+                  <span className="book-detail-reviews--spoiler">
+                    Spoiler? <i className="fa-solid fa-x no-spoiler-x"></i>
+                  </span>
                 )}
                 {review.userId === user?.id ? (
                   <span>
                     <i
-                      class="fa-regular fa-pen-to-square"
+                      className="fa-regular fa-pen-to-square"
                       onClick={() =>
                         setModalContent(
                           <EditReviewModal
@@ -38,7 +62,7 @@ const ViewReviews = ({ book, reviews, user }) => {
                       }
                     ></i>
                     <i
-                      class="fa-regular fa-trash-can"
+                      className="fa-regular fa-trash-can"
                       onClick={() =>
                         setModalContent(<DeleteReviewModal review={review} />)
                       }

@@ -23,7 +23,9 @@ const BookDetail = () => {
   const user = useSelector((state) => state.session.user);
   const reviews = useSelector(allReviews);
   const { closeModal, setModalContent } = useModal();
-  const reviewExists = reviews.map((review) => review.userId).includes(user.id);
+  const reviewExists = reviews
+    .map((review) => review.userId)
+    .includes(user?.id);
 
   const addToWishlist = () => {
     setModalContent(<AddBookToWishlistModal book={book} />);

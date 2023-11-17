@@ -5,6 +5,47 @@
   border-top: 1px solid #000000;
 }
 
+.book-detail-reviews--reviews {
+  list-style-type: none;
+}
+
 .book-detail-reviews--review-li {
   border-bottom: 1px solid #000000;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "rating     review"
+    "name       review"
+    "spoiler    review";
+  margin: 5px;
+}
+
+.book-detail-reviews--review-spoiler {
+  filter: blur(4px);
+}
+
+.book-detail-reviews--rating {
+  grid-area: rating;
+}
+
+.book-detail-reviews--penName {
+  grid-area: name;
+}
+
+.book-detail-reviews--spoiler {
+  grid-area: spoiler;
+}
+
+.yes-spoiler-check {
+  color: #008000;
+}
+
+.no-spoiler-x {
+  color: #ff0000;
+}
+
+.book-detail-reviews--review {
+  grid-area: review;
+  padding: 5px;
 }
