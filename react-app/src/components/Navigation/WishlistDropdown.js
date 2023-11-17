@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useModal } from "../../context/Modal";
 import CreateWishlistModal from "../CreateWishlistModal";
 import { useHistory } from "react-router-dom";
+import LoginFormModal from "../LoginFormModal";
 
 const WishlistDropdown = ({ user }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -48,7 +49,11 @@ const WishlistDropdown = ({ user }) => {
             </li>
           </div>
         ) : (
-          <span>Log in</span>
+          <div>
+            <span onClick={() => setModalContent(<LoginFormModal />)}>
+              Log in
+            </span>
+          </div>
         )}
       </ul>
     </>
