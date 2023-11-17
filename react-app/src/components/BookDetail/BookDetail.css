@@ -57,6 +57,11 @@
   color: #5c809e;
 }
 
+.book-detail-write-review-text-existing-review:hover {
+  color: #0000007c;
+  cursor: not-allowed;
+}
+
 .book-detail--price {
   grid-area: price;
 }
