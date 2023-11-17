@@ -139,7 +139,9 @@ const EditReviewModal = ({ bookId, reviewDetails, user }) => {
           </div>
         </div>
         {errors.rating && <p className="errors">{errors.rating}</p>}
-        <button type="submit">Save Changes</button>
+        <button className="edit-review-modal--submit-button" type="submit">
+          Save Changes
+        </button>
       </form>
     </div>
   );
