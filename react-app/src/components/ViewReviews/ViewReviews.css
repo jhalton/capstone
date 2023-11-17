@@ -1,11 +1,15 @@
 .book-detail-reviews--container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  border-top: 1px solid #000000;
+  align-items: center;
+  /* border-top: 1px solid #000000; */
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.book-detail-reviews--container h1 {
+  margin-top: 0;
 }
 
 .book-detail-reviews--reviews {
@@ -22,6 +26,7 @@
     "name       review"
     "spoiler    review";
   margin: 5px;
+  width: 90vw;
 }
 
 .book-detail-reviews--review-spoiler {
