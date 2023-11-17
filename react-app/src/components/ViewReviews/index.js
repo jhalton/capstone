@@ -1,11 +1,17 @@
 import "./ViewReviews.css";
-import React from "react";
+import React, { useState } from "react";
 import { useModal } from "../../context/Modal";
 import EditReviewModal from "../EditReviewModal";
 import DeleteReviewModal from "../DeleteReviewModal";
 
 const ViewReviews = ({ book, reviews, user }) => {
   const { setModalContent } = useModal();
+  const [showSpoiler, setShowSpoiler] = useState(false);
+
+  const handleToggleSpoiler = () => {
+    setShowSpoiler(!showSpoiler);
+  };
+
   return (
     <div className="book-detail-reviews--container">
       <h1>View Reviews</h1>
@@ -14,13 +20,7 @@ const ViewReviews = ({ book, reviews, user }) => {
           .sort((a, b) => b.id - a.id)
           .map((review) => (
             <li key={review?.id}>
-              <span
-                className={
-                  !review.spoiler
-                    ? "book-detail-reviews--review-li"
-                    : "book-detail-reviews--review-li spoiler"
-                }
-              >
+              <span className="book-detail-reviews--review-li">
                 <span className="book-detail-reviews--rating">
                   {review.rating}
                   <i className="fa-solid fa-star"></i>
@@ -31,9 +31,12 @@ const ViewReviews = ({ book, reviews, user }) => {
                 <span
                   className={
                     review.spoiler
-                      ? "book-detail-reviews--review-spoiler"
+                      ? `book-detail-reviews--review-spoiler ${
+                          showSpoiler ? "revealed" : ""
+                        }`
                       : "book-detail-reviews--review"
                   }
+                  onClick={review.spoiler ? handleToggleSpoiler : null}
                 >
                   {review.review}
                 </span>
@@ -50,7 +53,7 @@ const ViewReviews = ({ book, reviews, user }) => {
                 {review.userId === user?.id ? (
                   <span>
                     <i
-                      className="fa-regular fa-pen-to-square"
+                      className="fa-regular fa-pen-to-square review-user-icons"
                       onClick={() =>
                         setModalContent(
                           <EditReviewModal
@@ -62,7 +65,7 @@ const ViewReviews = ({ book, reviews, user }) => {
                       }
                     ></i>
                     <i
-                      className="fa-regular fa-trash-can"
+                      className="fa-regular fa-trash-can review-user-icons"
                       onClick={() =>
                         setModalContent(<DeleteReviewModal review={review} />)
                       }

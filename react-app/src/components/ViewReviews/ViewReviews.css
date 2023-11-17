@@ -25,6 +25,10 @@
   filter: blur(4px);
 }
 
+.book-detail-reviews--review-spoiler:hover {
+  cursor: pointer;
+}
+
 .book-detail-reviews--rating {
   grid-area: rating;
 }
@@ -48,4 +52,9 @@
 .book-detail-reviews--review {
   grid-area: review;
   padding: 5px;
+}
+
+.review-user-icons:hover {
+  cursor: pointer;
+  color: #6e98bb;
 }
