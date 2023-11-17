@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createReview, getAllReviews } from "../../store/reviews";
 import { useModal } from "../../context/Modal";
+import LoginFormModal from "../LoginFormModal";
 
 const CreateReviewModal = ({ user, bookId }) => {
   const [pen_name, setPenName] = useState(user?.firstName || null);
@@ -10,7 +11,7 @@ const CreateReviewModal = ({ user, bookId }) => {
   const [review, setReview] = useState("");
   const [spoiler, setSpoiler] = useState(false);
   const [errors, setErrors] = useState({});
-  const { closeModal } = useModal();
+  const { closeModal, setModalContent } = useModal();
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
@@ -38,6 +39,7 @@ const CreateReviewModal = ({ user, bookId }) => {
         <input
           id="penName"
           type="text"
+          placeholder={user?.firstName}
           value={pen_name}
           onChange={(e) => setPenName(e.target.value)}
         />
@@ -50,7 +52,7 @@ const CreateReviewModal = ({ user, bookId }) => {
         />
         {errors.review && <p className="errors">{errors.review}</p>}
         <label htmlFor="spoiler">Does your review contain spoilers?</label>
-        <div>
+        <div className="create-review-modal--spoiler-radio">
           <label>
             Yes
             <input
@@ -137,7 +139,21 @@ const CreateReviewModal = ({ user, bookId }) => {
           </div>
         </div>
         {errors.rating && <p className="errors">{errors.rating}</p>}
-        <button type="submit">Submit</button>
+        {user ? (
+          <button className="create-review-modal--submit-button" type="submit">
+            Submit
+          </button>
+        ) : (
+          <div className="create-review-modal--no-user">
+            <button
+              className="create-review-modal--no-user-button"
+              onClick={() => setModalContent(<LoginFormModal />)}
+            >
+              Login
+            </button>
+            <span className="errors">Sign in to leave a review</span>
+          </div>
+        )}
       </form>
     </div>
   );

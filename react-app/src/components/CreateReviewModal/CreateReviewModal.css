@@ -5,10 +5,64 @@
   padding: 10px;
 }
 
+#penName {
+  width: 100%;
+  background-color: #e1e5eb;
+  border-radius: 15px;
+  border: none;
+  min-height: 30px;
+  margin: 5px;
+}
+
+.create-review-modal--container textarea {
+  width: 100%;
+  background-color: #e1e5eb;
+  border-radius: 15px;
+  border: none;
+  min-height: 60px;
+  margin: 5px;
+}
+
+.create-review-modal--submit-button {
+  background-color: #5c809e;
+  color: #ffffff;
+  border: none;
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 1rem;
+}
+
+.create-review-modal--container button:hover {
+  cursor: pointer;
+  background-color: #6e98bb;
+}
+
+.create-review-modal--no-user {
+  display: flex;
+  flex-direction: column;
+}
+.create-review-modal--no-user-button {
+  background-color: #5c809e;
+  color: #ffffff;
+  border: none;
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+.create-review-modal--no-user-button:hover {
+  cursor: pointer;
+  background-color: #6e98bb;
+}
+
 /* CSS FOR STARS */
 .create-review-modal--stars {
   display: flex;
   flex-direction: row;
+  margin-top: 5px;
 }
 
 .create-review-modal--rating-filled {

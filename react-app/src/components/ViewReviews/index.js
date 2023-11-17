@@ -13,7 +13,7 @@ const ViewReviews = ({ book, reviews, user }) => {
         {reviews
           .sort((a, b) => b.id - a.id)
           .map((review) => (
-            <li key={review.id}>
+            <li key={review?.id}>
               <span className="book-detail-reviews--review-li">
                 {review.rating}
                 {review.penName}
@@ -23,7 +23,7 @@ const ViewReviews = ({ book, reviews, user }) => {
                 ) : (
                   <span>No spoiler</span>
                 )}
-                {review.userId === user.id ? (
+                {review.userId === user?.id ? (
                   <span>
                     <i
                       class="fa-regular fa-pen-to-square"
