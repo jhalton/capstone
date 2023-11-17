@@ -21,6 +21,7 @@
   border: none;
   min-height: 60px;
   margin: 5px;
+  padding: 5px;
 }
 
 .create-review-modal--submit-button {

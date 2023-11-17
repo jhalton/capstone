@@ -15,10 +15,12 @@ const DeleteReviewModal = ({ review }) => {
   };
 
   return (
-    <div>
+    <div className="delete-review-modal--container">
       <h3>Delete Review?</h3>
-      <button onClick={handleDelete}>Delete</button>
-      <button onClick={() => closeModal()}>Keep</button>
+      <div>
+        <button onClick={handleDelete}>Delete</button>
+        <button onClick={() => closeModal()}>Keep</button>
+      </div>
     </div>
   );
 };

@@ -57,8 +57,11 @@
   color: #5c809e;
 }
 
-.book-detail-write-review-text-existing-review:hover {
+.book-detail-write-review-text-existing-review {
   color: #0000007c;
+}
+
+.book-detail-write-review-text-existing-review:hover {
   cursor: not-allowed;
 }
 
