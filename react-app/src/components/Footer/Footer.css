@@ -1,0 +1,29 @@
+.footer--container {
+  background-color: #113b58;
+  color: #cecdcd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+}
+
+.footer-title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.footer--container i {
+  padding: 5px;
+}
+
+.footer--container i:hover {
+  cursor: pointer;
+  color: #ffffff;
+  transition: all ease-in 0.2s;
+}
+
+.footer--container a {
+  color: #cecdcd;
+}

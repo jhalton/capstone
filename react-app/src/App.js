@@ -13,6 +13,7 @@ import AdminPortal from "./components/AdminPortal";
 import BookDetail from "./components/BookDetail";
 import WishlistDetail from "./components/WishlistDetail";
 import ViewWishlists from "./components/ViewWishlists";
+import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }
