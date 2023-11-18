@@ -20,7 +20,13 @@ const Footer = () => {
         >
           <i className="fa-brands fa-square-github fa-2xl"></i>
         </a>
-        <i className="fa-solid fa-earth-americas fa-2xl"></i>
+        <a
+          href="https://www.jeanettehalton.dev/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <i className="fa-solid fa-earth-americas fa-2xl"></i>
+        </a>
       </div>
     </div>
   );
