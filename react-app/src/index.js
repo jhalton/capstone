@@ -9,6 +9,7 @@ import * as sessionActions from "./store/session";
 import * as collectionActions from "./store/collections";
 import * as bookActions from "./store/books";
 import * as wishlistActions from "./store/wishlists";
+import * as reviewActions from "./store/reviews";
 import App from "./App";
 
 import "./index.css";
@@ -21,6 +22,7 @@ if (process.env.NODE_ENV !== "production") {
   window.collectionActions = collectionActions;
   window.bookActions = bookActions;
   window.wishlistActions = wishlistActions;
+  window.reviewActions = reviewActions;
 }
 
 // Wrap the application with the Modal provider and render the Modal component

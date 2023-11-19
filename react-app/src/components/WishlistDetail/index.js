@@ -55,10 +55,10 @@ const WishlistDetail = () => {
 
   //--------------------->Icon functions
 
-  const handleAddToCart = (bookId) => {
-    //This function will both add the item to the cart and remove it from the
-    //wishlist.
-  };
+  // const handleAddToCart = (bookId) => {
+  //   //This function will both add the item to the cart and remove it from the
+  //   //wishlist.
+  // };
   //------------------------------------------------------------
 
   if (isLoading) {

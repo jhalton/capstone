@@ -137,7 +137,7 @@ export const deleteBook = (bookId) => async (dispatch) => {
   }
 };
 
-//------------------------State Selectors------------------------------
+//------------------------State Selectors--------------------------------
 export const allBooks = (state) => Object.values(state.book.allBooks);
 export const currentBook = (state) => state.book.currentBook;
 //-------------------------------Reducers--------------------------------
