@@ -5,12 +5,14 @@ import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import { useHistory } from "react-router-dom";
+import { useModal } from "../../context/Modal";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
   const history = useHistory();
+  const { closeModal } = useModal();
 
   const openMenu = () => {
     if (showMenu) return;

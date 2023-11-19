@@ -13,7 +13,6 @@ const ViewReviews = ({ book, reviews, user }) => {
   };
   const hasSpoilers =
     "book-detail-reviews--review-spoiler" + (showSpoilers ? " revealed" : "");
-  console.log("VIEW REVIEWS hasSpoilers", typeof hasSpoilers);
 
   return (
     <div className="book-detail-reviews--container">
