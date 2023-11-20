@@ -4,6 +4,7 @@ import { useModal } from "../../context/Modal";
 import { signUp } from "../../store/session";
 import "./SignupForm.css";
 import LoginFormModal from "../LoginFormModal";
+import { createWishlist } from "../../store/wishlists";
 
 function SignupFormModal() {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ function SignupFormModal() {
       if (data?.errors) {
         setErrors(data?.errors);
       } else {
+        await dispatch(createWishlist({ name: "Wishlist" }));
         closeModal();
       }
     } else {
