@@ -16,6 +16,16 @@
   list-style-type: none;
 }
 
+.book-detail-reviews--empty-reviews {
+  text-decoration: underline;
+}
+
+.book-detail-reviews--empty-reviews:hover {
+  cursor: pointer;
+  color: #5c809e;
+  font-weight: bold;
+}
+
 .book-detail-reviews--review-li {
   border-bottom: 1px solid #000000;
   display: grid;

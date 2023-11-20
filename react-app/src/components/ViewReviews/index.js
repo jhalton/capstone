@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useModal } from "../../context/Modal";
 import EditReviewModal from "../EditReviewModal";
 import DeleteReviewModal from "../DeleteReviewModal";
+import CreateReviewModal from "../CreateReviewModal";
 
 const ViewReviews = ({ book, reviews, user }) => {
   const { setModalContent } = useModal();
@@ -18,6 +19,18 @@ const ViewReviews = ({ book, reviews, user }) => {
     <div className="book-detail-reviews--container">
       <h1>Reviews</h1>
       <div className="book-detail-reviews--reviews">
+        {!reviews.length ? (
+          <div>
+            {" "}
+            <span>Have you read this book? Be the first to </span>
+            <span
+              className="book-detail-reviews--empty-reviews"
+              onClick={() => setModalContent(<CreateReviewModal />)}
+            >
+              leave a review!
+            </span>{" "}
+          </div>
+        ) : null}
         {reviews
           .sort((a, b) => b.id - a.id)
           .map((review) => (
