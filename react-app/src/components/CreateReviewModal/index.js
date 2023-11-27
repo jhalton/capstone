@@ -1,11 +1,13 @@
 import "./CreateReviewModal.css";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createReview, getAllReviews } from "../../store/reviews";
 import { useModal } from "../../context/Modal";
 import LoginFormModal from "../LoginFormModal";
+import LoadingSpinner from "../LoadingSpinner";
 
-const CreateReviewModal = ({ user, bookId }) => {
+const CreateReviewModal = ({ bookId }) => {
+  const user = useSelector((state) => state.session.user);
   const [pen_name, setPenName] = useState(user?.firstName || null);
   const [rating, setRating] = useState(null);
   const [review, setReview] = useState("");
